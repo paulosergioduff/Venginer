@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xml:lang="pt-br" lang="pt-br"><head>
+<title>Introdução ao PHP PDO</title>
+<link href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/css.css" rel="stylesheet" type="text/css">
+
+<link href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/artigo_style_2013.css" rel="stylesheet" type="text/css">
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+
+
+	<meta property="og:image" content="http://www.devmedia.com.br/imagens/fotoscolunistas/ilha_eu_carmen_maria-2.jpg">
+
+<meta name="description" content="Canal PHP - Veja neste artigo algumas funções de php para conexão com o banco de dados utilizando a biblioteca PDO."> 
+
+<link rel="canonical" href="http://www.devmedia.com.br/introducao-ao-php-pdo/24973">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="content-language" content="pt-br">
+<meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=3.0,initial-scale=1.0">
+<meta name="msapplication-tap-highlight" content="no">
+
+<!-- ICON MAC -->  
+<link rel="apple-touch-icon" href="http://www.devmedia.com.br/favicon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://www.devmedia.com.br/imagens/2013/Devmedia72x.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.devmedia.com.br/imagens/2013/Devmedia114x.png">
+<link rel="apple-touch-icon" sizes="129x129" href="http://www.devmedia.com.br/imagens/2013/Devmedia129x.png">  
+<!-- FAVICON HTML5-->
+<link rel="icon" href="http://www.devmedia.com.br/favicon.png">
+<!-- FAVICON IE-->
+<link rel="icon" type="image/png" href="http://www.devmedia.com.br/favicon.png">
+
+<link href="https://plus.google.com/101753743720604160232" rel="publisher">
+<!-- CSS - RESET E PRESET -->
+<link rel="stylesheet" type="text/css" href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/devmedia.css">
+<!-- CSS - RESPONSIVO -->
+<link rel="stylesheet" type="text/css" href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/devmedia-responsive.css">
+<!-- CSS - HEADER E FOOTER -->
+<link rel="stylesheet" type="text/css" href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/devmedia-header-footer.css">
+<link rel="stylesheet" type="text/css" href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/style.css">
+
+<script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/v2.js" async=""></script><script async="" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/cbgapi.loaded_1"></script><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/bjGqbWII8r4A2pacwqm_6r.js" async=""></script><script async="" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/cbgapi.loaded_0"></script><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/ti.js" type="text/javascript" async=""></script><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/ga.js" async="" type="text/javascript"></script><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/all.js" id="facebook-jssdk"></script><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/jquery.js"></script>
+<script async="" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/menu.js"></script><script async="" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/menu_002.js"></script>
+  <!--[if lt IE 9]>
+	<script async defer src="js/modernizr.custom.js"></script>
+  <![endif]-->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=145393072270566";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15997918-1']);
+_gaq.push(['_setDomainName', 'devmedia.com.br']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script async="" defer="defer" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/article.js"></script>
+
+<script gapi_processed="true" async="" type="text/javascript" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/plusone.js"></script>
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "7fba8974-a42c-4d1b-96a9-4249a82ce8c0", onhover: false}); </script>	
+
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=3">
+
+
+<link rel="publisher" href="https://plus.google.com/101753743720604160232">
+
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/getAllAppDefault.esi" type="text/javascript"></script><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/checkOAuth.esi" type="text/javascript"></script><link href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/buttons.css" type="text/css" rel="stylesheet"><script src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/getCount2.php" type="text/javascript"></script><script gapi_processed="true" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/plusone.js" type="text/javascript"></script></head>
+
+<body>
+<div class="dm-shadow"></div>
+<section class="dm-shell">
+<header>
+<span class="opacity"></span>
+<nav class="lateral">
+<ul>
+<li><strong><a href="http://www.devmedia.com.br/" rel="nofollow"><span class="font-dev">bem</span><span class="font-media">vindo</span><span class="icon home"></span></a></strong></li>
+<li><a href="#" class="back" data-main="true">Voltar</a></li>
+
+<li><a href="http://www.devmedia.com.br/forum/"><span class="icon2 forum"></span>Fórum</a></li>
+<li><a href="http://www.devmedia.com.br/api/" style="text-transform:none;"><span class="icon2 devware"></span>APIs</a></li>
+<li><a href="#" rel="nofollow"><span class="icon2 servicos"></span>Serviços<span></span></a>
+<ul>
+<li><h5>Serviços<span class="icon servicos"></span></h5></li>
+<li><a href="#" class="back">Voltar</a></li>
+<li><a href="http://www.devmedia.com.br/player" rel="nofollow">Devmedia Player</a></li>
+<li><a href="http://www.devmedia.com.br/join" rel="nofollow">Cadastre-se</a></li>
+<li><a href="http://www.devmedia.com.br/feed" rel="nofollow">RSS</a></li>
+<li><a href="http://www.devmedia.com.br/whatsnew/?id=1">O que há de novo </a></li>
+<li><a href="http://www.devmedia.com.br/como-gerenciar-os-posts-lidos-assistidos-no-portal-devmedia/25840" rel="nofollow">Gerenciando o que foi lido</a></li>
+</ul>
+</li>
+<li><a href="http://www.devmedia.com.br/mvp/" rel="nofollow"><span class="icon2 mvp"></span>MVP</a></li>
+<li><a href="#" rel="nofollow"><span class="icon2 comprar"></span>Comprar<span></span></a>
+<ul>
+<li><h5>Comprar<span class="icon comprar"></span></h5></li>
+<li><a href="#" class="back">Voltar</a></li>
+<li><a href="http://www.devmedia.com.br/mvp/" rel="nofollow">MVP</a></li>
+<li><a href="http://www.devmedia.com.br/shop/" rel="nofollow">Loja Virtual</a></li>
+<li><a href="http://www.devmedia.com.br/assine/#assine-revistas">Assine revistas</a></li>
+</ul>
+</li>
+<li><a href="#" rel="nofollow"><span class="icon2 tecnologia"></span>Conteúdo<span></span></a>
+<ul>
+<li><h5>Conteúdo<span class="icon tecnologia"></span></h5></li>
+<li><a href="#" class="back">Voltar</a></li>
+<li><a href="http://www.devmedia.com.br/mentoring/">Mentoring</a></li>
+<li><a href="http://www.devmedia.com.br/front-end-web">Front-end web</a></li>
+<li><a href="http://www.devmedia.com.br/mobile">Mobile</a></li>
+<li><a href="http://www.devmedia.com.br/java">Java</a></li>
+<li><a href="http://www.devmedia.com.br/dotnet">.net</a></li>
+<li><a href="http://www.devmedia.com.br/banco-de-dados">Banco de dados</a></li>
+<li><a href="http://www.devmedia.com.br/engenharia-de-software">Engenharia de Software</a></li>
+<li><a href="http://www.devmedia.com.br/php">PHP</a></li>
+<li><a href="http://www.devmedia.com.br/delphi">Delphi</a></li>
+<li><a href="http://www.devmedia.com.br/canais/">Todo o conteúdo</a></li>
+</ul>
+</li>
+<li><a href="#" rel="nofollow"><span class="icon2 revistas"></span>Revistas<span></span></a>
+<ul>
+<li><h5>Revistas<span class="icon revistas"></span></h5></li>
+<li><a href="#" class="back">Voltar</a></li>
+<li><a href="http://www.devmedia.com.br/revista-front-end-magazine">Front-end Magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-mobile-magazine">Mobile magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-java-magazine">Java Magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-easy-java-magazine">easy Java Magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-dotnet-magazine">.net Magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-easy-dotnet-magazine">easy .net Magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-sql-magazine">SQL Magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-engenharia-de-software-magazine">Engenharia de Software Magazine</a></li>
+<li><a href="http://www.devmedia.com.br/revista-clubedelphi">ClubeDelphi</a></li>
+<li><a href="http://www.devmedia.com.br/assgold">Todas as revistas</a></li>
+</ul>
+</li>
+<li><a href="#" rel="nofollow"><span class="icon2 cursos"></span>Cursos<span></span></a>
+<ul>
+<li><h5>Cursos<span class="icon cursos"></span></h5></li>
+<li><a href="#" class="back">Voltar</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/formacoes/">Formações completas</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/front-end-web">Cursos de front-end web</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/mobile">Cursos de Mobile</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/java">Cursos de Java</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/net">Cursos de .net</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/banco-de-dados">Cursos de Banco de dados</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/engenharia-de-software">Cursos de Engenharia de Software</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/php">Cursos de PHP</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/automacao">Cursos de Automação / NFe / Paf-ecf</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/delphi">Cursos de Delphi</a></li>
+<li><a href="http://www.devmedia.com.br/cursos/">Todos os cursos</a></li>
+</ul>
+</li>
+<li><a href="http://www.devmedia.com.br/pocket-video"><span class="icon2 pocketvideos"></span>Pocket Videos</a></li>
+<li><a href="http://www.devmedia.com.br/fale-conosco/" rel="nofollow"><span class="icon2 atendimento"></span>Fale conosco</a></li>
+
+</ul>
+</nav>
+            <!-- MENU DESKTOP -->  
+            <nav class="dm-bgnav-out">
+			  <div class="container-fluid dm-bgnav"> <!-- MOSTRAR E OCULTAR NAVBAR -->
+                <div class="container">     
+                  <div class="devmenu">  
+                    
+                    <i class="drop-mobile"><a href="#" class="menu"></a></i>
+					<a class="logo-mob" href="http://www.devmedia.com.br/"><span class="font-dev">Dev</span><span class="font-media">Media</span></a>
+                    <span id="headermenudesktop"><ul class="navspace menucel ativo3 dm-1"><li><a href="http://www.devmedia.com.br/canais/" rel="nofollow" class="menulink">Conteúdo &nbsp;<small>&#9660;</small></a><ul class="submenu"><li><strong><a href="http://www.devmedia.com.br/forum/">» Fórum</a></strong></li><li><strong><a href="http://www.devmedia.com.br/mentoring/">» Mentoring</a></strong></li><li><a href="http://www.devmedia.com.br/front-end-web">Front-end web</a></li><li><a href="http://www.devmedia.com.br/mobile">Mobile</a></li><li><a href="http://www.devmedia.com.br/java">Java</a></li><li><a href="http://www.devmedia.com.br/dotnet">.net</a></li><li><a href="http://www.devmedia.com.br/banco-de-dados">Banco de dados</a></li><li><a href="http://www.devmedia.com.br/engenharia-de-software">Engenharia de Software</a></li><li><a href="http://www.devmedia.com.br/php">PHP</a></li><li><a href="http://www.devmedia.com.br/delphi">Delphi</a></li><a href="http://www.devmedia.com.br/canais/" class="btn-dm-nav">Todo o conteúdo</a></ul></li></ul><ul class="navspace menucel ativo dm-1"><li><a href="http://www.devmedia.com.br/assgold" rel="nofollow" class="menulink">Revistas &nbsp;<small>&#9660;</small></a><ul class="submenu"><li><a href="http://www.devmedia.com.br/revista-front-end-magazine">Front-end Magazine</a></li><li><a href="http://www.devmedia.com.br/revista-mobile-magazine">Mobile magazine</a></li><li><a href="http://www.devmedia.com.br/revista-java-magazine">Java Magazine</a></li><li><a href="http://www.devmedia.com.br/revista-easy-java-magazine">easy Java Magazine</a></li><li><a href="http://www.devmedia.com.br/revista-dotnet-magazine">.net Magazine</a></li><li><a href="http://www.devmedia.com.br/revista-easy-dotnet-magazine">easy .net Magazine</a></li><li><a href="http://www.devmedia.com.br/revista-sql-magazine">SQL Magazine</a></li><li><a href="http://www.devmedia.com.br/revista-engenharia-de-software-magazine">Engenharia de Software Magazine</a></li><li><a href="http://www.devmedia.com.br/revista-clubedelphi">ClubeDelphi</a></li><a href="http://www.devmedia.com.br/assgold" class="btn-dm-nav">Todas as revistas</a></ul></li></ul><ul class="navspace menucel ativo3 dm-3"><li><a href="http://www.devmedia.com.br/cursos/" rel="nofollow" class="menulink">Cursos &nbsp;<small>&#9660;</small></a><ul class="submenu"><li><strong><a href="http://www.devmedia.com.br/cursos/formacoes/">» Formações completas</a></strong></li><li><a href="http://www.devmedia.com.br/cursos/front-end-web">Cursos de front-end web</a></li><li><a href="http://www.devmedia.com.br/cursos/mobile">Cursos de Mobile</a></li><li><a href="http://www.devmedia.com.br/cursos/java">Cursos de Java</a></li><li><a href="http://www.devmedia.com.br/cursos/net">Cursos de .net</a></li><li><a href="http://www.devmedia.com.br/cursos/banco-de-dados">Cursos de Banco de dados</a></li><li><a href="http://www.devmedia.com.br/cursos/engenharia-de-software">Cursos de Engenharia de Software</a></li><li><a href="http://www.devmedia.com.br/cursos/php">Cursos de PHP</a></li><li><a href="http://www.devmedia.com.br/cursos/automacao">Cursos de Automação / NFe / Paf-ecf</a></li><li><a href="http://www.devmedia.com.br/cursos/delphi">Cursos de Delphi</a></li><a href="http://www.devmedia.com.br/cursos/" class="btn-dm-nav">Todos os cursos</a></ul></li></ul><ul class="menucel dm-4"><li><a href="http://www.devmedia.com.br/pocket-video" class="menulink2">Pocket Videos</a></li></ul><ul class="menucel dm-5"><li><a href="http://www.devmedia.com.br/api/" rel="nofollow" class="menulink2" style="text-transform:none;">APIs</a></li></ul><ul class="menucel dm-5"><li><a href="http://www.devmedia.com.br/guias/" class="menulink2">Guias <img valign="middle" style="margin-top:-2px;" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/new.png" border="0"></a></li></ul><ul class="menucel dm-6"><li><strong><a href="http://www.devmedia.com.br/mvp/" class="menulink2">MVP</a></strong></li></ul></span>
+					
+					<div class="login-box">
+                    <div class="login-btn">
+					<a href="http://www.devmedia.com.br/join/" class="cadastre-se" rel="nofollow">Cadastre-se</a>
+                      <div class="popover1">Login</div>
+					  <div class="pai">
+                        <div class="login-pop deslogado">
+                          <div class="login-form">
+                            <div class="seta"></div>
+                              <form class="form-inline" method="post" action="http://www.devmedia.com.br/login/login.asp">
+                                <input name="usuario" class="input-medium pull-left" placeholder="Usuário" type="text">
+                                <input name="senha" class="input-medium pull-right" placeholder="Senha" type="password">
+								<input name="ac" value="1" type="hidden">
+                                <br><button type="submit">OK</button>
+                                <a href="http://www.devmedia.com.br/join/" class="cadastre-se">Cadastre-se</a>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <!-- FIM MENU DESKTOP -->
+
+            <!-- REVELAR MENU DROP-->
+			<div class="revelar dm-cor5">
+            <!-- DIV COM O Z-INDEX QUE SOBREPOE O DROPDOWN, CRIA A IDEIA DE REVELAR O MENU ESCONDIDO NA TRANSIÇÃO --> 
+              <!-- BLOCO TOPO -->
+			  <div class="container-fluid dm-busca">
+                <div class="container">
+                  <div class="row-fluid"> <!-- CABEÇALHO -->
+                    <a href="http://www.devmedia.com.br/"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/logo.png" alt="DevMedia" title="DevMedia"></a>
+                    <!-- BUSCA EM TELA DESKTOP E TABLET -->
+                    <nav id="busca">
+					  <form action="http://www.devmedia.com.br/busca/">
+                        <input name="txtsearch" placeholder="Buscar" type="text">
+                        <button type="submit"></button>
+					  </form>
+                    </nav>
+                  </div><!-- FIM CABEÇALHO -->
+                </div>
+              </div>
+              <!-- FIM BLOCO TOPO -->
+			  </div>
+</header>
+
+
+<div id="main">	
+	
+	
+
+	<div id="div_corpo_post">	 
+			
+			<section id="boxes_de_aviso">
+			<a name="boxvalorcreditos"></a>
+			<div id="div_feedback_post">
+		
+		Você precisa estar logado para dar um feedback. 
+		<a href="http://www.devmedia.com.br/login/login.asp?ret=articles/viewcomp.asp?comp=24973" rel="nofollow">Clique aqui para efetuar o login</a>
+		
+			</div>
+
+<div id="pop">
+	  
+	  Para efetuar o download você precisa estar logado. <a href="http://www.devmedia.com.br/login/login.asp">Clique aqui para efetuar o login</a>
+	  
+</div>	
+			</section>
+			
+			<!--include file="inc_mensagem_mvp.asp" -->
+			
+			
+								
+			
+			<section id="barra_botoes">
+			
+						   
+			   <label style="margin-right:30px;"><a href="#comentariosArtigo" rel="nofollow" class="linkpadrao">comentários</a></label>
+
+			   <label><a href="http://www.devmedia.com.br/favorite/addfavorite.asp?comp=24973" rel="nofollow" target="_blank" class="linkpadrao">post favorito 
+			   (6)
+			   </a></label>
+
+			   
+			   			
+			</section>		
+			
+			<article id="div_conteudo_post">
+			
+			
+									
+			<header>
+			<h1 class="normal">Introdução ao PHP PDO</h1>				
+			<div id="div_descricao">					
+			<h2 class="normal">Veja neste artigo algumas funções de php para conexão com o banco de dados utilizando a biblioteca PDO.</h2>				
+			</div>
+			</header>
+			
+																
+							
+			<div id="div_barrasocial"> 
+			
+				<div id="box_social">		
+				  <span st_processed="yes" class="st_twitter_hcount" displaytext="Tweet"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span><span style="background-image: url(&quot;http://w.sharethis.com/images/twitter_counter.png&quot;);" class="stMainServices st-twitter-counter">&nbsp;</span><span class="stArrow"><span style="display: inline-block;" class="stButton_gradient stHBubble"><span class="stBubble_hcount">5</span></span></span></span></span></span>
+				  <span st_processed="yes" class="st_plusone_hcount" displaytext="Tweet2"><div style="display:inline-block;overflow:hidden;line-height:0px;position:relative;vertical-align:middle;bottom:0px;width:75px; height:21px;">&nbsp;<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/fastbutton.html" name="I0_1426624691021" id="I0_1426624691021" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div></div></span>
+				  <span st_processed="yes" class="st_fblike_hcount" displaytext="Facebook"><span style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;position:relative;margin:3px 3px 0;padding:0px;font-size:11px;line-height:0px;vertical-align:bottom;overflow:visible;"><div fb-iframe-plugin-query="app_id=145393072270566&amp;container_width=0&amp;href=http%3A%2F%2Fwww.devmedia.com.br%2Fintroducao-ao-php-pdo%2F24973&amp;layout=button_count&amp;locale=pt_BR&amp;sdk=joey&amp;send=false&amp;show_faces=false" fb-xfbml-state="rendered" data-href="http://www.devmedia.com.br/introducao-ao-php-pdo/24973" class="fb-like fb_iframe_widget" data-show-faces="false" data-layout="button_count" data-send="false" data-action=""><span style="vertical-align: bottom; width: 84px; height: 20px;"><iframe class="" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/like.html" style="border: medium none; visibility: visible; width: 84px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f1689b2cd6e81f" frameborder="0" height="1000px" width="1000px"></iframe></span></div></span></span>
+				</div>			
+				
+				<span id="ja_votou">0</span>
+
+
+
+<div id="box_fb_comp">			
+	
+	
+
+	<div class="float_left">
+		<img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/handUp.png" border="0">
+	</div>
+
+	<div class="float_left">
+
+	<a class="linkfeedback" href="#" onclick="document.getElementById('div_feedback_post').style.display='block';">
+	&nbsp;Gostei (7)</a>
+	</div>
+
+	
+	
+	<div class="separador_feedback_rodape2"> 
+	<a href="#" onclick="document.getElementById('div_feedback_post').style.display='block';">
+	<img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/handDown.png" border="0">
+	</a>
+	</div>
+	
+	<div class="float_left">
+	<a class="linkfeedback" href="#" onclick="document.getElementById('div_feedback_post').style.display='block';">
+	<span class="feedback_rodape1">&nbsp;(0)</span>
+	</a>
+	</div>
+	
+	
+	
+	<div class="t_clear_both"></div>
+</div>
+	
+				
+				<div class="t_clear_both"></div>
+			
+			</div>
+			<a name="link_voto_negativo"></a>
+<section id="box_voto_negativo">
+
+	<a href="#" onclick="document.getElementById('box_voto_negativo').style.display='none';" class="linkpadrao">[fechar]</a>		
+	<p class="frase_box_qualidade1">Você não gostou da <b>qualidade</b> deste conteúdo?</p>
+	<p class="frase_box_qualidade2">(opcional) Você poderia comentar o que não lhe agradou?</p>		
+	
+	<div id="form_voto_negativo">
+	<form name="form_voto_negativo" method="post" action="http://www.devmedia.com.br/articles/grava_fb_negativo.asp">
+	  <textarea id="texto_voto" name="texto_voto"></textarea>
+	  <input name="idcomp" value="24973" type="hidden">
+	</form>
+	</div>
+
+	<span id="div_confirma_voto_negativo">
+	<a href="#" class="botao_confirma_negativo" onclick="document.forms['form_voto_negativo'].submit(); return false;">Confirmo meu voto negativo</a>
+	</span>
+</section>
+				<div id="div_conteudo">
+					
+					<div id="section_conteudo_post"> 
+					<p>Olá a todos novamente, gostaria de agradecer novamente a 
+oportunidade para escrever mais um artigo, mas agora vou falar a 
+respeito de PHP e um pouco de Orientação a Objeto.</p>
+<p>O objetivo do artigo de hoje é falar a respeito do PDO, essa biblioteca (DRIVER) tão poderosa do PHP.</p>
+<h3>Habilitar o PDO</h3>
+<p>Antes de começarmos a trabalhar com o PDO, é necessário habilitar o 
+driver do PDO e o driver referente ao banco que será utilizado. Para 
+habilitar o PDO é bem simples, vá ate o seu arquivo php.ini que 
+encontra-se dentro do diretório onde foi instalado o PHP e remova os 
+comentários (;) das linhas abaixo.</p>
+<p><strong>Listagem 1</strong>: Habilitando PDO no Windows</p>
+<div class="div_listagem"><pre class="pre_listagem">extension=php_pdo.dll
+extension=php_pdo_mysql.dll
+</pre></div>
+
+<p><strong>Listagem 2</strong>: Habilitando PDO no Linux</p>
+<div class="div_listagem"><pre class="pre_listagem">extension=pdo.so
+extension=pdo_mysql.so
+</pre></div>
+<h3>PDO (PHP Data Object) - Definição</h3>
+<p>PDO_MYSQL é um driver que implementa a interface PHP Data Objects (PDO) - <a href="http://www.php.net/manual/pt_BR/intro.pdo.php" target="_blank">http://www.php.net/manual/pt_BR/intro.pdo.php</a> para acesso do PHP ao MySQL 3.x, 4.x and 5.x.</p>
+<p>PDO_MYSQL tem vantagens do nativo suporte a prepared statement 
+presente no MySQL 4.1 e superior. Se você está usando um versão antiga 
+da biblioteca do mysql client, PDO irá emular para você.</p>
+<p><a href="http://php.net/manual/pt_BR/ref.pdo-mysql.php" target="_blank">http://php.net/manual/pt_BR/ref.pdo-mysql.php</a></p>
+<p>A utilização do PDO fornece uma camada de abstração em relação a 
+conexão com o banco de dados visto que o PDO efetua a conexão com 
+diversos bancos de dados da mesma maneira, modificando apenas a sua 
+string de conexão.</p>
+<p><strong>Listagem 3</strong>: Conexão com o banco de dados com o PDO</p>
+<div class="div_listagem"><pre class="pre_listagem">$con = new PDO("mysql:host=localhost;dbname=exercicio", "root", "senha"); 
+</pre></div>
+<p>A classe PDO em sua instancia pede como parâmetro primeiro o banco 
+que será utilizado, O caminho do banco de dados e o nome da base de 
+dados. Após devemos inserir o login e a senha do banco de dados.</p>
+<p>BANCO DE DADOS:host=CAMINHO BANCO;dbname=NOME BASE</p>
+<p>Logo basta modificarmos essa string teremos conexão com qualquer 
+outro banco de dados. Note que estamos apenas efetuando uma conexão 
+simples com o banco de dados mysql, com a utilização do PDO poderíamos, 
+se necessário, utilizar transações para as operações do banco, porem não
+ é o objetivo deste artigo.</p>
+<p>Para trabalhar com operações no banco, o PDO possui um método 
+conhecido como prepare. Como o próprio nome diz, este método apenas 
+prepara uma operação no banco de dados, logo se faz necessário a 
+utilização de outros métodos como execute por exemplo, para realmente 
+executar a operação.</p>
+<p>Vejamos abaixo o exemplo de um inserção de dados no banco, imagem que
+ temos uma tabela chamada de pessoa com os campos idpessoa, nome e email
+ e iremos utilizar a biblioteca para inserir nesta tabela.</p>
+<p>Lembrando, os métodos utilizados neste é exemplo são apenas alguns 
+dos métodos existentes na biblioteca PDO, para o conhecimento de todos 
+os métodos sugiro que acessem ao Manual do PHP (<a href="http://www.php.net/manual/pt_BR/book.pdo.php" target="_blank">http://www.php.net/manual/pt_BR/book.pdo.php</a>)</p>
+<img class="imagem_artigo" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/pdo01.png" alt="Tabela Pessoa do exemplo"><br>
+<p><strong>Figura 1</strong> - Tabela Pessoa do exemplo</p>
+<p><strong>Listagem 4</strong> - Criando a Tabela do Banco de dados</p> 
+<div class="div_listagem"><pre class="pre_listagem">CREATE  TABLE IF NOT EXISTS pessoa (
+  idpessoa INT NOT NULL AUTO_INCREMENT ,
+  nome VARCHAR(45) NOT NULL ,
+  email VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (idpessoa));
+</pre></div>
+<p>Segue acima um exemplo de criação da tabela para mostrar o exemplo do PDO.</p>
+<p><strong>Listagem 5</strong> - Exemplo de Inserção de Dados</p>
+<div class="div_listagem"><pre class="pre_listagem">$stmt = $con-&gt;prepare("INSERT INTO pessoa(nome, email) VALUES(?, ?)");
+$stmt-&gt;bindParam(1,”Nome da Pessoa”);
+$stmt-&gt;bindParam(2,”email@email.com”);
+$stmt-&gt;execute();
+</pre></div>
+<p>Conforme podemos observar no código acima, primeiramente houve uma 
+preparação no SQL que será enviado ao banco de dados. O método <i>prepare </i>ele apenas inicia uma query, esta possui diversos interrogações (?) que devemos substituir pelos valores reais adicionado.</p>
+<p>Os valores deverão ser adicionados com o método <i>bindParam</i>, 
+este método utiliza 2 ou 3 passagens de parâmetros. No exemplo criado 
+temos apenas duas passagens de parâmetros, sendo a primeira referente a 
+posição do interrogação que será substituído e o segundo parâmetro 
+referente ao valor que será inserido no banco. Existe um 3 parâmetro que
+ é referente ao tipo de valor que será enviado.</p>
+<p>Com isso já temos uma inserção no banco de dados com o auxilio da 
+biblioteca, com os dados já inseridos vamos conhecer como devemos fazer 
+para buscar todos os valores da tabela pessoa.</p>
+<strong>Listagem 6</strong> - Exemplo de Listagem de dados
+<div class="div_listagem"><pre class="pre_listagem">$rs = $con-&gt;query(“SELEC idpessoa, nome, email FROM pessoa”);
+while($row = $rs-&gt;fetch(PDO::FETCH_OBJ)){
+	echo $row-&gt;idpessoa . “&lt;br /&gt;”;
+	echo $row-&gt;nome . “&lt;br /&gt;”;
+	echo $row-&gt;email . “&lt;br /&gt;”;
+}
+</pre></div>
+<p>No código acima temos uma consulta sem passagem de parâmetro de todos
+ os dados armazenados na tabela pessoa. Utilizamos o método query para 
+isso. O método query ira armazenar na variável $rs todos os dados 
+referentes a consulta do banco.</p>
+<p>Após a variável $rs ser populada, devemos utilizar um while para 
+percorrer esses dados e trabalharmos com os valores. Dentro do while 
+inserimos o método fetch do PDO que tem como função resgatar linha a 
+linha do resultado da consulta. No método fetch utilizamos um parâmetro 
+PDO::FETCH_OBJ, este parâmetro define a forma na qual os dados serão 
+retornados e armazenados na variável $row, criada dentro do while.</p>
+<p>O PDO::FETCH_OBJ trata cada linha da consulta como um objeto, 
+transformando os campos que foram retornados em atributos do objeto 
+$row. Acessamos estes atributos utilizando os caracteres -&gt; (traço 
+maior) e o nome do campo buscado. </p>
+<p>Exemplo para imprimir o valor do campo nome da consulta teria que utilizar </p>
+<p><strong>Listagem 7</strong> - Imprimindo Dados</p>
+<div class="div_listagem"><pre class="pre_listagem">$row-&gt;nome. </pre></div>
+<p>Se fossemos criar uma consulta com passagem de parâmetros seria utilizado o método <i>prepara</i>,
+ pois o mesmo suporta inserção de elementos após a criação da query. 
+Veja no exemplo abaixo se a consulta dos dados da tabela pessoa fosse 
+realizada através de uma igualdade do nome.</p>
+<p><strong>Listagem 8</strong> - Consulta com igualdade do nome</p>
+<div class="div_listagem"><pre class="pre_listagem">$rs = $con-&gt;prepare("SELECT idpessoa, nome, email FROM pessoa WHERE nome LIKE ?”);
+$rs-&gt;bindParam(1, $nome . “%”);
+if($rs-&gt;execute()){
+if($rs-&gt;rowCount() &gt; 0){
+while($row = $rs-&gt;fetch(PDO::FETCH_OBJ)){
+	echo $row-&gt;idpessoa . “&lt;br /&gt;”;
+	echo $row-&gt;nome . “&lt;br /&gt;”;
+	echo $row-&gt;email . “&lt;br /&gt;”;
+}
+            }       
+        }
+</pre></div>
+<p>O método prepare foi utilizado no exemplo acima com a idéia apenas de
+ iniciar a query e aguardar pela inclusão de valores posteriormente. O 
+nome foi inserido em um segundo momento com o % (per cento), pois em SQL
+ ele representa um coringa. Logo estaremos buscando por todas as pessoas
+ armazenadas no banco de dados cujo seu nome inicie com a(s) letra(s) 
+informada na variável $nome por exemplo.</p>
+<p>Para efetuar as operações de atualização e deleção de dados no banco 
+teremos um processo parecido com a inserção, seguem exemplos abaixo:</p>
+<p><strong>Listagem 9</strong> - Deletando dados</p>
+<div class="div_listagem"><pre class="pre_listagem">$stmt = $con-&gt;prepare("DELETE FROM pessoa WHERE idpessoa = ?");
+$stmt-&gt;bindParam(1, $id);
+$stmt-&gt;execute();
+</pre></div>
+<p><strong>Listagem 10</strong> - Atualizando dados</p>
+<div class="div_listagem"><pre class="pre_listagem">$stmt = $con-&gt;prepare("UPDATE pessoa SET nome = ?, email = ? WHERE idpessoa = ?");
+$stmt-&gt;bindParam(1,$nome );
+$stmt-&gt;bindParam(2,$email);
+$stmt-&gt;bindParam(3,$id);
+$stmt-&gt;execute();
+</pre></div>
+
+<p>Espero ter ajudado a vocês falando um pouco sobre PDO, um driver 
+nativo do PHP que possui um grande poder de abstração da camada de banco
+ de dados. Em breve estarei escrevendo um artigo elaborando uma inserção
+ de dados utilizando o PDO com um projeto Orientado a Objetos.</p>
+<p>Obrigado a todos e ate mais.</p>
+ 
+
+
+					</div>	
+					
+					
+				</div>
+			
+				<footer>
+				<section id="box_autor_revista">
+
+	<a href="http://www.devmedia.com.br/autor/rodrigo-marques/276252"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/ilha_eu_carmen_maria-2.jpg" border="0" width="55px"></a>
+	
+	<br>
+		
+	<a href="http://www.devmedia.com.br/autor/rodrigo-marques/276252" rel="author" class="nome_autor">Rodrigo Marques</a><br>
+		
+	<p class="minibio_autor">Instrutor de informática na COTI INFORMÁTICA com as linguagens JAVA, PHP, ZEND, MYSQL, JavaScript, JQUERY entre outras.
+Recentemente com Certificação OCJP 6.</p>
+	
+
+</section>					
+				</footer>
+				
+
+				<div id="separador_vert_60"></div>
+			
+				<a name="comentariosArtigo"></a>	
+				<section id="feedback_rodape"> 
+					
+					<div id="div_frase_feedback_rodape">
+					O que você achou deste post?
+					</div>
+					
+<div id="box_vota_rodape">
+	
+	
+	<div class="float_left">
+	<a class="linkfeedback" href="#" onclick="document.getElementById('div_feedback_post').style.display='block';"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/handUp.png" border="0"></a>
+	</div>
+
+	<div class="float_left">
+	<a href="#" onclick="document.getElementById('div_feedback_post').style.display='block';" class="linkfeedback">&nbsp;Gostei (7)
+	</a> 
+	</div>
+	
+			
+	
+	<div class="separador_feedback_rodape2">
+	<a class="linkfeedback" href="#" onclick="document.getElementById('div_feedback_post').style.display='block';">
+	<img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/handDown.png" border="0"> 
+	</a>
+	</div>
+
+	<div class="separador_feedback_rodape1">
+	<a class="linkfeedback" href="#" onclick="document.getElementById('div_feedback_post').style.display='block';">
+	<span class="feedback_rodape1">(0)</span>
+	</a>
+	</div>  
+	
+	
+	
+	<div class="t_clear_both"></div>
+</div>
+	
+					<div class="t_clear_both"></div>
+					
+				</section>
+										
+					 
+			
+<style>
+	.mark-mvp {
+		display: inline-block;
+		background-color: #8CC53E;
+		margin-left: 7px;
+		padding: 0 5px;
+		height: 2em;
+		color: #fff;
+		font-weight: normal;
+		font-size: 10px;
+		line-height: 2.1em;
+		border-radius: 3px;
+		text-transform: uppercase;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.div_listagem
+	{
+	   word-wrap: normal !important;
+	}
+	.linkMyComments{text-decoration: none;color: #000;}
+	.linkMyComments:hover{text-decoration:underline;}
+</style>
+<span style="display: table;background: #D8D8D8;margin-bottom: 35px;font-family: 'Roboto',Sans-serif;height: 45px;font-size: 25px;width: 100%;"><span style="  display: table-cell;vertical-align: middle;text-align: center;"><a href="http://www.devmedia.com.br/meus-comentarios/" rel="nofollow" target="_blank" class="linkMyComments">Meus Comentários</a></span></span><a href="http://www.devmedia.com.br/meus-comentarios/" rel="nofollow" target="_blank" class="linkMyComments">
+</a><aside id="div_comentarios"><a href="http://www.devmedia.com.br/meus-comentarios/" rel="nofollow" target="_blank" class="linkMyComments">
+
+  </a><div id="div_poste_comentario"><a href="http://www.devmedia.com.br/meus-comentarios/" rel="nofollow" target="_blank" class="linkMyComments"></a><center><a href="http://www.devmedia.com.br/meus-comentarios/" rel="nofollow" target="_blank" class="linkMyComments">
+  </a><a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973" class="link_primeiro_comentar" rel="nofollow">Comentário | Tire sua dúvida</a>
+  </center>
+  </div>
+  
+	 <div class="foto_comentario1"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/usuariosemfoto.png" width="45">
+				
+		</div>
+		<div class="margin_left60"> 
+	    <span class="texto_comentario">  
+		
+		  
+				<span class="texto_comentario_nome">Andre Louzada</span>
+			
+
+			  <div class="texto_comentario_conteudo">	
+		  	  Ficou maneiro! Parabéns! 
+			 </div>
+
+	  	
+     	  <div class="margin_top10">
+		  [há +1 ano] - 
+		  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=24539" rel="nofollow" class="linkpadrao">Responder</a>
+		  </div>
+	   
+	</span>
+	</div>
+
+	<div class="t_clear_both">&nbsp;</div>
+
+	<div>  
+		 
+			<div class="foto_comentario_sub"> <img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/ilha_eu_carmen_maria-2.jpg" width="45">
+						</div>
+						<div class="box_comentario_sub1">
+
+						<span class="texto_comentario">
+
+						
+								   <b>[autor]</b>
+							  
+								<span class="texto_comentario_nome">Rodrigo Marques</span>
+							
+						  
+							  <div class="texto_comentario_conteudo">	
+							  Obrigado Andre... 
+							  </div>
+					
+					  
+     					  <div class="margin_top10">
+						  [há +1 ano] - 
+						  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=24541" rel="nofollow" class="linkpadrao">Responder</a>
+						  </div>
+					  
+					</span>
+					</div>
+					<div class="t_clear_both">&nbsp;</div>
+				     
+			  
+	</div>	
+	
+	
+		
+		<div id="divisor_comentarios"></div>
+				 
+	
+	 <div class="foto_comentario1"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/usuariosemfoto.png" width="45">
+				
+		</div>
+		<div class="margin_left60"> 
+	    <span class="texto_comentario">  
+		
+		  
+				<span class="texto_comentario_nome">Jean Fonseca</span>
+			
+
+			  <div class="texto_comentario_conteudo">	
+		  	  Parabéns Rodrigo Excelente Artigo! 
+			 </div>
+
+	  	
+     	  <div class="margin_top10">
+		  [há +1 ano] - 
+		  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=24551" rel="nofollow" class="linkpadrao">Responder</a>
+		  </div>
+	   
+	</span>
+	</div>
+
+	<div class="t_clear_both">&nbsp;</div>
+
+	<div>  
+	</div>	
+	
+	
+		
+		<div id="divisor_comentarios"></div>
+				 
+	
+	 <div class="foto_comentario1"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/mauro.bmp" width="45">
+				
+		</div>
+		<div class="margin_left60"> 
+	    <span class="texto_comentario">  
+		
+		  
+				<span class="texto_comentario_nome">Mauro Sérgio De Sousa Nascimento</span>
+			
+
+			  <div class="texto_comentario_conteudo">	
+		  	  Muito bem explicado. Obrigado! 
+			 </div>
+
+	  	
+     	  <div class="margin_top10">
+		  [há +1 ano] - 
+		  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=24588" rel="nofollow" class="linkpadrao">Responder</a>
+		  </div>
+	   
+	</span>
+	</div>
+
+	<div class="t_clear_both">&nbsp;</div>
+
+	<div>  
+		 
+			<div class="foto_comentario_sub"> <img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/ilha_eu_carmen_maria-2.jpg" width="45">
+						</div>
+						<div class="box_comentario_sub1">
+
+						<span class="texto_comentario">
+
+						
+								   <b>[autor]</b>
+							  
+								<span class="texto_comentario_nome">Rodrigo Marques</span>
+							
+						  
+							  <div class="texto_comentario_conteudo">	
+							  Muito Obrigado Mauricio...
+ <br> 
+ <br> espero que tenha gostado... logo virao outros...
+ <br> 
+ <br> Obrigado 
+							  </div>
+					
+					  
+     					  <div class="margin_top10">
+						  [há +1 ano] - 
+						  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=24590" rel="nofollow" class="linkpadrao">Responder</a>
+						  </div>
+					  
+					</span>
+					</div>
+					<div class="t_clear_both">&nbsp;</div>
+				     
+			  
+	</div>	
+	
+	
+		
+		<div id="divisor_comentarios"></div>
+				 
+	
+	 <div class="foto_comentario1"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/232232_20141224092830.jpg" width="45">
+				
+		</div>
+		<div class="margin_left60"> 
+	    <span class="texto_comentario">  
+		
+		  
+				<span class="texto_comentario_nome">Joel Rodrigues</span>
+			
+
+			  <div class="texto_comentario_conteudo">	
+		  	  Parabéns pelo artigo Rodrigo.
+ <br> Aguardamos novos artigos. 
+			 </div>
+
+	  	
+     	  <div class="margin_top10">
+		  [há +1 ano] - 
+		  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=26924" rel="nofollow" class="linkpadrao">Responder</a>
+		  </div>
+	   
+	</span>
+	</div>
+
+	<div class="t_clear_both">&nbsp;</div>
+
+	<div>  
+	</div>	
+	
+	
+		
+		<div id="divisor_comentarios"></div>
+				 
+	
+	 <div class="foto_comentario1"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/357821_20140423174409.jpg" width="45">
+				
+		</div>
+		<div class="margin_left60"> 
+	    <span class="texto_comentario">  
+		
+		  
+				<span class="texto_comentario_nome">João Gustavo Balestrin Dos Santos</span>
+			
+
+			  <div class="texto_comentario_conteudo">	
+		  	  Muito bom o Artigo!  
+			 </div>
+
+	  	
+     	  <div class="margin_top10">
+		  [há +1 ano] - 
+		  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=41912" rel="nofollow" class="linkpadrao">Responder</a>
+		  </div>
+	   
+	</span>
+	</div>
+
+	<div class="t_clear_both">&nbsp;</div>
+
+	<div>  
+	</div>	
+	
+	
+		
+		<div id="divisor_comentarios"></div>
+				 
+	
+	 <div class="foto_comentario1"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/usuariosemfoto.png" width="45">
+				
+		</div>
+		<div class="margin_left60"> 
+	    <span class="texto_comentario">  
+		
+		  
+				<span class="texto_comentario_nome">Frederico Brigatte***</span>
+			
+
+			  <div class="texto_comentario_conteudo">	
+		  	  Como fazer um crud genérico com as opções mostradas? 
+			 </div>
+
+	  	
+     	  <div class="margin_top10">
+		  [há +1 mês] - 
+		  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=45075" rel="nofollow" class="linkpadrao">Responder</a>
+		  </div>
+	   
+	</span>
+	</div>
+
+	<div class="t_clear_both">&nbsp;</div>
+
+	<div>  
+		 
+			<div class="foto_comentario_sub"> <img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/291681_20150206084740.png" width="45">
+						</div>
+						<div class="box_comentario_sub1">
+
+						<span class="texto_comentario">
+
+						
+								<span class="texto_comentario_nome">Douglas Claudio</span>
+							
+						  
+							  <div class="texto_comentario_conteudo">	
+							  Olá Frederico, obrigado pelo seu comentário. 
+ <br> 
+ <br> Enviamos sua solicitação ao Rodrigo e estamos no aguardo de um feedback do mesmo. 
+ <br> 
+ <br> Um abraço. 
+							  </div>
+					
+					  
+     					  <div class="margin_top10">
+						  [há +1 mês] - 
+						  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=45092" rel="nofollow" class="linkpadrao">Responder</a>
+						  </div>
+					  
+					</span>
+					</div>
+					<div class="t_clear_both">&nbsp;</div>
+				     
+			  
+		 
+			<div class="foto_comentario_sub"> <img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/294727_20150211073941.jpg" width="45">
+						</div>
+						<div class="box_comentario_sub1">
+
+						<span class="texto_comentario">
+
+						
+								<span class="texto_comentario_nome">Ricardo Arrigoni</span>
+							
+						  
+							  <div class="texto_comentario_conteudo">	
+							  Olá Frederico, como acabei de responder em meu post sobre CRUD com PHP PDO, o artigo em questão já não lhe atende ? <a href="http://www.devmedia.com.br/crud-com-php-pdo/28873" target="_blank">http://www.devmedia.com.br/crud-com-php-pdo/28873</a> 
+							  </div>
+					
+					  
+     					  <div class="margin_top10">
+						  [há +1 mês] - 
+						  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=45106" rel="nofollow" class="linkpadrao">Responder</a>
+						  </div>
+					  
+					</span>
+					</div>
+					<div class="t_clear_both">&nbsp;</div>
+				     
+			  
+	</div>	
+	
+	
+		
+		<div id="divisor_comentarios"></div>
+				 
+	
+	 <div class="foto_comentario1"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/354015_20140201201804.png" width="45">
+				
+		</div>
+		<div class="margin_left60"> 
+	    <span class="texto_comentario">  
+		
+		  
+				<span class="texto_comentario_nome">Victor Oliveira Marques</span>
+			
+				<mark class="mark-mvp">MVP</mark>
+			
+
+			  <div class="texto_comentario_conteudo">	
+		  	  Muito bom, bem dinâmico, parabéns... isso irá me ajudar muito no inicio com PDO. Obrigado! 
+			 </div>
+
+	  	
+     	  <div class="margin_top10">
+		  [há +1 mês] - 
+		  <a href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973&amp;idco_pai=54802" rel="nofollow" class="linkpadrao">Responder</a>
+		  </div>
+	   
+	</span>
+	</div>
+
+	<div class="t_clear_both">&nbsp;</div>
+
+	<div>  
+	</div>	
+	
+	
+</aside>
+
+
+	
+														
+									
+		</article>
+						
+					
+		<div id="box_ad_mvp">
+		<span class="titulo_box_ad_mvp">Conhece a assinatura MVP?</span>
+		<div>
+		<iframe src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/Untitled-5.html" scrolling="no" marginwidth="0px" marginheight="0px" frameborder="0" height="90" width="265"></iframe>
+		
+		</div>
+</div>
+
+<!--<object  width="265" height="100">
+		<param name="movie" value="http://www.devmedia.com.br/imagens/banners/bannerMVP_300x100.swf">	
+		<param name="quality" value="high">
+		<param name="wmode" value="transparent">
+		<embed wmode="transparent"  src="http://www.devmedia.com.br/imagens/banners/bannerMVP_300x100.swf" width="265" height="100">	
+		</object>
+		-->
+		<div id="div_publicidade">		
+		
+		<div style="margin-top:40px;margin-bottom:40px;"></div>
+
+		
+		<a target="_blank" href="http://www.devmedia.com.br/campanha/v.asp?i=128"><img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/banner_DevMidia-300x100.gif" border="0" height="100" width="300"></a>
+	
+		</div>
+		<section id="box_servicos_new"> 
+
+<div id="box_post_title">
+<center>
+Serviços
+</center>
+</div>
+
+ <div id="conteudo_box_servicos">
+
+			  
+
+			 
+					<div>
+						
+						<a class="linkservico" href="http://www.devmedia.com.br/rte3/addcomment.asp?idcomp=24973" rel="nofollow">Inclua um comentário</a>
+						</div>
+				  
+					<div class="link_box_servico">
+						<a href="http://www.devmedia.com.br/favorite/addfavorite.asp?comp=24973" class="linkservico" rel="nofollow">
+						Adicionar aos Favoritos</a>
+						</div>
+				  
+				  <div class="link_box_servico">
+					<a href="http://www.devmedia.com.br/favorite/add_finished.asp?comp=24973" class="linkservico" rel="nofollow">Marcar como lido/assistido</a>
+				  </div>
+
+				  <div class="link_box_servico">
+						<a class="linkservico" href="http://www.devmedia.com.br/anotacoes/add/?idcomp=24973" rel="nofollow">
+						Incluir anotação pessoal</a>				  						
+					</div>
+					
+				  <div class="link_box_servico">
+						<a class="linkservico" href="http://www.devmedia.com.br/articles/viewcomp_forprint.asp?comp=24973">Versão para impressão</a>
+						</div>
+					
+
+	</div>
+</section><div id="box_artigo_canal">  
+
+	<div id="div_link_canal">
+	
+	<a href="http://www.devmedia.com.br/php">
+	
+	
+	+PHP
+	</a> 
+	</div>
+	
+   
+</div>	
+		</div>
+		
+	</div>
+
+<div class="t_clear_both"></div>
+
+
+<!--include file="box_relacionados.asp" -->
+
+<style>
+mark {
+	padding: 0 5px;
+	height: 20px;
+	margin-left: 7px;
+	background-color: #43B1AB;
+	color: #fff;
+	border-radius: 3px;
+	font-weight: normal;
+	display: inline-block;
+	font-size: 10px;
+	text-transform: uppercase;
+	top: -4px;
+	position: relative;
+	box-sizing: border-box;
+	line-height: 20px;
+}
+</style>
+
+<link href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/css.css" rel="stylesheet" type="text/css">
+<link href="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/artigo_style_2013_002.css" rel="stylesheet" type="text/css">
+
+<section id="section_relacionados">
+	<p class="titulo_relacionados">Mais posts</p> 
+	<div class="separador10px"></div>
+	<nav id="nav_relacionados">		
+		<ul class="ul_lista_relacionados"> 
+			<li class="lista_relacionados"><div id="tipo_post_relacionado">Pocket Video</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/templates-em-php-utilizando-twig/32193" class="titulo_post_relacionado">Templates em PHP utilizando Twig</a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Artigo</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/criando-um-projeto-com-zend-framework/32175" class="titulo_post_relacionado">Criando um projeto com Zend Framework</a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Artigo</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/yii-framework-aumentando-a-performace-de-sua-aplicacao-web-com-caching/32126" class="titulo_post_relacionado">Yii Framework: Aumentando a performace de sua aplicação web com Caching</a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Artigo</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/framework-drupal-utilizando-taxonomia-em-drupal/32101" class="titulo_post_relacionado">Framework Drupal: Utilizando Taxonomia em Drupal</a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Artigo</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/criando-um-crud-com-zend-framework-2-e-doctrine-2/32100" class="titulo_post_relacionado">Criando um CRUD com Zend Framework 2 e Doctrine 2</a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Artigo</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/php-yii-framework-trabalhando-com-formularios/31973" class="titulo_post_relacionado">PHP Yii Framework: Trabalhando com formulários</a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Pocket Video</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/programacao-web-por-onde-comecar/31953" class="titulo_post_relacionado">Programação Web: Por onde começar? </a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Artigo</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/elasticsearch-desenvolvendo-big-data-com-php/31609" class="titulo_post_relacionado">Elasticsearch: desenvolvendo Big Data com PHP</a></div></li><li class="lista_relacionados"><div id="tipo_post_relacionado">Pocket Video</div><div id="box_titulo_post_relacionado"><a href="http://www.devmedia.com.br/integrando-php-com-google-analytics/31470" class="titulo_post_relacionado">Integrando PHP com Google Analytics </a></div></li>
+		</ul>
+	</nav>
+	<div class="separador10px"></div>
+	<div id="div_listar_relacionados">
+		<div id="botao_listar_relacionados"> 
+			<center>
+			
+			
+			    
+				  <a href="http://www.devmedia.com.br/php" class="link_listar_relacionados">Listar mais conteúdo</a>
+				
+				
+				<!--<a href='http://www.devmedia.com.br/php' class='link_listar_relacionados'>Listar mais conteúdo</a>-->
+		
+		
+				
+			</center>
+			
+		</div>
+	</div>	
+</section>
+
+
+
+
+
+
+<section class="dm-limitfoot"></section>
+<footer class="footer-fixed">
+<section class="container-fluid dm-cor1 footer-box">
+<div class="container">
+<div class="row-fluid">
+<div class="span7 f-box-filho">
+<div class="row-fluid cx2">
+<img src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/logo-footer.png" alt="DevMedia - asp.net, Java, Delphi, SQL e web Design, tudo em um só lugar!" title="DevMedia - asp.net, Java, Delphi, SQL e web Design, tudo em um só lugar!" height="32" width="145">
+<nav><a href="http://www.web-03.net/devmedia.asp" target="_blank">Anuncie</a> | <a href="http://www.devmedia.com.br/shop/">Loja</a> | <a href="http://www.devmedia.com.br/seja-um-autor-devmedia/28103">Publique</a> | <a href="http://www.devmedia.com.br/mvp/">Assine</a> | <a href="http://www.devmedia.com.br/fale-conosco/">Fale conosco</a></nav>
+</div>
+<ul class="social-bar">
+<li><a class="icon-1" href="http://www.facebook.com/pages/DevMedia/144522665592650" target="_blank"></a></li>
+<li><a class="icon-3" href="http://twitter.com/devmedia" target="_blank"></a></li>
+<li><a class="icon-4" href="https://plus.google.com/101753743720604160232?prsrc=3" target="_blank"></a></li>
+<li><a class="icon-2" href="http://www.devmedia.com.br/feed/"></a></li>
+</ul>
+</div>
+<div class="span5 cx3">
+<div id="fb-root"></div>
+<div class="fb-shell">
+<div fb-iframe-plugin-query="app_id=145393072270566&amp;color_scheme=light&amp;container_width=290&amp;header=false&amp;height=184&amp;href=https%3A%2F%2Fwww.facebook.com%2FDevmediaWeb03&amp;locale=pt_BR&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false&amp;width=767" fb-xfbml-state="rendered" class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/DevmediaWeb03" data-width="767" data-height="184" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"><span style="vertical-align: bottom; width: 767px; height: 184px;"><iframe class="" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/like_box.html" style="border: medium none; visibility: visible; width: 767px; height: 184px;" title="fb:like_box Facebook Social Plugin" scrolling="no" allowtransparency="true" name="f1b8d6191b5dd4" frameborder="0" height="184px" width="767px"></iframe></span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container-fluid dm-cor2 footer-box2">
+<div class="container">
+<div class="row-fluid">
+<div class="span4">Hospedagem web por <a href="http://www.porta80.com.br/" target="_blank">Porta 80 Web Hosting</a></div>
+
+</div>
+</div>
+</section>
+
+</footer>
+</section>
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/6Dg4oLkBbYq.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/6Dg4oLkBbYq_002.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe style="display:none;" scrolling="no" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/getSegment.html" name="stSegmentFrame" id="stSegmentFrame" frameborder="0" height="0px" width="0px"></iframe><div style="display: none;" class="stwrapper stwrapper5x" id="stwrapper"><iframe src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/index.html" scrolling="no" name="stLframe" class="stLframe" id="stLframe" allowtransparency="true" frameborder="0"></iframe></div><div onclick="javascript:stWidget.closeWidget();" id="stOverlay"></div><div id="fb-root"></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/postmessageRelay.html" id="oauth2relay807976478" name="oauth2relay807976478"></iframe><iframe src="Introdu%C3%A7%C3%A3o%20ao%20PHP%20PDO_arquivos/rtifr.html" style="position: absolute; overflow: hidden; visibility: hidden; height: 1px; width: 1px; bottom: 1px; left: 1px;"></iframe></body></html>

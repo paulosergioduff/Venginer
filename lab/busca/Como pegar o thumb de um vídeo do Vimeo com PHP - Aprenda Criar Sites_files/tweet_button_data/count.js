@@ -1,0 +1,1 @@
+/**/__twttr.receiveCount({"count":0,"url":"http:\/\/aprendacriarsites.com\/como-pegar-o-thumb-de-um-video-do-vimeo-com-php\/"});

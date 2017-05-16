@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/style.css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Aprenda Criar Sites RSS Feed" href="http://aprendacriarsites.com/feed/">
+<link rel="alternate" type="application/atom+xml" title="Aprenda Criar Sites Atom Feed" href="http://aprendacriarsites.com/feed/atom/">
+<link rel="pingback" href="http://aprendacriarsites.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://aprendacriarsites.com/wp-content/themes/cleartype/images/favicon.ico">
+<script async="" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/cbgapi.loaded_1"></script><script async="" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/cbgapi.loaded_0"></script><script src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/ga.js" async="" type="text/javascript"></script><script src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/populike.html" async="" type="text/javascript"></script><script src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/ca-pub-2075139633286717.js" type="text/javascript" async=""></script><script gapi_processed="true" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/plusone.js" async="" type="text/javascript"></script><script src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/widgets.js" id="twitter-wjs"></script><script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/dropdown.js"></script>
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Como pegar a imagem miniatura de um vídeo do YouTube - Aprenda Criar Sites</title>
+<link rel="canonical" href="http://aprendacriarsites.com/como-pegar-a-imagem-miniatura-de-um-video-do-youtube/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Como pegar a imagem miniatura de um vídeo do YouTube - Aprenda Criar Sites">
+<meta property="og:description" content="Muitas vezes precisamos adicionar vídeos do YouTube em algum site. Vamos supor que você tenha uma área em seu site onde existe uma galeria de vídeos do YouTube. Como apresentar uma lista de vídeos? Não é adequado por o iframe do vídeo direto na listagem. Primeiro que o player teria que ficar pequeno e segundo …">
+<meta property="og:url" content="http://aprendacriarsites.com/como-pegar-a-imagem-miniatura-de-um-video-do-youtube/">
+<meta property="og:site_name" content="Aprenda Criar Sites">
+<meta property="article:publisher" content="https://www.facebook.com/ACriarSites">
+<meta property="article:tag" content="PHP">
+<meta property="article:section" content="Programação">
+<meta property="article:published_time" content="2013-04-09T23:30:59-03:00">
+<meta property="article:modified_time" content="2014-05-14T00:06:26-03:00">
+<meta property="og:updated_time" content="2014-05-14T00:06:26-03:00">
+<meta property="fb:admins" content="1271757852">
+<meta property="og:image" content="http://aprendacriarsites.com/wp-content/uploads/2013/04/youtube.jpg">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Feed de Aprenda Criar Sites »" href="http://aprendacriarsites.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Aprenda Criar Sites »  Feed de comentários" href="http://aprendacriarsites.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Aprenda Criar Sites » Como pegar a imagem miniatura de um vídeo do YouTube  Feed de comentários" href="http://aprendacriarsites.com/como-pegar-a-imagem-miniatura-de-um-video-do-youtube/feed/">
+<link rel="stylesheet" id="crayon-css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/crayon.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/classic.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="optimizepress-fancybox-css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery.css" type="text/css" media="all">
+<link rel="stylesheet" id="optimizepress-wp-css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/wp.css" type="text/css" media="all">
+<link rel="stylesheet" id="optimizepress-default-css" href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/default.css" type="text/css" media="all">
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_004.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var OptimizePress = {"ajaxurl":"http:\/\/aprendacriarsites.com\/wp-admin\/admin-ajax.php","SN":"optimizepress","version":"2.3.1","script_debug":".min","imgurl":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/images\/","OP_URL":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/","OP_JS":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/js\/","include_url":"http:\/\/aprendacriarsites.com\/wp-includes\/","op_autosave_interval":"300","op_autosave_enabled":"Y","paths":{"url":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/","img":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/images\/","js":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/js\/","css":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/css\/"},"social":{"twitter":"optimizepress","facebook":"optimizepress","googleplus":"111273444733787349971"},"flowplayerHTML5":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/modules\/blog\/video\/flowplayer-5.5.0\/flowplayer.swf","flowplayerKey":"","flowplayerLogo":"","flowplayer":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/modules\/blog\/video\/flowplayer\/flowplayer-3.2.7.swf","flowplayer_control":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/modules\/blog\/video\/flowplayer\/flowplayer.controls-3.2.5.swf","mediaelementplayer":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/optimizePressPlugin\/lib\/modules\/blog\/video\/mediaelement\/","pb_unload_alert":"This page is asking you to confirm that you want to leave - data you have entered may not be saved.","pb_save_alert":"Please make sure you are happy with all of your options as some options will not be able to be changed for this page later."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_009.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/form.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_002.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var quicktagsL10n = {"closeAllOpenTags":"Fechar todas as tags abertas","closeTags":"fechar tags","enterURL":"Digite o URL","enterImageURL":"Digite a URL da imagem","enterImageDescription":"Digite uma descri\u00e7\u00e3o da imagem","fullscreen":"tela cheia","toggleFullscreen":"Ativar\/desativar modo de tela inteira","textdirection":"dire\u00e7\u00e3o do texto","toggleTextdirection":"Alternar dire\u00e7\u00e3o de texto do Editor"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/quicktags.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.6.8","is_admin":"0","ajaxurl":"http:\/\/aprendacriarsites.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Pressione %s para Copiar, %s para Colar","minimize":"Click To Expand Code"};
+var CrayonTagEditorSettings = {"home_url":"http:\/\/aprendacriarsites.com","css":"crayon-te","css_selected":"crayon-selected","code_css":"#crayon-code","url_css":"#crayon-url","url_info_css":"#crayon-te-url-info","lang_css":"#crayon-lang","title_css":"#crayon-title","mark_css":"#crayon-mark","range_css":"#crayon-range","inline_css":"crayon-inline","inline_hide_css":"crayon-hide-inline","inline_hide_only_css":"crayon-hide-inline-only","hl_css":"#crayon-highlight","switch_html":"#content-html","switch_tmce":"#content-tmce","tinymce_button_generic":".mce-btn","tinymce_button":"a.mce_crayon_tinymce,.mce-i-crayon_tinymce","tinymce_button_unique":"mce_crayon_tinymce","tinymce_highlight":"mce-active","submit_css":"#crayon-te-ok","cancel_css":"#crayon-te-cancel","content_css":"#crayon-te-content","dialog_title_css":"#crayon-te-title","submit_wrapper_css":"#crayon-te-submit-wrapper","data_value":"data-value","attr_sep":":","css_sep":"_","fallback_lang":"default","dialog_title_add":"Adicionar c\u00f3digo Crayon","dialog_title_edit":"Editar c\u00f3digo do Crayon","submit_add":"Adicionar","submit_edit":"Salvar","bar":"#crayon-te-bar","bar_content":"#crayon-te-bar-content","extensions":{"scpt":"applescript","applescript":"applescript","swf":"as","fla":"as","cs":"c#","h":"c++","hh":"c++","hpp":"c++","hxx":"c++","h++":"c++","cc":"c++","cpp":"c++","cxx":"c++","c++":"c++","pas":"delphi","java":"java","class":"java","jar":"java","mv":"miva","mvc":"miva","mvt":"miva","m":"objc","mm":"objc","pl":"perl","py":"python","pyw":"python","pyc":"python","pyo":"python","pyd":"python","rb":"ruby","rbx":"ruby","rhtml":"ruby","vbs":"vb"}};
+var CrayonSyntaxSettings = {"version":"2.6.8","is_admin":"0","ajaxurl":"http:\/\/aprendacriarsites.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Pressione %s para Copiar, %s para Colar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/crayon.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://aprendacriarsites.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://aprendacriarsites.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.0.1">
+<link rel="shortlink" href="http://aprendacriarsites.com/?p=387">
+
+		
+	<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/ajax.js"></script>
+	<script type="text/javascript">
+
+		var ajax = new Array();
+		function TrackClick(link,title) {
+
+			var index = ajax.length;
+			ajax[index] = new sack();		
+			ajax[index].requestFile = "http://aprendacriarsites.com?wp_click_tracked="+link+"***"+title+"***";	
+			ajax[index].onCompletion = null;
+
+			//FireFox 3 is a bitch; it doesn't track links which open in "self"
+			var onunload_ran = 0;
+			window.onunload = function () {
+				onunload_ran = 1;
+				ajax[index].runAJAX();
+			}
+
+			if(onunload_ran == 0){
+				ajax[index].runAJAX();
+			}
+
+			return true;
+		}
+
+	</script>
+        <!--[if (gte IE 6)&(lte IE 8)]>
+        <script type="text/javascript" src="http://aprendacriarsites.com/wp-content/plugins/optimizePressPlugin/lib/js/selectivizr-1.0.2-min.js?ver=1.0.2"></script>
+        <![endif]-->
+        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/ajaxtabs.js"></script>
+<!--<script type="text/javascript" src="http://aprendacriarsites.com/wp-content/themes/cleartype/javascripts/jquery.js"></script>-->
+<!--<script src="http://aprendacriarsites.com/wp-content/themes/cleartype/lightbox/js/jquery-1.7.2.min.js"></script>-->
+<script src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/lightbox.js"></script>
+<link href="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/lightbox.css" rel="stylesheet">
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/easySlider1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#featured").easySlider({
+				auto: true,
+				continuous: true 
+			});
+		});	
+	</script>
+
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://aprendacriarsites.com/wp-content/themes/cleartype/javascripts/unitpngfix.js"></script>
+<![endif]-->
+</head>
+<body data-twttr-rendered="true">
+<div id="wrapper">
+<div id="top">
+	<div id="topnav">
+		<div class="left">
+			<ul>
+							<li><a href="http://aprendacriarsites.com/">Home</a></li>
+																				<li><a href="http://aprendacriarsites.com/ideia-de-artigo/" title="Enviar ideia de artigo" class="">Enviar ideia de artigo</a></li>
+								<li><a href="http://aprendacriarsites.com/duvida-do-leitor/" title="Tirar dúvidas" class="">Tirar dúvidas</a></li>
+								<li><a href="http://aprendacriarsites.com/sobre/" title="Sobre" class="">Sobre</a></li>
+								<li><a href="http://aprendacriarsites.com/contato" title="Contato" class="">Contato</a></li>
+											</ul>
+		</div> <!--end .left-->
+		<div class="right">
+			<form method="get" id="searchform" action="http://aprendacriarsites.com/">
+				<div id="search">
+					<input class="searchinput" value="Buscar..." onclick="this.value='';" name="s" id="s" type="text">
+					<input class="searchsubmit" value="Buscar" type="submit">
+				</div>
+			</form>
+		</div> <!--end .right-->
+	</div> <!--end .topnav-->
+</div> <!--end #top-->
+
+<div id="header">
+	<a class="imagelogo" href="http://aprendacriarsites.com/"></a>
+    	<div class="ad468x60"></div>
+
+</div> <!--end #header-->
+
+<div id="menu">
+	<div class="left">
+		<ul>
+							<li class="cat-item cat-item-6"><a href="http://aprendacriarsites.com/categoria/ganhar-dinheiro-online/">Ganhar Dinheiro Online</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://aprendacriarsites.com/categoria/programacao/">Programação</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://aprendacriarsites.com/categoria/marketing-digital/">Marketing Digital</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://aprendacriarsites.com/categoria/divulgar-site-gratis/">Divulgar Site Grátis</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="http://aprendacriarsites.com/categoria/programa-afiliados/">Programa de Afiliados</a>
+</li>
+					</ul>
+	</div> <!--end .left-->
+<div class="right">
+			<a class="rssfeed" href="http://aprendacriarsites.com/feed/" title="Assinar RSS"> </a>
+	</div> <!--end .right-->
+</div> <!--end #menu-->
+
+<div id="content">
+
+	<p class="browse"><a href="http://aprendacriarsites.com/">Home</a> » <a href="http://aprendacriarsites.com/categoria/programacao/" rel="category tag">Programação</a> » Como pegar a imagem miniatura de um vídeo do YouTube</p>
+	
+	<div class="postmeta left">
+		<h2 class="posttitle">Como pegar a imagem miniatura de um vídeo do YouTube</h2>
+		<span class="by">Por <a href="http://aprendacriarsites.com/author/rodurma/" title="Posts de Rodrigo Maia" rel="author">Rodrigo Maia</a> em  9 de abril de 2013</span>
+	</div> <!--end .postmeta-->
+	
+	<div class="comments right">
+		<a href="http://aprendacriarsites.com/como-pegar-a-imagem-miniatura-de-um-video-do-youtube/#comments" class="comments-link" title="Comentário para Como pegar a imagem miniatura de um vídeo do YouTube">1</a>	</div> <!--end .comments-->
+	
+	<div class="clear"></div>
+	
+	<div class="entry">
+		<div id="social-single">
+			<iframe src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/like.html" style="border:none; overflow:hidden; width:60px; height:70px; margin-left: 2px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+			<iframe style="width: 55px; height: 62px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-vertical" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/tweet_button.html" allowtransparency="true" id="twitter-widget-0" frameborder="0" scrolling="no"></iframe>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			<div style="width: 60px; height: 60px; margin: 10px 0 0 3px;">
+				<!-- Place this tag where you want the +1 button to render. -->
+				<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;"><iframe title="+1" data-gapiattached="true" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/fastbutton.html" name="I0_1426518135750" id="I0_1426518135750" vspace="0" tabindex="0" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+				<!-- Place this tag after the last +1 button tag. -->
+				<script type="text/javascript">
+					window.___gcfg = {lang: 'pt-BR'};
+				
+					(function() {
+						var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+						po.src = 'https://apis.google.com/js/plusone.js';
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					})();
+				</script>
+			</div>
+		</div>
+		<div class="esqBan">
+			<script type="text/javascript">
+			<!--
+			google_ad_client = "ca-pub-2075139633286717";
+			/* Artigo - Aprenda Criar Sites */
+			google_ad_slot = "6795074816";
+			google_ad_width = 300;
+			google_ad_height = 250;
+			//-->
+			</script>
+			<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/show_ads.js">
+			</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins>
+		</div>
+		<p>Muitas vezes precisamos adicionar vídeos do YouTube em algum site. 
+Vamos supor que você tenha uma área em seu site onde existe uma galeria 
+de vídeos do YouTube. Como apresentar uma lista de vídeos? Não é 
+adequado por o iframe do vídeo direto na listagem. Primeiro que o player
+ teria que ficar pequeno e segundo que seu site ficaria pesado.</p>
+<p>Nestes casos o ideal é pegar a imagem miniatura dos vídeos do YouTube
+ para exibir nesta listagem e abrir o vídeo somente se a pessoa clicar 
+nele.</p>
+<h2>Como pegar a imagem do vídeo do YouTube</h2>
+<p>Se você olhar nos links dos vídeos do YouTube irá perceber que ele é formado com um padrão. Vejamos um link de exemplo:</p>
+<p><strong>http://www.youtube.com/watch?v=<span style="color: red;">cEYFaBh7gCA</span></strong></p>
+<p>Repare na parte em vermelho onde temos o código do vídeo. É com este 
+código que podemos resgatar as imagens miniaturas de um vídeo no 
+YouTube. Veja no exemplo abaixo que temos 4 imagens do vídeo do link 
+acima.</p>
+<p><img class="alignnone" alt="" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/0.jpg" height="360" width="480"></p>
+<p><img alt="" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/1.jpg" height="90" width="120"></p>
+<p>http://i1.ytimg.com/vi/<strong style="color: red;">cEYFaBh7gCA</strong>/0.jpg</p>
+<p><img alt="" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/2.jpg" height="90" width="120"></p>
+<p>http://i1.ytimg.com/vi/<strong style="color: red;">cEYFaBh7gCA</strong>/2.jpg</p>
+<p><img class="alignnone" alt="" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/3.jpg" height="90" width="120"></p>
+<p>http://i1.ytimg.com/vi/<strong style="color: red;">cEYFaBh7gCA</strong>/3.jpg</p>
+<p>Repare que a parte em vermelho do link das imagens em miniatura são 
+os mesmos e só muda o final: default.jpg, 0.jpg, 1.jpg, 2.jpg e 
+finalmente 3.jpg</p>
+<p>Agora em um sistema administrativo de um site você vai criar e não 
+vai pedir pro cliente inserir somente este código para adicionar um 
+vídeo não é? O ideal seria falar para ele copiar o link inteiro e 
+cadastrar no sistema administrativo.</p>
+<h2>Como extrair o código do link com PHP</h2>
+<p>Para extrair o código do link de exemplo acima, que serve para 
+qualquer outro link de vídeo do YouTube vamos utilizar algumas funções 
+do PHP.</p><!-- Crayon Syntax Highlighter v2.6.8 -->
+
+		<div id="crayon-5506f0757f456966158312" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-always" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-mixed-highlight" title="Contem Várias Linguagens"></span><div class="crayon-button crayon-nums-button crayon-pressed" title="Alternar números de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Exibir código simples"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Alternar quebras de linha"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir código em nova janela"><div class="crayon-button-icon"></div></div><span class="crayon-language">PHP</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0;">&lt;?php
+// $tipo aceita: default, 0, 1, 2 e 3 como parâmetro
+function imagemYouTube($url, $tipo = 0){
+  // cria um array com várias informações da url
+  $yt_link = parse_url($url);
+  // verifica se no array existe a chave query
+  // e verifica se o parâmetro $tipo é aceito
+  if (isset($yt_link['query']) &amp;&amp; in_array($tipo, array(0,1,2,3,'default'))){
+    // transforma a querystring em um array associativo
+    parse_str($yt_link['query'], $video);
+    // verifica se tem a chave v no array $video
+    if (isset($video['v'])){
+      // retorna o link da imagem de acordo com o tipo
+      return 'http://i1.ytimg.com/vi/'.$video['v'].'/'.$tipo.'.jpg';
+    }
+  }
+  // retorna false. Pode ser trocado por um link
+  // de uma imagem padrão
+  // use como abaixo para isso
+  // return 'http://endereco-da-imagem-padrao/imagem.jpg';
+  return false;
+}
+?&gt;
+&lt;img src="&lt;?php echo imagemYouTube("http://www.youtube.com/watch?v=cEYFaBh7gCA", 'default')?&gt;" /&gt;</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5506f0757f456966158312-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-2">2</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-4">4</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-6">6</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-8">8</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-10">10</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-12">12</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-14">14</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-16">16</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-18">18</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-20">20</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-22">22</div><div class="crayon-num" data-line="crayon-5506f0757f456966158312-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5506f0757f456966158312-24">24</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5506f0757f456966158312-1"><span class="crayon-ta">&lt;?php</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-2"><span class="crayon-c">// $tipo aceita: default, 0, 1, 2 e 3 como parâmetro</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-3"><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-e">imagemYouTube</span><span class="crayon-sy">(</span><span class="crayon-v">$url</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$tipo</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// cria um array com várias informações da url</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">$yt_link</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">parse_url</span><span class="crayon-sy">(</span><span class="crayon-v">$url</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// verifica se no array existe a chave query</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// e verifica se o parâmetro $tipo é aceito</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">isset</span><span class="crayon-sy">(</span><span class="crayon-v">$yt_link</span><span class="crayon-sy">[</span><span class="crayon-s">'query'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-e">in_array</span><span class="crayon-sy">(</span><span class="crayon-v">$tipo</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">array</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-s">'default'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// transforma a querystring em um array associativo</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">parse_str</span><span class="crayon-sy">(</span><span class="crayon-v">$yt_link</span><span class="crayon-sy">[</span><span class="crayon-s">'query'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">$video</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// verifica se tem a chave v no array $video</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">isset</span><span class="crayon-sy">(</span><span class="crayon-v">$video</span><span class="crayon-sy">[</span><span class="crayon-s">'v'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">// retorna o link da imagem de acordo com o tipo</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-s">'http://i1.ytimg.com/vi/'</span><span class="crayon-sy">.</span><span class="crayon-v">$video</span><span class="crayon-sy">[</span><span class="crayon-s">'v'</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-s">'/'</span><span class="crayon-sy">.</span><span class="crayon-v">$tipo</span><span class="crayon-sy">.</span><span class="crayon-s">'.jpg'</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-17"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// retorna false. Pode ser trocado por um link</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-18"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// de uma imagem padrão</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-19"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// use como abaixo para isso</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// return 'http://endereco-da-imagem-padrao/imagem.jpg';</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-21"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">return</span><span class="crayon-h"> </span><span class="crayon-t">false</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-22"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5506f0757f456966158312-23"><span class="crayon-ta">?&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5506f0757f456966158312-24"><span class="crayon-o">&lt;</span><span class="crayon-e">img </span><span class="crayon-i">src</span><span class="crayon-o">=</span><span class="crayon-s">"<span class="crayon-ta">&lt;?php</span><span class="crayon-h"> </span><span class="crayon-k ">echo</span><span class="crayon-h"> </span><span class="crayon-e">imagemYouTube</span><span class="crayon-sy">(</span><span class="crayon-s">"http://www.youtube.com/watch?v=cEYFaBh7gCA"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'default'</span><span class="crayon-sy">)</span><span class="crayon-ta">?&gt;</span>"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0188 seconds] -->
+<p>Para facilitar criei a função acima, ela está toda comentada para melhor entendimento. <a title="Como pegar o thumb de um vídeo do Vimeo com PHP" href="http://aprendacriarsites.com/como-pegar-o-thumb-de-um-video-do-vimeo-com-php/"><strong>Veja como pegar imagens miniaturas (thumb) do Vimeo</strong></a>.</p>
+<p>&nbsp;</p>
+		
+		<p><a href="http://aprendacriarsites.com/receba-novidades-e-dicas-por-e-mail/"><strong>Cadastre seu e-mail para receber as novidades do blog</strong></a></p>
+		
+		<div class="clear"></div>
+		
+		<div class="tags">
+			Tags:<a href="http://aprendacriarsites.com/tag/php/" rel="tag">PHP</a>					</div> <!--end .tags-->
+		
+	</div> <!--end .entry-->
+	<iframe src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/likebox.html" style="border:none; overflow:hidden; width:585px; height:290px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+	
+	<!-- You can start editing here. -->
+<div class="comments-box"> <a name="comments" id="comments"></a>
+    <h2>
+    1 Comentário  </h2>
+  <ol class="commentlist">
+      </ol>
+  <div class="pagenavi">
+    <div class="nextprev left">
+          </div>
+    <div class=" nextprev right">
+          </div>
+    <div class="clear"></div>
+  </div>
+      <div id="respond">
+    <h2>Deixe um comentário</h2>
+    <div class="cancel-comment-reply"> <small>
+      <a rel="nofollow" id="cancel-comment-reply-link" href="http://aprendacriarsites.com/como-pegar-a-imagem-miniatura-de-um-video-do-youtube/#respond" style="display:none;">Clique aqui para cancelar a resposta.</a>      </small> </div>
+        <form action="http://aprendacriarsites.com/wp-comments-post.php" method="post" id="commentform">
+            <p>
+        <input class="author" value="Informe seu nome..." onclick="this.value='';" name="author" id="author" size="22" tabindex="1" type="text">
+        <label for="author"><small>
+          (Obrigatório)          </small></label>
+      </p>
+      <p>
+        <input class="email" value="Informe seu e-mail..." onclick="this.value='';" name="email" id="email" size="22" tabindex="2" type="text">
+        <label for="email"><small>(Não será publicado)
+           (Obrigatório)          </small></label>
+      </p>
+      <p>
+        <input class="url" value="Informe seu website..." onclick="this.value='';" name="url" id="url" size="22" tabindex="3" type="text">
+        <label for="url"><small>(Opcional)</small></label>
+      </p>
+            <!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code class=&quot;&quot; title=&quot;&quot; data-url=&quot;&quot;&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre class=&quot;&quot; title=&quot;&quot; data-url=&quot;&quot;&gt; &lt;span class=&quot;&quot; title=&quot;&quot; data-url=&quot;&quot;&gt; </code></small></p>-->
+      <p>
+        <textarea name="comment" id="comment" tabindex="4"></textarea>
+      </p>
+      <p>
+        <input class="submit" name="submit" id="submit" tabindex="5" value="Enviar" type="submit">
+        <input name="comment_post_ID" value="387" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+      </p>
+      <p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="acda9168a9" type="hidden"></p><!-- BEGIN: subscribe to comments reloaded --><p><label for="subscribe-reloaded"><input style="width:30px" name="subscribe-reloaded" id="subscribe-reloaded" value="yes" type="checkbox"> Notifique-me de novos comentários via e-mail. Você também pode <a href="http://aprendacriarsites.com/comment-subscriptions?srp=387&amp;sra=s">se inscrever</a> sem comentar.</label></p><!-- END: subscribe to comments reloaded --><p style="display: none;"><input id="ak_js" name="ak_js" value="102" type="hidden"></p>    </form>
+      </div>
+  </div>
+	<script type="text/javascript">
+		(function() {
+			var populike = document.createElement('script'); populike.type = 'text/javascript'; populike.async = true;
+			populike.src = ('https:' == document.location.protocol ? 'https://www.populike.com.br' : 'http://www.populike.com.br') + '/populike.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(populike, s);
+		})();
+	</script>
+
+</div> <!--end #content-->
+
+<div id="sidebar">
+	<a href="http://aprendacriarsites.com/?wp_ct=11" rel="nofollow">
+		<img src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/banner-formulanegocioonline-300-10.jpg" style="width:250px; height:208px" border="0">
+	</a>
+	<!--
+	<div style="margin-bottom: 20px">
+		<a href="http://aprendacriarsites.com?wp_ct=1" rel="nofollow" target="_blank"><img border="0" src="http://afiliados.hostgator.com.br/banners/banner__300x250.gif" width="260" height="217" alt="Hospedagem de sites"></a>
+	</div>
+	-->
+		
+	<div class="fullwidget">
+    					<h3>Tópicos recentes</h3><div class="clear"></div><div class="box">		<ul>
+					<li>
+				<a href="http://aprendacriarsites.com/wordpress-na-nuvem-como-instalar-o-wordpress/">WordPress na Nuvem – Aprenda como instalar o WordPress passo-a-passo em um servidor dedicado</a>
+						</li>
+					<li>
+				<a href="http://aprendacriarsites.com/pegar-numero-de-visualizacoes-de-um-video-youtube-com-php/">Pegar número de visualizações de um vídeo do YouTube com PHP</a>
+						</li>
+					<li>
+				<a href="http://aprendacriarsites.com/e-mail-comentado-conrado-adolpho-e-o-mindset-empreendedor/">E-mail Comentado: Conrado Adolpho e o mindset empreendedor</a>
+						</li>
+					<li>
+				<a href="http://aprendacriarsites.com/mais-visitas-para-seu-blog-como-transcrever-videos-do-youtube-de-forma-rapida/">Mais visitas para seu blog: Como transcrever vídeos do YouTube de forma rápida</a>
+						</li>
+					<li>
+				<a href="http://aprendacriarsites.com/como-pegar-o-numero-de-curtirlikes-do-facebook-via-php/">Como pegar o número de curtir/likes do facebook via PHP</a>
+						</li>
+				</ul>
+		</div><h3>Categorias</h3><div class="clear"></div><div class="box">		<ul>
+	<li class="cat-item cat-item-38"><a href="http://aprendacriarsites.com/categoria/criar-sites/">Criar Sites</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://aprendacriarsites.com/categoria/divulgar-site-gratis/">Divulgar Site Grátis</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://aprendacriarsites.com/categoria/ganhar-dinheiro-online/">Ganhar Dinheiro Online</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://aprendacriarsites.com/categoria/hospedagem-gratis/">Hospedagem Grátis</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://aprendacriarsites.com/categoria/html-css-javascript/">HTML, CSS e Javascript</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://aprendacriarsites.com/categoria/marketing-digital/">Marketing Digital</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://aprendacriarsites.com/categoria/otimizacao-de-site/">Otimização de site</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="http://aprendacriarsites.com/categoria/programa-afiliados/">Programa de Afiliados</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://aprendacriarsites.com/categoria/programacao/">Programação</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://aprendacriarsites.com/categoria/redes-sociais/">Redes Sociais</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://aprendacriarsites.com/categoria/sem-categoria/">Sem categoria</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="http://aprendacriarsites.com/categoria/webdesign/">Webdesign</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://aprendacriarsites.com/categoria/wordpress/">WordPress</a>
+</li>
+		</ul>
+</div>  	</div> <!--end .fullwidget-->
+
+  	<div class="leftwidget">
+		    	  	</div> <!--end .leftwidget-->
+
+  	<div class="rightwidget">
+    	    	  	</div> <!--end .rightwidget-->
+
+</div> <!--end: sidebar-->
+<div class="clear"></div>
+</div> <!--end #wrapper-->
+
+<div id="footer">
+
+	<div class="left">
+		© 2013 · <a href="http://aprendacriarsites.com/">Aprenda Criar Sites</a> · <span class="rss"><a href="http://aprendacriarsites.com/feed/" title="Assinar RSS">Artigos</a></span> · <span class="rss" title="Assinar RSS dos comentários"><a href="http://aprendacriarsites.com/comments/feed/">Comentários</a></span>
+		 - <a href="http://aprendacriarsites.com/politica-de-privacidade/">Política de privacidade</a>
+	</div>
+	
+	<div class="right">
+		Design por <a href="http://aprendacriarsites.com/?wp_ct=7" rel="nofollow">Theme Junkie</a> · Desenvolvido por <a href="http://wordpress.org/">WordPress</a>
+	</div>
+	
+	<div class="clear"></div>
+	
+</div> <!--end #footer-->
+
+<!--begin of site tracking-->
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-211884-63']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><!--end of site tracking-->
+
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_007.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_008.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_003.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_005.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/comment-reply.js"></script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/jquery_006.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/aprendacriarsites.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Enviando ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/scripts.js"></script>
+
+
+
+
+
+<div style="display: none;" id="cboxOverlay"></div><div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox"><div id="cboxWrapper"><div><div style="float: left;" id="cboxTopLeft"></div><div style="float: left;" id="cboxTopCenter"></div><div style="float: left;" id="cboxTopRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxMiddleLeft"></div><div style="float: left;" id="cboxContent"><div style="float: left;" id="cboxTitle"></div><div style="float: left;" id="cboxCurrent"></div><button id="cboxPrevious" type="button"></button><button id="cboxNext" type="button"></button><button id="cboxSlideshow"></button><div style="float: left;" id="cboxLoadingOverlay"></div><div style="float: left;" id="cboxLoadingGraphic"></div></div><div style="float: left;" id="cboxMiddleRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxBottomLeft"></div><div style="float: left;" id="cboxBottomCenter"></div><div style="float: left;" id="cboxBottomRight"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div style="display: none;" id="lightboxOverlay"></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Como%20pegar%20a%20imagem%20miniatura%20de%20um%20v%C3%ADdeo%20do%20YouTube%20-%20Aprenda%20Criar%20Sites_files/postmessageRelay.html" id="oauth2relay1745496926" name="oauth2relay1745496926"></iframe></body><iframe src="" style="display: none;"></iframe></html>
+<!-- Dynamic page generated in 2.945 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-03-16 12:02:13 -->
+<!-- super cache -->

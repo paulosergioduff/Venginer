@@ -1,0 +1,10 @@
+
+<?php
+$br = $SERVER["HTTPUSER_AGENT"];
+
+echo $br;
+
+
+?>
+
+

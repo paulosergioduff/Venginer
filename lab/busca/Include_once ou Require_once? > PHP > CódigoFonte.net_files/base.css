@@ -1,0 +1,201 @@
+body
+{
+	font: 12px Verdana;
+	margin: 0;
+	color: green;
+}
+
+table tr td
+{
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	border: 0;
+}
+
+ul
+{
+	margin: 0;
+}
+
+a 	{ color: green; font-size: 8pt; text-decoration: none; font-family: Verdana, Arial, sans-serif}
+
+.tpeq
+{
+	font-size: 11px;
+}
+
+.tmed
+{
+	font-size: 12px;
+}
+
+.tcen
+{
+	text-align: center;
+}
+
+.tesq
+{
+	text-align: left;
+}
+
+.tdir
+{
+	text-align: right;
+}
+
+.tneg
+{
+	font-weight: bold;
+}
+
+.fleft
+{
+	float: left;
+}
+
+.fright
+{
+	float: right;
+}
+
+.quadroInformacao, .quadroInformacaoMeio, .quadroAviso, .quadroSucesso
+{
+	border: 1px solid #aaddbb;
+	background: #E3F4EA;
+	padding: 3px;
+	clear: both;
+	display: table;
+	width: 400px;
+}
+	
+	.quadroInformacaoJanelaServicos
+	{
+		margin: 15px 0 0 0;
+		width: 99%;
+	}
+
+	.quadroAviso
+	{
+		background: #FFF0DF;
+		border: 1px solid #FFD8B0;
+		color: red;
+		margin: 0 0 15px 0;
+	}
+	
+	.quadroSucesso
+	{
+		background: #DFF2FF;
+		border: 1px solid #246693;
+		color: #246693;
+		margin: 0 0 15px 0;
+	}
+
+	.quadroInformacao .icone
+	{
+		float: left;
+		width: 40px;
+		padding: 3px;
+	}
+	
+	.quadroInformacao .texto
+	{
+		float: left;
+		width: 85%;
+	}
+	
+.quadroInformacaoMeio
+{
+	margin: 10px;
+}
+
+.quadroAvisoMeio
+{
+	margin: 10px;
+}	
+
+.aviso
+{
+	color: red;
+}
+
+.detalhe
+{
+	color: orange;
+}
+
+/* formulários */
+.botao
+{
+	font: bold 11px Arial; 
+	color: green; 
+	background: #e3f4ea; 
+	
+	border-top: 1px solid green; 
+	border-left: 1px solid green;
+	border-right: 2px solid green;
+	border-bottom: 2px solid green;
+}
+
+.campo
+{
+	font: bold 11px Arial; 
+	color: green; 
+	background: #e3f4ea; 	
+	border: 1px solid green;
+}
+
+.inativo
+{
+	background: #fff; 	
+}
+
+.textarea
+{
+	font: bold 11px Arial; 
+	color: green; 
+	background: #e3f4ea; 	
+	border: 1px solid green;
+}
+
+fieldset 
+{
+	margin: 10px 0 5px 0;	
+	padding: 0;
+}
+
+fieldset label
+{
+	display: block;	
+	padding: 5px 0 2px 0;
+}
+
+#faqRapido
+{
+	margin-top: 20px;
+	width: 98%;
+}
+
+/* formulários */
+
+.formul 
+{  
+	font-family: Arial, Times New Roman, sans-serif; 
+	font-size: 8pt; 
+	color: green; 
+	font-weight: bold;
+	background-color: #aaddbb; 
+	BORDER-RIGHT: 1px solid; 
+	BORDER-TOP: 1px solid; 
+	BORDER-LEFT: 1px solid; 
+	BORDER-BOTTOM: 1px solid;
+}
+
+.clear
+{
+	clear: both;
+	overflow: hidden;
+}

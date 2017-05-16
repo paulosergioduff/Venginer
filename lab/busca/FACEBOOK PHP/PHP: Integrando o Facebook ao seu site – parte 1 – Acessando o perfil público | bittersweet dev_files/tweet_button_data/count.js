@@ -1,0 +1,1 @@
+/**/__twttr.receiveCount({"count":4,"url":"http:\/\/blog.hboaventura.com\/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico\/"});

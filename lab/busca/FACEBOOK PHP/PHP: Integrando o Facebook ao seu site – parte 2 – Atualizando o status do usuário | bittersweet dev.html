@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário | bittersweet dev</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="screen" href="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/A.css">
+
+<link rel="pingback" href="http://blog.hboaventura.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://blog.hboaventura.com/wp-content/themes/kidh0_theme/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="Feed de bittersweet dev »" href="http://blog.hboaventura.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="bittersweet dev »  Feed de comentários" href="http://blog.hboaventura.com/comments/feed/">
+
+			<script async="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/cbgapi.loaded_1"></script><script async="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/plusone.js" async="" type="text/javascript"></script><script src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-620782-2']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();
+//]]></script>
+			<link rel="alternate" type="application/rss+xml" title="bittersweet dev » PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário  Feed de comentários" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/feed/">
+<style id="contact-form-7-css" media="all">div.wpcf7{margin:0;padding:0}div.wpcf7-response-output{margin:2em .5em 1em;padding:.2em 1em}div.wpcf7-mail-sent-ok{border:2px solid #398f14}div.wpcf7-mail-sent-ng{border:2px solid red}div.wpcf7-spam-blocked{border:2px solid #ffa500}div.wpcf7-validation-errors{border:2px solid #f7e700}span.wpcf7-form-control-wrap{position:relative}span.wpcf7-not-valid-tip{position:absolute;top:20%;left:20%;z-index:100;background:#fff;border:1px solid red;font-size:10pt;width:280px;padding:2px}span.wpcf7-not-valid-tip-no-ajax{color:red;font-size:10pt;display:block}span.wpcf7-list-item{margin-left:.5em}.wpcf7-display-none{display:none}div.wpcf7 img.ajax-loader{border:none;vertical-align:middle;margin-left:4px}div.wpcf7 .watermark{color:#888}</style>
+<script type="text/javascript" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/jquery_002.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.hboaventura.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.hboaventura.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/">
+<link rel="next" title="Noticias do front" href="http://blog.hboaventura.com/noticias-do-front/">
+<meta name="generator" content="WordPress 3.4.1">
+<link rel="canonical" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/">
+<link rel="shortlink" href="http://blog.hboaventura.com/?p=426">
+	<link href="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/A_002.css" type="text/css" rel="stylesheet">
+	</head>
+
+<body data-twttr-rendered="true" class="single single-post postid-426 single-format-standard"><noscript><meta HTTP-EQUIV="refresh" content="0;url='http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/?ModPagespeed=noscript'" /><style><!--table,div,span,font,p{display:none} --></style><div style="display:block">Please click <a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/?ModPagespeed=noscript">here</a> if you are not redirected within a few seconds.</div></noscript>
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://blog.hboaventura.com/" title="bittersweet dev" rel="home">bittersweet dev</a></span></h1>
+				<h2 id="site-description">Henrique Boaventura</h2>
+			</hgroup>
+
+			<nav id="access" role="navigation">
+				<h1 class="section-heading">Main menu</h1>
+				<div class="skip-link screen-reader-text"><a href="#content" title="Pular para o conteúdo">Pular para o conteúdo</a></div>
+
+				<div class="menu"><ul><li><a href="http://blog.hboaventura.com/" title="Início">Início</a></li><li class="page_item page-item-2"><a href="http://blog.hboaventura.com/sobre/">Sobre</a></li><li class="page_item page-item-357"><a href="http://blog.hboaventura.com/contato/">Contato</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+		<div id="primary">
+			<div id="content" role="main">
+
+			
+				<nav id="nav-above">
+					<h1 class="section-heading">Post navigation</h1>
+					<div class="nav-previous"><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/" rel="prev"><span class="meta-nav">←</span> PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público</a></div>
+					<div class="nav-next"><a href="http://blog.hboaventura.com/noticias-do-front/" rel="next">Noticias do front <span class="meta-nav">→</span></a></div>
+				</nav><!-- #nav-above -->
+
+				
+<article id="post-426" class="post-426 post type-post status-publish format-standard hentry category-sem-categoria tag-api tag-facebook tag-php">
+	<header class="entry-header">
+		<h1 class="entry-title">PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário</h1>
+
+		<div class="entry-meta">
+			<span class="sep">Postado por: </span><span class="author vcard"><a class="url fn n" href="http://blog.hboaventura.com/author/kidh0/" title="Ver todos os posts de Henrique Boaventura">Henrique Boaventura</a></span> em <a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/" rel="bookmark"><time class="entry-date" datetime="2011-09-15T22:24:44+00:00" pubdate="">15 de setembro de 2011</time></a>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p><a href="http://blog.hboaventura.com/wp-content/uploads/2011/08/facebook.png" rel="" style="" target="" title=""><img alt="" class="alignleft size-full wp-image-416" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/216x216xfacebook.png" style="" title="Facebook" height="216" width="216"></a><br>
+	Essa segunda parte da série "Integrando o Facebook ao seu site" começou
+ complicada já na escolha do título, não conseguia decidir qual 
+complemento usar: "Atualizando o Mural do Usuário" ou "Postando no Mural
+ do Usuário". Em inglês parece muito mais simples, muito mais!</p>
+<p>É necessário que você tenha lido a primeira parte do artigo, caso não tenha feito ainda, <a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/">corre lá</a>.</p>
+<p>Agora que cheguei a uma decisão, já desabafei, você já deve ter lido o
+ primeiro artigo, já está com todos os arquivos em mãos, vamos parar de 
+papo e vamos para o que interessa.</p>
+<h2>Permissões</h2>
+<p>Depois de levar muita bola nas costas, o Facebook aprendeu sobre 
+privacidade (e a falta dela). Existe uma extensa lista de tipos de 
+permissão que sua aplicação pode solicitar ao usuário, disponível na 
+documentação da <a href="https://developers.facebook.com/docs/reference/api/permissions/">api</a>, mas para o nosso exemplo, vamos precisar especificamente da permissão <code>publish_stream</code>, que libera a aplicação para atualizar o status do usuário a qualquer momento, assim como criar comentários e curtir conteúdos.</p>
+<p>&nbsp;</p>
+<h2>Code is Beautiful</h2>
+<p>Quem não concorda com isso, está no lugar errado!</p>
+<p>Uma vez que já temos a permissão escolhida, vamos montar o código 
+necessário para pedir a autorização e postar algum conteúdo no mural do 
+usuário. Estou considerando que você já fez o download da SDK do 
+Facebook no <a href="https://github.com/facebook/php-sdk">GitHub</a> (lembre-se do primeiro artigo, jovem <a href="http://starwars.wikia.com/wiki/Padawan">Padawan</a>):</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">require</span><span>&nbsp;</span><span class="string">'php-sdk/src/facebook.php'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="vars">$facebook</span><span>&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;Facebook(</span><span class="keyword">array</span><span>(&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'appId'</span><span>&nbsp;&nbsp;=&gt;&nbsp;</span><span class="string">'125178627581346'</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'secret'</span><span>&nbsp;=&gt;&nbsp;</span><span class="string">'9fcc6b62c0f23c337d8ecb9aec27d155'</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="vars">$user</span><span>&nbsp;=&nbsp;</span><span class="vars">$facebook</span><span>-&gt;getUser();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">if</span><span>&nbsp;(</span><span class="vars">$user</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$post</span><span>&nbsp;=&nbsp;&nbsp;</span><span class="keyword">array</span><span>(&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'message'</span><span>&nbsp;=&gt;&nbsp;</span><span class="string">'I&nbsp;may&nbsp;be&nbsp;paranoid...&nbsp;but&nbsp;not&nbsp;an&nbsp;android...'</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$facebook</span><span>-&gt;api(</span><span class="string">'/me/feed'</span><span>,&nbsp;</span><span class="string">'POST'</span><span>,&nbsp;</span><span class="vars">$post</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;<span class="keyword">else</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$loginURL</span><span>&nbsp;=&nbsp;</span><span class="vars">$facebook</span><span>-&gt;getLoginUrl(</span><span class="keyword">array</span><span>(&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'scope'</span><span>&nbsp;=&gt;&nbsp;</span><span class="string">'publish_stream'</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;));&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">"«a&nbsp;href="</span><span>\</span><span class="string">""</span><span>.</span><span class="vars">$loginURL</span><span>.</span><span class="string">"\""</span><span>»";&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="php" name="code">    require 'php-sdk/src/facebook.php';
+
+    $facebook = new Facebook(array(
+        'appId'  =&gt; '125178627581346',
+        'secret' =&gt; '9fcc6b62c0f23c337d8ecb9aec27d155'
+    ));    
+
+    $user = $facebook-&gt;getUser();
+
+    if ($user) {
+        $post =  array(
+            'message' =&gt; 'I may be paranoid... but not an android...'
+        );
+        $facebook-&gt;api('/me/feed', 'POST', $post);
+    } else {
+        $loginURL = $facebook-&gt;getLoginUrl(array(
+            'scope' =&gt; 'publish_stream'
+        ));
+        echo "«a href="\"".$loginURL."\""»";
+    }
+</pre>
+<p>Lembrem-se, isso é só um exemplo (extremamente <del>tosco</del> simples). Explicando:</p>
+<ul>
+<li>Linha 1: Requisita a biblioteca do facebook;</li>
+<li>Linha 3 a 6: Instancia a biblioteca, passando os tokens da aplicação ParanoidAndroid (aqui você substitui pela sua aplicação);</li>
+<li>Linha 8: Recupera o usuário;</li>
+<li>Linha 11 a 13: Caso o usuário tenha liberado o acesso da aplicação, monta a mensagem que vai ser postada no mural do usuário;</li>
+<li>Linha 14: Efetua a postagem;</li>
+<li>Linha 16 a 18: Caso o usuário não tenha liberado ainda o acesso da 
+aplicação, monta a URL para solicitar permissão, informando o tipo de 
+permissão necessária;</li>
+<li>Linha 19: Imprime a URL para se logar pelo Facebook.</li>
+</ul>
+<p>Neste exemplo, (lembrando novamente, simples), postamos uma mensagem 
+no mural do usuário, mas você pode postar qualquer coisa (desde que seja
+ possivel via a própria aplicação do facebook). Dê uma olhada na lista 
+completa do que você pode postar <a href="https://developers.facebook.com/docs/reference/api/post/">aqui</a>.</p>
+<p>Com isso temos, basicamente, um sistema que permite que sua 
+aplicação, poste algo no mural do usuário, mediante a permissão do 
+usuário.</p>
+<p>Caso queira ver a "aplicação" funcionando, dê uma olhada no meu <a href="http://hboaventura.com/facebook_parte_2/index.php">site</a>. Para fazer o download dos fontes, <a href="http://blog.hboaventura.com/wp-content/uploads/2011/09/facebook_parte_2.zip">clique aqui</a></p>
+<p>That's all folks, aguardem, mais artigos estão por vir :)</p>
+<p><strong>Links úteis</strong></p>
+<ul>
+<li><a href="https://developers.facebook.com/docs/reference/api/post/">https://developers.facebook.com/docs/reference/api/post/</a></li>
+<li><a href="https://developers.facebook.com/docs/reference/api/permissions/">https://developers.facebook.com/docs/reference/api/permissions/</a></li>
+</ul>
+<br><br><p><strong>  Leia também:</strong></p><ol>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/" rel="bookmark" title="PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público">PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público</a></li>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-twitter-ao-seu-site-autenticacao-de-usuarios/" rel="bookmark" title="PHP: Integrando o Twitter ao seu Site – Autenticação de Usuários">PHP: Integrando o Twitter ao seu Site – Autenticação de Usuários</a></li>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-twitter-ao-seu-site-extra-mais-comandos-da-api/" rel="bookmark" title="PHP: Integrando o Twitter ao seu Site – Extra (Mais comandos da API)">PHP: Integrando o Twitter ao seu Site – Extra (Mais comandos da API)</a></li>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-twitter-ao-seu-site-%e2%80%93-parte-3-agora-com-oauth/" rel="bookmark" title="PHP: Integrando o Twitter ao seu Site – Parte 3 (Agora com OAuth)">PHP: Integrando o Twitter ao seu Site – Parte 3 (Agora com OAuth)</a></li>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-twitter-ao-seu-site-parte-2/" rel="bookmark" title="PHP: Integrando o Twitter ao seu Site – Parte 2">PHP: Integrando o Twitter ao seu Site – Parte 2</a></li>
+</ol><p></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<div id="post_attr">
+			<strong>Categoria:</strong> <a href="http://blog.hboaventura.com/category/sem-categoria/" title="Ver todos os posts em Sem categoria" rel="category tag">Sem categoria</a><br><strong>Tags:</strong> <a href="http://blog.hboaventura.com/tag/api/" rel="tag">API</a>, <a href="http://blog.hboaventura.com/tag/facebook/" rel="tag">facebook</a>, <a href="http://blog.hboaventura.com/tag/php/" rel="tag">PHP</a>					</div>
+		<div id="sharing">
+			<script src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/widgets.js" type="text/javascript"></script>
+			<iframe style="width: 119px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/tweet_button.html" allowtransparency="true" id="twitter-widget-0" frameborder="0" scrolling="no"></iframe>
+			<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 106px; height: 24px;"><iframe title="+1" data-gapiattached="true" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/fastbutton.html" name="I0_1426428859993" id="I0_1426428859993" vspace="0" tabindex="0" style="position: static; top: 0px; width: 106px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+			<script type="text/javascript">(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='https://apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>
+			<iframe src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/like.html" style="border:none; overflow:hidden; width:80px; height:21px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</footer><!-- .entry-meta -->
+</article><!-- #post-426 -->
+
+				<nav id="nav-below">
+					<h1 class="section-heading">Post navigation</h1>
+					<div class="nav-previous"><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/" rel="prev"><span class="meta-nav">←</span> PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público</a></div>
+					<div class="nav-next"><a href="http://blog.hboaventura.com/noticias-do-front/" rel="next">Noticias do front <span class="meta-nav">→</span></a></div>
+				</nav><!-- #nav-below -->
+
+				
+	<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			101 respostas a <em>PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário</em>		</h2>
+
+				<nav id="comment-nav-above">
+			<h1 class="section-heading">Comment navigation</h1>
+			<div class="nav-previous"><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/comment-page-2/#comments">← Older Comments</a></div>
+			<div class="nav-next"></div>
+		</nav>
+		
+		<ol class="commentlist">
+				<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-722">
+		<article id="comment-722" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/comment-page-3/#comment-722"><time pubdate="" datetime="2013-02-20T11:25:07+00:00">
+					20 de fevereiro de 2013 às 11:25					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Não, não é possível.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+		</ol>
+
+				<nav id="comment-nav-below">
+			<h1 class="section-heading">Comment navigation</h1>
+			<div class="nav-previous"><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/comment-page-2/#comments">← Older Comments</a></div>
+			<div class="nav-next"></div>
+		</nav>
+		
+	
+									<div id="respond">
+				<h3 id="reply-title">Deixe uma resposta <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/#respond" style="display:none;">Cancelar resposta</a></small></h3>
+									<form action="http://blog.hboaventura.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">O seu endereço de email não será publicado Campos obrigatórios são marcados <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Nome</label> <span class="required">*</span><input id="author" name="author" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-url"><label for="url">Site</label><input id="url" name="url" size="30" type="text"></p>
+												<p class="comment-form-comment"><label for="comment">Comentário</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">Você pode usar estas tags e atributos de <abbr title="HyperText Markup Language">HTML</abbr>:  <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" id="submit" value="Publicar comentário" type="submit">
+							<input name="comment_post_ID" value="426" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="3ed5a3e89e" type="hidden"></p>					</form>
+							</div><!-- #respond -->
+				<script type="text/javascript">jQuery(document).ready(function(){jQuery('#commentform').submit(function(){_gaq.push(['_setAccount','UA-620782-2'],['_trackEvent','comment','submit']);});});</script>
+				
+</div><!-- #comments -->
+			
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://blog.hboaventura.com/">
+	<div><label class="screen-reader-text" for="s">Pesquisar por:</label>
+	<input name="s" id="s" type="text">
+	<input id="searchsubmit" value="Pesquisar" type="submit">
+	</div>
+	</form></aside><aside id="text-3" class="widget widget_text">			<div class="textwidget">web
+ standards enthusiastic | webdev addicted | symfony lover | webaholic | 
+music fan | asparing chef... mix it up... drink it cold</div>
+		</aside><aside id="twitter-1" class="widget widget_twitter"><h1 class="widget-title"><a href="http://twitter.com/kidh0" class="twitter_title_link">Twitter</a></h1><ul class="twitter"><li>No public Twitter messages.</li></ul></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Tópicos recentes</h1>		<ul>
+				<li><a href="http://blog.hboaventura.com/desabafo-de-um-ubunteiro-a-k-a-como-o-ubuntu-esta-acabando-com-a-minha-produtividade/" title="Desabafo de um ubunteiro (a.k.a. como o Ubuntu está acabando com a minha produtividade)">Desabafo de um ubunteiro (a.k.a. como o Ubuntu está acabando com a minha produtividade)</a></li>
+				<li><a href="http://blog.hboaventura.com/noticias-do-front/" title="Noticias do front">Noticias do front</a></li>
+				<li><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/" title="PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário">PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário</a></li>
+				</ul>
+		</aside><aside id="linkcat-2" class="widget widget_links"><h1 class="widget-title">Lista de Links</h1>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.hboaventura.com/" rel="me" title="Site pessoal com todas as informações referentes a minha pessoa">Henrique Boaventura</a></li>
+<li><a href="http://kroiner.wordpress.com/" rel="friend met co-worker">Life With Linux</a></li>
+<li><a href="http://lucas-ts.com/" rel="friend met co-worker" target="_blank">Lucas Stephanou</a></li>
+
+	</ul>
+</aside>
+		</div><!-- #secondary .widget-area -->
+
+		
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+			<div id="site-generator">
+                <q cite="http://en.wikipedia.org/wiki/Paranoid_Android">I may be paranoid... but not an android</q> - 1984-'15 / Design by <a href="http://www.melonmakers.com/">Luciano Fontoura</a>
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/shCore.js"></script><script>eval(mod_pagespeed_9lBfqjKnQj);</script>
+<script>eval(mod_pagespeed_gEWmz$LbBM);</script>
+<script>eval(mod_pagespeed_OzikAHH9Bq);</script>
+<script>eval(mod_pagespeed_WZzZ9FrLow);</script>
+<script>eval(mod_pagespeed_4eqVuZt4od);</script>
+<script>eval(mod_pagespeed_xh5xsr38Vj);</script>
+<script>eval(mod_pagespeed_6po3cZnAY0);</script>
+<script>eval(mod_pagespeed_VxVhHiJRPi);</script>
+<script>eval(mod_pagespeed_kaJpdFvdGy);</script>
+<script>eval(mod_pagespeed_kBOcRP7WtQ);</script>
+<script>eval(mod_pagespeed_iLaU8DZrFO);</script>
+<script>eval(mod_pagespeed_kLznJTxQMh);</script>
+<script>eval(mod_pagespeed_j2$WdisdIU);</script>
+<script class="javascript">dp.SyntaxHighlighter.ClipboardSwf='http://blog.hboaventura.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';dp.SyntaxHighlighter.HighlightAll('code');</script>
+<script type="text/javascript" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/jquery.js"></script>
+<script type="text/javascript">//<![CDATA[
+var _wpcf7={"loaderUrl":"http:\/\/blog.hboaventura.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Enviando ..."};
+//]]></script>
+<script type="text/javascript" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/scripts.js"></script>
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%202%20%E2%80%93%20Atualizando%20o%20status%20do%20usu%C3%A1rio%20%7C%20bittersweet%20dev_files/postmessageRelay.html" id="oauth2relay221003129" name="oauth2relay221003129"></iframe></body><iframe src="" style="display: none;"></iframe></html>

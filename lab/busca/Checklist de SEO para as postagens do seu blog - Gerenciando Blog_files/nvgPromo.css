@@ -1,0 +1,392 @@
+  #nvg_prm { color: #fff; position: fixed; opacity: 1; 
+    -webkit-transition:all 0.4s ease-in-out 0.5s;
+    -moz-transition:all 0.4s ease-in-out 0.5s;
+    transition:all 0.4s ease-in-out 0.5s;
+    z-index:99999999;
+  }
+  #nvg_prm h3{ padding: 0; margin: 3px 0 0 0; margin-left: 35px; opacity: 1; font-family: sans-serif !important; font-weight: bold !important; font-size: 1.3em !important; text-transform: none !important; background: none !important; border: none !important; color: #fff !important;}
+  #nvg_prm #nvg_action{ border: none; background-color: #fff;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        padding: 3px 10px;
+        cursor: pointer;
+        opacity: 0;
+        margin-left: 25px;
+        float: left;
+        font-weight: bold;
+  }
+  
+  #nvg_prm a{ text-decoration: none; color: #fff; font-family:Arial;  display: block; line-height:22px; font-size: 14px; float: left; overflow: hidden;}
+  #nvg_prm a i{ width: 35px; height: 32px; display: block; margin-right: 14px; margin-left: 4px;  opacity: 0;  position: absolute;}
+  #nvg_prm a span{ opacity: 0; margin-left: 35px; margin-top: 3px; font-family: sans-serif !important; font-weight: normal !important; font-size: 1em !important; text-transform: none !important; background: none !important; border: none !important; color: #fff !important;}
+  
+
+div#nvg_prm .animated {
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+    animation-fill-mode:both;
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -o-animation-duration:1s;
+    animation-duration:1s;
+}
+
+div#nvg_prm .animated.hinge {
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -o-animation-duration:1s;
+    animation-duration:1s;
+}
+
+
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-10px);
+    }
+    60% {
+        -webkit-transform: translateY(-5px);
+    }
+}
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-10px);
+    }
+    60% {
+        -moz-transform: translateY(-5px);
+    }
+}
+@-o-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -o-transform: translateY(0);
+    }
+    40% {
+        -o-transform: translateY(-30px);
+    }
+    60% {
+        -o-transform: translateY(-15px);
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+#nvg_prm a:hover > i{
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    -o-animation-name: bounce;
+    animation-name: bounce;
+}
+
+
+/*Barra topo*/
+
+ div#nvg_prm.top{ position:fixed; width: 100%;top:0;}
+ div#nvg_prm.top h3{ float: left; padding-right:10px; }
+ div#nvg_prm.top span{ float: left; margin-right: 15px; margin-bottom: 5px;}
+ div#nvg_prm.top #nvg_action{ float: left; margin-top: 2px;}
+ div#nvg_prm.top a{ width: 94%; padding: 0;   
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition:all 0.4s ease-in-out 0.5s;
+    -moz-transition:all 0.4s ease-in-out 0.5s;
+    transition:all 0.4s ease-in-out 0.5s;
+  }
+  div#nvg_prm.top #nvg_trg{ background:transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -12px -198px; width: 32px; height: 26px; border: none; text-indent: -9999px; position: absolute; right: 10px; cursor: pointer;                  
+                  bottom: -25px;
+                  -webkit-border-bottom-right-radius: 5px;
+                  -webkit-border-bottom-left-radius: 5px;
+                  -moz-border-radius-bottomright: 5px;
+                  -moz-border-radius-bottomleft: 5px;
+                  border-bottom-right-radius: 5px;
+                  border-bottom-left-radius: 5px;
+                   -webkit-transition:all 0.4s ease-in-out 0.5s; -moz-transition:all 0.4s ease-in-out 0.5s;  transition:all 0.4s ease-in-out 0.5s;
+  }
+
+  div#nvg_prm.top.open:hover{ opacity: 1!important;}
+  div#nvg_prm.top.open { position: fixed; margin-top:0; overflow: visible; opacity: 0.9!important;  top: 0; }
+  div#nvg_prm.top.open a{ max-height: 350px;  padding: 10px 10px 10px 60px;}
+  div#nvg_prm.top.open a i{ position: absolute; left: 11px;}
+  div#nvg_prm.top.open a span, div#nvg_prm.top.open a h3, div#nvg_prm.top.open a #nvg_action, div#nvg_prm.top.open a i{ 
+                  opacity: 1;
+                  margin-left: 0!important;
+  }
+
+  div#nvg_prm.top a span, div#nvg_prm.top a h3, div#nvg_prm.top a #nvg_action, div#nvg_prm.top a i{
+                  webkit-transition: all 0.4s ease-in-out 0.7s!important;
+                  -moz-transition: all 0.4s ease-in-out 0.7s!important;
+                  -o-transition: all 0.4s ease-in-out 0.7s!important;
+                  transition: all 0.4s ease-in-out 0.7s!important;
+                  opacity: 0;
+  }
+ div#nvg_prm.top.open #nvg_trg{ background:  #2E8A51 url('//tag.navdmp.com/nvgPromo.png') no-repeat -63px -198px; }
+
+/*end:barra topo*/
+
+
+/*Barra bottom*/
+
+ div#nvg_prm.bottom{ position:fixed; width: 100%; bottom: 0!important;}
+ div#nvg_prm.bottom h3{ float: left; padding-right:10px; }
+ div#nvg_prm.bottom span{ float: left; margin-right: 15px; margin-bottom: 5px;}
+ div#nvg_prm.bottom #nvg_action{ float: left; margin-top: 2px;}
+ div#nvg_prm.bottom a{ width: 94%; padding: 0;   
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition:all 0.4s ease-in-out 0.5s;
+    -moz-transition:all 0.4s ease-in-out 0.5s;
+    transition:all 0.4s ease-in-out 0.5s;
+  }
+  div#nvg_prm.bottom #nvg_trg{ background:  #2E8A51 url('//tag.navdmp.com/nvgPromo.png') no-repeat -63px -198px; width: 32px; height: 26px; border: none; text-indent: -9999px; position: absolute; right: 10px; cursor: pointer;                  
+                    top:-25px;
+                  -webkit-border-top-left-radius: 5px;
+                  -webkit-border-top-right-radius: 5px;
+                  -moz-border-radius-topleft: 5px;
+                  -moz-border-radius-topright: 5px;
+                  border-top-left-radius: 5px;
+                  border-top-right-radius: 5px;
+                   -webkit-transition:all 0.4s ease-in-out 0.5s; -moz-transition:all 0.4s ease-in-out 0.5s;  transition:all 0.4s ease-in-out 0.5s;
+  }
+
+  div#nvg_prm.bottom.open:hover{ opacity: 1!important;}
+  div#nvg_prm.bottom.open { position: fixed; margin-top:0; overflow: visible; opacity: 0.9!important;}
+  div#nvg_prm.bottom.open a{ max-height: 350px;  padding: 15px 10px 10px 60px;}
+  div#nvg_prm.bottom.open a i{ position: absolute; left: 11px;}
+  div#nvg_prm.bottom.open a span, div#nvg_prm.bottom.open a h3, div#nvg_prm.bottom.open a #nvg_action, div#nvg_prm.bottom.open a i{ 
+                  opacity: 1!important;
+                  margin-left: 0!important;
+  }
+
+  div#nvg_prm.bottom a span, div#nvg_prm.bottom a h3, div#nvg_prm.bottom a #nvg_action, div#nvg_prm.bottom a i{
+                  webkit-transition: all 0.4s ease-in-out 0.7s!important;
+                  -moz-transition: all 0.4s ease-in-out 0.7s!important;
+                  -o-transition: all 0.4s ease-in-out 0.7s!important;
+                  transition: all 0.4s ease-in-out 0.7s!important;
+                  opacity: 0;
+  }
+ div#nvg_prm.bottom.open #nvg_trg{   background:transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -12px -198px;}
+
+
+
+/*Animação Barra esquerda*/
+  div#nvg_prm.left{  position: fixed!important;  top: 80%; left: 0; height: auto;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-bottomright: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: 0;
+  }
+  div#nvg_prm.left a{ width: 0; padding: 0!important; overflow: hidden;  
+    -webkit-transition:all 0.4s ease-in-out 0.5s;
+      -moz-transition:all 0.4s ease-in-out 0.5s;
+      transition:all 0.4s ease-in-out 0.5s;
+  }
+
+  div#nvg_prm.left a i{ position: absolute!important; left: 9px; top: 20%; opacity: 0!important; }
+  div#nvg_prm.left a h3{ margin-left: 0; opacity: 0;}
+  div#nvg_prm.left a #nvg_action{margin-left: 0; float: none; margin-top: 13px;} 
+  div#nvg_prm.left a span{ opacity: 0!important; margin-left: 0!important; display:block; opacity: 0;} 
+  div#nvg_prm.left #nvg_trg{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -16px -198px; width: 26px; height: 26px; border: none; text-indent: -9999px; position: absolute; right: -23px; opacity: 1; cursor: pointer;
+   -webkit-transition:all 0.4s ease-in-out 0.5s; 
+   -moz-transition:all 0.4s ease-in-out 0.5s;
+   transition:all 0.4s ease-in-out 0.5s; top: 0;
+   -webkit-transform:rotate(-90deg);
+   -moz-transform:rotate(-90deg);
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  }
+  div#nvg_prm.left.open #nvg_trg{background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -67px -198px; }
+  div#nvg_prm.left #nvg_trg:hover{ opacity: 1;}
+
+
+  div#nvg_prm.left.open{ opacity: 1!important;  left: 0!important; width: 30%!important; height: auto;}
+  div#nvg_prm.left.open a{ padding: 10px 10px 10px 60px!important;  width: 80%; }
+  div#nvg_prm.left.open a span{ opacity: 1!important;}
+  div#nvg_prm.left.open a h3{ opacity: 1;}
+  div#nvg_prm.left.open a i{ left: 9px!important; top: 10%!important; float: none!important; opacity: 1!important;}
+  div#nvg_prm.left.open a #nvg_action{ opacity: 1;}
+  div#nvg_prm.left a h3, div#nvg_prm.left a span, div#nvg_prm.left a #nvg_action,  div#nvg_prm.left a i{
+     -webkit-transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.4s ease-in-out;
+    transition:all 0.4s ease-in-out;
+    opacity: 0;
+  }
+/*end: barra esquerda*/
+
+
+/*Animação Barra direita*/
+
+div#nvg_prm.right{  position: fixed!important;  top: 80%; right: 0; height: auto;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 0;
+  }
+  div#nvg_prm.right a{ width: 0; padding: 0!important; overflow: hidden;  
+    -webkit-transition:all 0.4s ease-in-out 0.5s;
+      -moz-transition:all 0.4s ease-in-out 0.5s;
+      transition:all 0.4s ease-in-out 0.5s;
+  }
+
+  div#nvg_prm.right a i{ position: absolute!important; left: 9px; top: 20%; opacity: 0!important; }
+  div#nvg_prm.right a h3{ margin-left: 0; opacity: 0;}
+  div#nvg_prm.right a #nvg_action{margin-left: 0; float: none; margin-top: 13px;} 
+  div#nvg_prm.right a span{ opacity: 0!important; margin-left: 0!important; display:block; opacity: 0;} 
+  div#nvg_prm.right #nvg_trg{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -67px -198px; width: 26px; height: 26px; border: none; text-indent: -9999px; position: absolute; left: -23px; opacity: 1; cursor: pointer;
+     -webkit-transition:all 0.4s ease-in-out 0.5s; 
+     -moz-transition:all 0.4s ease-in-out 0.5s;
+     transition:all 0.4s ease-in-out 0.5s; top: 0;
+     -webkit-transform:rotate(-90deg);
+     -moz-transform:rotate(-90deg);
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  div#nvg_prm.right.open #nvg_trg{background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -16px -198px; }
+  div#nvg_prm.right #nvg_trg:hover{ opacity: 1;}
+
+  div#nvg_prm.right.open{ opacity: 1!important;  right: 0!important; width: 30%!important; height: auto;}
+  div#nvg_prm.right.open a{ padding: 10px 10px 10px 65px!important;  width: 80%; }
+  div#nvg_prm.right.open a span{ opacity: 1!important;}
+  div#nvg_prm.right.open a h3{ opacity: 1;}
+  div#nvg_prm.right.open a i{ left: 12px!important; top: 10%!important; float: none!important; opacity: 1!important;}
+  div#nvg_prm.right.open a #nvg_action{ opacity: 1;}
+  div#nvg_prm.right a h3, div#nvg_prm.right a span, div#nvg_prm.right a #nvg_action,  div#nvg_prm.right a i{
+     -webkit-transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.4s ease-in-out;
+    transition:all 0.4s ease-in-out;
+    opacity: 0;
+  }
+
+/*end: barra direita*/
+
+
+/*Color*/
+  div#nvg_prm.red{ background-color: #e74c3c;}
+  div#nvg_prm.red:hover{ background-color: #c5412f;}
+    div#nvg_prm.red #nvg_trg{ background-color: #e74c3c;}
+    div#nvg_prm.red:hover #nvg_trg{ background-color: #c5412f;}
+    div#nvg_prm.red.open #nvg_trg{ background-color: #e74c3c;}
+    div#nvg_prm.red.open:hover #nvg_trg{ background-color: #c5412f;}
+    div#nvg_prm.red #nvg_action{ color: #e74c3c;}
+    div#nvg_prm.red:hover #nvg_action{ color: #c5412f;}
+
+  div#nvg_prm.blue{ background-color: #4093BF;}
+  div#nvg_prm.blue:hover{ background-color: #1e7eb0;}
+    div#nvg_prm.blue #nvg_trg{ background-color: #4093BF;}
+    div#nvg_prm.blue:hover #nvg_trg{ background-color: #1e7eb0;}
+    div#nvg_prm.blue.open #nvg_trg{ background-color: #4093BF;}
+    div#nvg_prm.blue.open:hover #nvg_trg{ background-color: #1e7eb0;}
+    div#nvg_prm.blue #nvg_action{ color: #4093BF;}
+    div#nvg_prm.blue:hover #nvg_action{ color: #1e7eb0;}
+
+  div#nvg_prm.green{ background-color: #2E8A51;}
+  div#nvg_prm.green:hover{ background-color: #1e7840;}
+    div#nvg_prm.green #nvg_trg{ background-color: #2E8A51;}
+    div#nvg_prm.green:hover #nvg_trg{ background-color: #1e7840;}
+    div#nvg_prm.green.open #nvg_trg{ background-color: #2E8A51;}
+    div#nvg_prm.green.open:hover #nvg_trg{ background-color: #1e7840;}
+    div#nvg_prm.green #nvg_action{ color: #2E8A51;}
+    div#nvg_prm.green:hover #nvg_action{ color: #1e7840;}
+
+  div#nvg_prm.purple_dark{ background-color: #292D7A;}
+  div#nvg_prm.purple_dark:hover{ background-color: #555789;}
+    div#nvg_prm.purple_dark #nvg_trg{ background-color: #292D7A;}
+    div#nvg_prm.purple_dark:hover #nvg_trg{ background-color: #555789;}
+    div#nvg_prm.purple_dark.open #nvg_trg{ background-color: #292D7A;}
+    div#nvg_prm.purple_dark.open:hover #nvg_trg{ background-color: #555789;}
+    div#nvg_prm.purple_dark #nvg_action{ color: #292D7A;}
+    div#nvg_prm.purple_dark:hover #nvg_action{ color: #555789;}
+
+
+  div#nvg_prm.purple{ background-color: #8C3CB4;}
+  div#nvg_prm.purple:hover{ background-color: #69208e;}
+    div#nvg_prm.purple #nvg_trg{ background-color: #8C3CB4;}
+    div#nvg_prm.purple:hover #nvg_trg{ background-color: #69208e;}
+    div#nvg_prm.purple.open #nvg_trg{ background-color: #8C3CB4;}
+    div#nvg_prm.purple.open:hover #nvg_trg{ background-color: #69208e;}
+    div#nvg_prm.purple #nvg_action{ color: #8C3CB4;}
+    div#nvg_prm.purple:hover #nvg_action{ color: #69208e;}
+
+
+  div#nvg_prm.brown{ background-color: #B4863C;}
+  div#nvg_prm.brown:hover{ background-color: #a1752d;}
+    div#nvg_prm.brown #nvg_trg{ background-color: #B4863C;}
+    div#nvg_prm.brown:hover #nvg_trg{ background-color: #a1752d;}
+    div#nvg_prm.brown.open #nvg_trg{ background-color: #B4863C;}
+    div#nvg_prm.brown.open:hover #nvg_trg{ background-color: #a1752d;}
+    div#nvg_prm.brown #nvg_action{ color: #B4863C;}
+    div#nvg_prm.brown:hover #nvg_action{ color: #a1752d;}
+
+
+  div#nvg_prm.black{ background-color: #000;}
+  div#nvg_prm.black:hover{ background-color: #666;}
+  div#nvg_prm.black #nvg_trg{ background-color: #000;}
+    div#nvg_prm.black:hover #nvg_trg{ background-color: #666;}
+    div#nvg_prm.black.open #nvg_trg{ background-color: #000;}
+    div#nvg_prm.black.open:hover #nvg_trg{ background-color: #666;}
+    div#nvg_prm.black #nvg_action{ color: #000;}
+    div#nvg_prm.black:hover #nvg_action{ color: #666;}
+
+
+
+  div#nvg_prm.pink{ background-color: #DD98AB;}
+  div#nvg_prm.pink:hover{ background-color:#dc6485;}
+    div#nvg_prm.pink #nvg_trg{ background-color: #DD98AB;}
+    div#nvg_prm.pink:hover #nvg_trg{ background-color: #dc6485;}
+    div#nvg_prm.pink.open #nvg_trg{ background-color: #DD98AB;}
+    div#nvg_prm.pink.open:hover #nvg_trg{ background-color: #dc6485;}
+    div#nvg_prm.pink #nvg_action{ color: #DD98AB;}
+    div#nvg_prm.pink:hover #nvg_action{ color: #dc6485;}
+
+
+  div#nvg_prm.gray{ background-color: #666; }
+  div#nvg_prm.gray:hover{ background-color: #4d4d4d;}
+  div#nvg_prm.gray #nvg_trg{ background-color: #666;}
+    div#nvg_prm.gray:hover #nvg_trg{ background-color: #4d4d4d;}
+    div#nvg_prm.gray.open #nvg_trg{ background-color: #666;}
+    div#nvg_prm.gray.open:hover #nvg_trg{ background-color: #4d4d4d;}
+    div#nvg_prm.gray #nvg_action{ color: #666;}
+    div#nvg_prm.gray:hover #nvg_action{ color: #4d4d4d;}
+  /*end:color*/
+
+  /*Ícones*/
+   div#nvg_prm a.truck i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -17px -20px;}
+   div#nvg_prm a.time i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -117px -20px;}
+   div#nvg_prm a.mega i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -223px -20px;}
+   div#nvg_prm a.basket i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -315px -20px;}
+   div#nvg_prm a.promo i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -17px -91px;}
+   div#nvg_prm a.clock i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -118px -91px;}
+   div#nvg_prm a.star i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -220px -92px;}
+   div#nvg_prm a.pay i{ background: transparent url('//tag.navdmp.com/nvgPromo.png') no-repeat -310px -91px;}
+  /*end: ícones*/

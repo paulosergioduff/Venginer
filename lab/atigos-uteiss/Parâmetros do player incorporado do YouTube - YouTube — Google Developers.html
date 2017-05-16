@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html class="devsite" lang="pt-br"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <script async="" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/cbgapi.loaded_1"></script><script async="" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/cbgapi.loaded_0"></script><script gapi_processed="true" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/platform.js" async="" type="text/javascript"></script><script src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/analytics.js" async=""></script><script gapi_processed="true" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/platform_002.js" async="" type="text/javascript"></script><script>var b=window.devsite||{};b.timing={};window.devsite=b;window.devsite.timing=b.timing;b.timing.timers=[];b.timing.tick=function(d,a,g){for(var c=0;c<b.timing.timers.length;c++)b.timing.timers[c].tick(d,a,g)};window.devsite.timing.tick=b.timing.tick;b.timing.report=function(d){b.setTimeout(function(){for(var a=0;a<b.timing.timers.length;a++)window.jstiming.report(b.timing.timers[a],d)},500)};
+b.timing.init=function(d){b.timing.timers.push(window.jstiming.load);if(d){var a=new window.jstiming.Timer;a.name=d;b.timing.timers.push(a)}document.addEventListener&&window.addEventListener&&(document.addEventListener("DOMContentLoaded",b.timing.handleDomContentLoaded,!1),window.addEventListener("load",b.timing.handleLoad,!1))};b.timing.handleDomContentLoaded=function(){b.timing.tick("ol");document.removeEventListener("DOMContentLoaded",b.timing.handleDomContentLoaded,!1)};
+b.timing.handleLoad=function(){window.removeEventListener("load",b.timing.handleLoad,!1);var d=document.querySelector("#devsite-request-elapsed");d&&(d=parseInt(d.getAttribute("data-request-elapsed"),10))&&(b.timing.tick("_st_start",null,1),b.timing.tick("st","_st_start",1+d));b.timing.tick("prt");b.timing.report()};(function(){function d(a){this.t={};this.tick=function(a,d,c){var e=void 0!=c?c:(new Date).getTime();this.t[a]=[e,d];if(void 0==c)try{window.console.timeStamp("CSI/"+a)}catch(f){}};this.tick("start",null,a)}var a;window.performance&&(a=window.performance.timing);var g=a?new d(a.responseStart):new d;window.jstiming={Timer:d,load:g};if(a){var c=a.navigationStart,f=a.responseStart;0<c&&f>=c&&(window.jstiming.srt=f-c)}if(a){var e=window.jstiming.load;0<c&&f>=c&&(e.tick("_wtsrt",void 0,c),e.tick("wtsrt_",
+"_wtsrt",f),e.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),e&&0<c&&(e.tick("_tbnd",void 0,window.chrome.csi().startE),e.tick("tbnd_","_tbnd",c))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,e&&0<c&&(e.tick("_tbnd",void 0,window.external.startE),e.tick("tbnd_","_tbnd",c))),a&&(window.jstiming.pt=a)}catch(h){}})();
+devsite.timing.init('DocPage');</script>
+    
+      <link href="https://developers.google.com/youtube/player_parameters?hl=pt-br" rel="canonical">
+    
+    <meta charset="utf-8">
+    
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=tr" hreflang="tr">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=pt-br" hreflang="pt-br">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=es" hreflang="es">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=de" hreflang="de">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=ja" hreflang="ja">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=pl" hreflang="pl">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=zh-cn" hreflang="zh-cn">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=it" hreflang="it">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=fr" hreflang="fr">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=ko" hreflang="ko">
+      
+      
+      
+        <link rel="alternate" href="https://developers.google.com/youtube/player_parameters?hl=ru" hreflang="ru">
+      
+      
+    
+    <meta name="xsrf_token" content="72Zt-3bT4pXVtAO_AnyjZjoxNDI2NzIwNDYwMTUyODcw">
+      <link rel="stylesheet" type="text/css" href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/screen-maia.css">
+      <link href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/css.css" rel="stylesheet" type="text/css">
+    
+      
+        <link rel="stylesheet" type="text/css" href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/screen-docs.css">
+      
+      
+      <link href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/screen-foot.css" rel="stylesheet" type="text/css" id="screen-foot" data-href="https://developers.google.com/_static/3bb7e1809c/css/screen-foot.css">
+    
+    <link rel="shortcut icon" href="https://developers.google.com/_static/3bb7e1809c/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://developers.google.com/_static/3bb7e1809c/images/apple-touch-icon.png">
+    <link href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/css_002.css" rel="stylesheet" type="text/css">
+    
+    
+    
+      <link rel="search" type="application/opensearchdescription+xml" title="Google Developers" href="https://developers.google.com/s/opensearch.xml">
+    
+    
+    
+    <script src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/jquery.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://developers.google.com/_static/3bb7e1809c/js/html5shim/html5.js"></script>
+    <![endif]-->
+
+    
+  <meta property="og:site_name" content="Google Developers">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://developers.google.com/youtube/player_parameters?hl=pt-br">
+  <meta property="og:locale" content="pt-br">
+
+  <script type="text/javascript">
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'pt-br';
+  </script>
+  
+    <title>Parâmetros do player incorporado do YouTube - YouTube — Google Developers</title>
+    <meta property="og:title" content="Parâmetros do player incorporado do YouTube">
+  
+  
+
+  
+    
+    
+    
+    
+  
+
+
+    
+
+    <style>
+    
+    </style>
+  </head>
+  <body class=" slim   two-column docs normal-width">
+
+  <div class="maia-max">
+
+    
+    <div id="sandbar">
+      
+        
+          
+
+
+
+
+
+<div id="maia-header" class="maia-header">
+  <header id="googlebar">
+    <div id="logo-wrapper">
+      <a id="logo" href="https://developers.google.com/?hl=pt-br">
+        <img src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/developers-logo.svg" alt="Google">
+      </a>
+      <script>
+      if (navigator.userAgent.match(/msie/i) && navigator.appVersion.indexOf['8'] ==0) {
+        $('#gc-logo img').attr({src:'https://developers.google.com/_static/3bb7e1809c/images/developers-logo.png'});
+      }
+      </script>
+    </div>
+
+    <div id="search-wrapper" class="head-sec search-wrapper2 ">
+      <form class="search" action="/s/results" method="GET" id="top-search">
+        <div id="searchbox" class="searchbox"><span class="button button-blue mini">YouTube</span>
+           
+           <input name="q" class="q" id="q" placeholder="Pesquisa" autocomplete="off" type="text">
+        <ul style="display: none;" tabindex="0" role="menu" id="ui-id-1" class="suggest-results ui-menu ui-widget ui-widget-content ui-corner-all"></ul></div>
+        <button style="position: relative; top: 0px; left: 0px;" id="search-button" class="button button-blue big">
+          <img src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/search.png" alt="Search">
+        </button>
+        
+          <input name="p" id="search_project" value="/youtube" data-project-name="YouTube" data-project-path="/youtube" data-query-match="" type="hidden">
+        
+        
+
+
+  
+  <input id="suggest-category-label-2" value="Páginas em YouTube" type="hidden">
+  
+  <input id="suggest-category-label-3" value="Referências em YouTube" type="hidden">
+
+
+<input id="suggest-category-label-1" value="Produtos" type="hidden">
+
+<input id="suggest-all-results-label" value="Ver todos os resultados para" type="hidden">
+
+      </form>
+    </div>
+
+    
+
+    <div id="social-wrapper" class="social">
+      
+      <span class="signed-in">
+        <div>
+          <a class"email"="" href="https://plus.google.com/me">paulobelmarco@gmail.com</a>
+          <a href="https://www.google.com/accounts/Logout?continue=https://developers.google.com/youtube/player_parameters&amp;service=ahsid">Sair</a>
+        </div>
+        <img class="avatar" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/photo.jpg">
+      </span>
+      
+    </div>
+  </header>
+</div>
+
+<script>
+  if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        window.devsite.search.init('pt-br', true, null, true)
+      }
+    });
+  }
+</script>
+
+        
+      
+    </div><!-- end div.sandbar -->
+    
+
+    
+    <div class="kd-butterbar">
+      <span>
+        <span class="message"></span>
+        
+        <a href="#" class="kd-butterbar-dismiss">Ocultar</a>
+      </span>
+    </div>
+    
+    <div id="gc-wrapper" itemscope="" itemtype="http://schema.org/APIReference">
+      
+        
+          <input class="google-analytics-id-json" value="{&quot;dimensions&quot;: {&quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed In&quot;}, &quot;gaid&quot;: &quot;UA-24532603-1&quot;}" type="hidden">
+        
+          <input class="google-analytics-id-json" value="{&quot;dimensions&quot;: {&quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed In&quot;}, &quot;gaid&quot;: &quot;UA-49880327-1&quot;}" type="hidden">
+        
+      
+
+      
+
+      
+
+<div id="gc-appnav" class="maia-aux">
+  <ol class="breadcrumbs">
+    
+    <li><a href="https://developers.google.com/products/?hl=pt-br">Produtos</a></li>
+    
+    <li><a href="https://developers.google.com/youtube/?hl=pt-br">YouTube</a></li>
+    
+  </ol>
+</div>
+
+
+
+      
+      
+      
+          <div class="maia-aux" id="gc-appbar">
+
+          
+          
+
+  <a href="https://developers.google.com/youtube/?hl=pt-br" class="gc-appbar-title">
+    
+    YouTube
+  </a>
+
+
+
+<div class="plusone-container" style="height:27px">
+  <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/fastbutton.html" name="I0_1426720460532" id="I0_1426720460532" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+          
+        </div>
+      
+      
+
+      
+        
+          <div id="gc-main" class="main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar" class="wide">
+        
+
+  <nav class="gc-toc devsite-navigation"><ul><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/getting_started?hl=pt-br" title="Primeiros passos" class="devsite-navigation-title ">Primeiros passos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="http://youtube-gallery.appspot.com/" title="Galeria de aplicativos" class="devsite-navigation-title ">Galeria de aplicativos</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/code_samples?hl=pt-br" title="Exemplos de código" class="devsite-navigation-title ">Exemplos de código</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="API de dados do YouTube" class="devsite-navigation-title devsite-navigation-title-no-path ">API de dados do YouTube</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/?hl=pt-br" title="Versão 3.0" class="devsite-navigation-title ">Versão 3.0</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/getting-started?hl=pt-br" title="Guia de visão geral da API" class="devsite-navigation-title ">Guia de visão geral da API</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/registering_an_application?hl=pt-br" title="Registro seu aplicativo" class="devsite-navigation-title ">Registro seu aplicativo</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/guides/authentication?hl=pt-br" title="Autenticação" class="devsite-navigation-title ">Autenticação</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/libraries?hl=pt-br" title="Bibliotecas cliente" class="devsite-navigation-title ">Bibliotecas cliente</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/code_samples/?hl=pt-br" title="Exemplos de código" class="devsite-navigation-title ">Exemplos de código</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/code_samples/go?hl=pt-br" title="Go" class="devsite-navigation-title ">Go</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/code_samples/java?hl=pt-br" title="Java" class="devsite-navigation-title ">Java</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/code_samples/javascript?hl=pt-br" title="JavaScript" class="devsite-navigation-title ">JavaScript</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/code_samples/dotnet?hl=pt-br" title=".NET" class="devsite-navigation-title ">.NET</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/code_samples/php?hl=pt-br" title="PHP" class="devsite-navigation-title ">PHP</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/code_samples/python?hl=pt-br" title="Python" class="devsite-navigation-title ">Python</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/code_samples/ruby?hl=pt-br" title="Ruby" class="devsite-navigation-title ">Ruby</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/sample_requests?hl=pt-br" title="Solicitações de amostras" class="devsite-navigation-title ">Solicitações de amostras</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/guides/?hl=pt-br" title="Guias e tutoriais" class="devsite-navigation-title ">Guias e tutoriais</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/guides/uploading_a_video?hl=pt-br" title="Envio de vídeo" class="devsite-navigation-title ">Envio de vídeo</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol?hl=pt-br" title="Retomada de envios" class="devsite-navigation-title ">Retomada de envios</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/guides/searching_by_topic?hl=pt-br" title="Pesquisa com tópicos da Freebase" class="devsite-navigation-title ">Pesquisa com tópicos da Freebase</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/guides/working_with_channel_ids?hl=pt-br" title="Trabalho com IDs de canais" class="devsite-navigation-title ">Trabalho com IDs de canais</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/guides/moving_to_oauth?hl=pt-br" title="Migração de ClientLogin para OAuth 2.0" class="devsite-navigation-title ">Migração de ClientLogin para OAuth 2.0</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/?hl=pt-br" title="Referência da API" class="devsite-navigation-title ">Referência da API</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/activities?hl=pt-br" title="Activities" class="devsite-navigation-title ">Activities</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/activities/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/activities/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/channelBanners?hl=pt-br" title="ChannelBanners" class="devsite-navigation-title ">ChannelBanners</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/channelBanners/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/channels?hl=pt-br" title="Channels" class="devsite-navigation-title ">Channels</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/channels/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/channels/update?hl=pt-br" title="update" class="devsite-navigation-title ">update</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/guideCategories?hl=pt-br" title="GuideCategories" class="devsite-navigation-title ">GuideCategories</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/guideCategories/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/playlistItems?hl=pt-br" title="PlaylistItems" class="devsite-navigation-title ">PlaylistItems</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlistItems/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlistItems/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlistItems/update?hl=pt-br" title="update" class="devsite-navigation-title ">update</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlistItems/delete?hl=pt-br" title="delete" class="devsite-navigation-title ">delete</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/playlists?hl=pt-br" title="Playlists" class="devsite-navigation-title ">Playlists</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlists/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlists/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlists/update?hl=pt-br" title="update" class="devsite-navigation-title ">update</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/playlists/delete?hl=pt-br" title="delete" class="devsite-navigation-title ">delete</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/search?hl=pt-br" title="Search" class="devsite-navigation-title ">Search</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/search/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/subscriptions?hl=pt-br" title="Subscriptions" class="devsite-navigation-title ">Subscriptions</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/subscriptions/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/subscriptions/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/subscriptions/delete?hl=pt-br" title="delete" class="devsite-navigation-title ">delete</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/thumbnails?hl=pt-br" title="Thumbnails" class="devsite-navigation-title ">Thumbnails</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/thumbnails/set?hl=pt-br" title="set" class="devsite-navigation-title ">set</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/videoCategories?hl=pt-br" title="VideoCategories" class="devsite-navigation-title ">VideoCategories</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/videoCategories/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/videos?hl=pt-br" title="Videos" class="devsite-navigation-title ">Videos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/videos/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/videos/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/videos/update?hl=pt-br" title="update" class="devsite-navigation-title ">update</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/videos/rate?hl=pt-br" title="rate" class="devsite-navigation-title ">rate</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/videos/getRating?hl=pt-br" title="getRating" class="devsite-navigation-title ">getRating</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/videos/delete?hl=pt-br" title="delete" class="devsite-navigation-title ">delete</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/docs/watermarks?hl=pt-br" title="Watermarks" class="devsite-navigation-title ">Watermarks</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/watermarks/set?hl=pt-br" title="set" class="devsite-navigation-title ">set</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/watermarks/unset?hl=pt-br" title="unset" class="devsite-navigation-title ">unset</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/standard_parameters?hl=pt-br" title="Parâmetros de consulta padrão" class="devsite-navigation-title ">Parâmetros de consulta padrão</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/docs/errors?hl=pt-br" title="Erros" class="devsite-navigation-title ">Erros</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/revision_history?hl=pt-br" title="Histórico de revisões" class="devsite-navigation-title ">Histórico de revisões</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable deprecated"><a title="Versão 2.0" class="devsite-navigation-title devsite-navigation-title-no-path ">Versão 2.0<sup class="devsite-navigation-status devsite-navigation-deprecated">Desativado</sup></a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/code?hl=pt-br" title="Códigos e guias da Biblioteca do cliente" class="devsite-navigation-title ">Códigos e guias da Biblioteca do cliente</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_java?hl=pt-br" title="Guia do Java" class="devsite-navigation-title ">Guia do Java</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/2.0/developers_guide_jsonc?hl=pt-br" title="Guia do JSON-C/JavaScript" class="devsite-navigation-title ">Guia do JSON-C/JavaScript</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/articles/view_youtube_jsonc_responses?hl=pt-br" title="Demonstração interativa" class="devsite-navigation-title ">Demonstração interativa</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_json?hl=pt-br" title="Guia do JSON/JavaScript" class="devsite-navigation-title ">Guia do JSON/JavaScript</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_dotnet?hl=pt-br" title="Guia do .NET" class="devsite-navigation-title ">Guia do .NET</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_php?hl=pt-br" title="Guia do PHP" class="devsite-navigation-title ">Guia do PHP</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/1.0/developers_guide_python?hl=pt-br" title="Python (v1.0)" class="devsite-navigation-title ">Python (v1.0)</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_audience?hl=pt-br" title="Guia do desenvolvedor" class="devsite-navigation-title ">Guia do desenvolvedor</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_authentication?hl=pt-br" title="Autenticação" class="devsite-navigation-title ">Autenticação</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_oauth2?hl=pt-br" title="OAuth 2.0" class="devsite-navigation-title ">OAuth 2.0</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_authenticating_flash?hl=pt-br" title="Aplicativos em Flash" class="devsite-navigation-title ">Aplicativos em Flash</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_understanding_video_feeds?hl=pt-br" title="Noções básicas sobre feeds e entradas de vídeo" class="devsite-navigation-title ">Noções básicas sobre feeds e entradas de vídeo</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_displaying_list_of_videos?hl=pt-br" title="Exibir uma lista de vídeos" class="devsite-navigation-title ">Exibir uma lista de vídeos</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_identifying_related_feeds?hl=pt-br" title="Identificar feeds relacionados" class="devsite-navigation-title ">Identificar feeds relacionados</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_displaying_video_information?hl=pt-br" title="Exibir informações do vídeo" class="devsite-navigation-title ">Exibir informações do vídeo</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Recuperar e pesquisar vídeos" class="devsite-navigation-title devsite-navigation-title-no-path ">Recuperar e pesquisar vídeos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_video_feeds?hl=pt-br" title="Tipos de feed de vídeos" class="devsite-navigation-title ">Tipos de feed de vídeos</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_category_keyword_browsing?hl=pt-br" title="Navegar com categorias e palavras-chave" class="devsite-navigation-title ">Navegar com categorias e palavras-chave</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_api_query_parameters?hl=pt-br" title="Parâmetros de consulta da API" class="devsite-navigation-title ">Parâmetros de consulta da API</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_video_entries?hl=pt-br" title="Recuperar dados de um único vídeo" class="devsite-navigation-title ">Recuperar dados de um único vídeo</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_channel_search?hl=pt-br" title="Pesquisar por canais" class="devsite-navigation-title ">Pesquisar por canais</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_playlist_search?hl=pt-br" title="Pesquisar por playlists" class="devsite-navigation-title ">Pesquisar por playlists</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_uploading_videos?hl=pt-br" title="Enviar vídeos" class="devsite-navigation-title ">Enviar vídeos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_browser_based_uploading?hl=pt-br" title="Envio pelo navegador" class="devsite-navigation-title ">Envio pelo navegador</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_direct_uploading?hl=pt-br" title="Envio direto" class="devsite-navigation-title ">Envio direto</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_resumable_uploads?hl=pt-br" title="Envios recuperáveis" class="devsite-navigation-title ">Envios recuperáveis</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_checking_video_status?hl=pt-br" title="Ver status de um vídeo" class="devsite-navigation-title ">Ver status de um vídeo</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_updating_and_deleting_videos?hl=pt-br" title="Atualizar e excluir vídeos" class="devsite-navigation-title ">Atualizar e excluir vídeos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_captions?hl=pt-br" title="Disponibilizar legendas para um vídeo" class="devsite-navigation-title ">Disponibilizar legendas para um vídeo</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_movies_and_shows?hl=pt-br" title="Filmes e programas" class="devsite-navigation-title ">Filmes e programas</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_education?hl=pt-br" title="YouTube EDU" class="devsite-navigation-title ">YouTube EDU</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Recursos da comunidade" class="devsite-navigation-title devsite-navigation-title-no-path ">Recursos da comunidade</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_ratings?hl=pt-br" title="Adicionar uma avaliação" class="devsite-navigation-title ">Adicionar uma avaliação</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_comments?hl=pt-br" title="Comentários" class="devsite-navigation-title ">Comentários</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_complaints?hl=pt-br" title="Adicionar uma reclamação" class="devsite-navigation-title ">Adicionar uma reclamação</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Salvar e colecionar vídeos" class="devsite-navigation-title devsite-navigation-title-no-path ">Salvar e colecionar vídeos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_favorites?hl=pt-br" title="Vídeos favoritos" class="devsite-navigation-title ">Vídeos favoritos</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_playlists?hl=pt-br" title="Playlists" class="devsite-navigation-title ">Playlists</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_subscriptions?hl=pt-br" title="Inscrições" class="devsite-navigation-title ">Inscrições</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_channel_suggestions?hl=pt-br" title="Sugestões de canais" class="devsite-navigation-title ">Sugestões de canais</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_recommendations?hl=pt-br" title="Recomendações de vídeo" class="devsite-navigation-title ">Recomendações de vídeo</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_watch_history?hl=pt-br" title="Histórico de exibição" class="devsite-navigation-title ">Histórico de exibição</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Ativar a interação do usuário" class="devsite-navigation-title devsite-navigation-title-no-path ">Ativar a interação do usuário</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_profiles?hl=pt-br" title="Perfis e contas de usuário" class="devsite-navigation-title ">Perfis e contas de usuário</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_activity_feeds?hl=pt-br" title="Feeds de atividades" class="devsite-navigation-title ">Feeds de atividades</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_sup?hl=pt-br" title="Usar o protocolo de atualização simples (SUP, na sigla em inglês)" class="devsite-navigation-title ">Usar o protocolo de atualização simples (SUP, na sigla em inglês)</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_batch_processing?hl=pt-br" title="Usar processamento em lote" class="devsite-navigation-title ">Usar processamento em lote</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Feeds parciais" class="devsite-navigation-title devsite-navigation-title-no-path ">Feeds parciais</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_partial?hl=pt-br" title="Respostas parciais" class="devsite-navigation-title ">Respostas parciais</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_partial_updates?hl=pt-br" title="Atualizações parciais" class="devsite-navigation-title ">Atualizações parciais</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_testing?hl=pt-br" title="Teste e solução de problemas" class="devsite-navigation-title ">Teste e solução de problemas</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_error_responses?hl=pt-br" title="Noções básicas sobre respostas a erros da API" class="devsite-navigation-title ">Noções básicas sobre respostas a erros da API</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_release_notes?hl=pt-br" title="Histórico de revisões" class="devsite-navigation-title ">Histórico de revisões</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_branding?hl=pt-br" title="Opções de promoção de marca do canal" class="devsite-navigation-title ">Opções de promoção de marca do canal</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_deprecated?hl=pt-br" title="Recursos suspensos" class="devsite-navigation-title ">Recursos suspensos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_oauth?hl=pt-br" title="OAuth 1.0" class="devsite-navigation-title ">OAuth 1.0</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_authsub?hl=pt-br" title="AuthSub" class="devsite-navigation-title ">AuthSub</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_clientlogin?hl=pt-br" title="ClientLogin" class="devsite-navigation-title ">ClientLogin</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_video_responses?hl=pt-br" title="Respostas em vídeo" class="devsite-navigation-title ">Respostas em vídeo</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_contacts?hl=pt-br" title="Contatos" class="devsite-navigation-title ">Contatos</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_messages?hl=pt-br" title="Compartilhar mensagens e vídeos" class="devsite-navigation-title ">Compartilhar mensagens e vídeos</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Eventos ao vivo" class="devsite-navigation-title devsite-navigation-title-no-path ">Eventos ao vivo</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_retrieving_live_events?hl=pt-br" title="Recuperar eventos ao vivo" class="devsite-navigation-title ">Recuperar eventos ao vivo</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_managing_live_events?hl=pt-br" title="Gerenciar eventos ao vivo" class="devsite-navigation-title ">Gerenciar eventos ao vivo</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_insight?hl=pt-br" title="Recuperar dados do Insight para um vídeo" class="devsite-navigation-title ">Recuperar dados do Insight para um vídeo</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/developers_guide_protocol?hl=pt-br" title="(Versão para impressão)" class="devsite-navigation-title ">(Versão para impressão)</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/reference?hl=pt-br" title="Guia de referência (v2.0)" class="devsite-navigation-title ">Guia de referência (v2.0)</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/2.0/migration?hl=pt-br" title="Guia de migração (v2.0)" class="devsite-navigation-title ">Guia de migração (v2.0)</a></li><li class="devsite-navigation-item"><a href="http://gdata.youtube.com/demo/index.html" title="Demonstração interativa" class="devsite-navigation-title ">Demonstração interativa</a></li></ul></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/analytics/?hl=pt-br" title="API do YouTube Analytics" class="devsite-navigation-title ">API do YouTube Analytics</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/analytics/getting_started?hl=pt-br" title="Primeiros passos" class="devsite-navigation-title ">Primeiros passos</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/registering_an_application?hl=pt-br" title="Receber credenciais de autenticação" class="devsite-navigation-title ">Receber credenciais de autenticação</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/authentication?hl=pt-br" title="Solicitações de autorização" class="devsite-navigation-title ">Solicitações de autorização</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/libraries?hl=pt-br" title="Bibliotecas de clientes" class="devsite-navigation-title ">Bibliotecas de clientes</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/analytics/v1/code_samples/?hl=pt-br" title="Exemplos de código" class="devsite-navigation-title ">Exemplos de código</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/code_samples/apps-script?hl=pt-br" title="Apps Script" class="devsite-navigation-title ">Apps Script</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/code_samples/java?hl=pt-br" title="Java" class="devsite-navigation-title ">Java</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/code_samples/javascript?hl=pt-br" title="JavaScript" class="devsite-navigation-title ">JavaScript</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/code_samples/python?hl=pt-br" title="Python" class="devsite-navigation-title ">Python</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/code_samples/ruby?hl=pt-br" title="Ruby" class="devsite-navigation-title ">Ruby</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/sample-requests?hl=pt-br" title="Exemplos de solicitações" class="devsite-navigation-title ">Exemplos de solicitações</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/sample-application?hl=pt-br" title="Exemplo de aplicativos" class="devsite-navigation-title ">Exemplo de aplicativos</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/analytics/v1/?hl=pt-br" title="Referência" class="devsite-navigation-title ">Referência</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/analytics/v1/reports?hl=pt-br" title="Relatórios" class="devsite-navigation-title ">Relatórios</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/channel_reports?hl=pt-br" title="Relatórios de canal" class="devsite-navigation-title ">Relatórios de canal</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/content_owner_reports?hl=pt-br" title="Relatórios do proprietário do conteúdo" class="devsite-navigation-title ">Relatórios do proprietário do conteúdo</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/dimsmets/dims?hl=pt-br" title="Dimensões" class="devsite-navigation-title ">Dimensões</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/v1/dimsmets/mets?hl=pt-br" title="Métricas" class="devsite-navigation-title ">Métricas</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/analytics/revision_history?hl=pt-br" title="Histórico de revisões" class="devsite-navigation-title ">Histórico de revisões</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/live/?hl=pt-br" title="API de transmissão do YouTube ao vivo" class="devsite-navigation-title ">API de transmissão do YouTube ao vivo</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/live/getting-started?hl=pt-br" title="Guia de visão geral da API" class="devsite-navigation-title ">Guia de visão geral da API</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/authentication?hl=pt-br" title="Autenticação" class="devsite-navigation-title ">Autenticação</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/life-of-a-broadcast?hl=pt-br" title="A vida de uma transmissão" class="devsite-navigation-title ">A vida de uma transmissão</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/live/code_samples/?hl=pt-br" title="Exemplos de código" class="devsite-navigation-title ">Exemplos de código</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/code_samples/java?hl=pt-br" title="Java" class="devsite-navigation-title ">Java</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/code_samples/php?hl=pt-br" title="PHP" class="devsite-navigation-title ">PHP</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/code_samples/python?hl=pt-br" title="Python" class="devsite-navigation-title ">Python</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/live/docs/?hl=pt-br" title="Referência da API" class="devsite-navigation-title ">Referência da API</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts?hl=pt-br" title="LiveBroadcasts" class="devsite-navigation-title ">LiveBroadcasts</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/update?hl=pt-br" title="update" class="devsite-navigation-title ">update</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/bind?hl=pt-br" title="bind" class="devsite-navigation-title ">bind</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/transition?hl=pt-br" title="transition" class="devsite-navigation-title ">transition</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/control?hl=pt-br" title="control" class="devsite-navigation-title ">control</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveBroadcasts/delete?hl=pt-br" title="delete" class="devsite-navigation-title ">delete</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/live/docs/liveStreams?hl=pt-br" title="LiveStreams" class="devsite-navigation-title ">LiveStreams</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveStreams/list?hl=pt-br" title="list" class="devsite-navigation-title ">list</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveStreams/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveStreams/update?hl=pt-br" title="update" class="devsite-navigation-title ">update</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveStreams/delete?hl=pt-br" title="delete" class="devsite-navigation-title ">delete</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/v3/live/docs/liveCuepoints?hl=pt-br" title="LiveCuepoints" class="devsite-navigation-title ">LiveCuepoints</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/liveCuepoints/insert?hl=pt-br" title="insert" class="devsite-navigation-title ">insert</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/docs/errors?hl=pt-br" title="Errors" class="devsite-navigation-title ">Errors</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/live/revision_history?hl=pt-br" title="Histórico de revisões" class="devsite-navigation-title ">Histórico de revisões</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Ferramentas do player do YouTube" class="devsite-navigation-title devsite-navigation-title-no-path ">Ferramentas do player do YouTube</a><a class="devsite-navigation-toggle expanded"></a><ul class="devsite-navigation-section expanded"><li class="devsite-navigation-item devsite-navigation-active"><a href="https://developers.google.com/youtube/player_parameters?hl=pt-br" title="Parâmetros do player" class="devsite-navigation-title devsite-navigation-active">Parâmetros do player</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="APIs do player" class="devsite-navigation-title devsite-navigation-title-no-path ">APIs do player</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/android/player/?hl=pt-br" title="API para Android" class="devsite-navigation-title ">API para Android</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/downloads/?hl=pt-br" title="Fazer o download" class="devsite-navigation-title ">Fazer o download</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/register?hl=pt-br" title="Registrar seu aplicativo" class="devsite-navigation-title ">Registrar seu aplicativo</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/setup?hl=pt-br" title="Instruções de configuração" class="devsite-navigation-title ">Instruções de configuração</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/sample-applications?hl=pt-br" title="Amostra de aplicativos" class="devsite-navigation-title ">Amostra de aplicativos</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/package-summary?hl=pt-br" title="Guia de referência" class="devsite-navigation-title ">Guia de referência</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Interfaces" class="devsite-navigation-title devsite-navigation-title-no-path ">Interfaces</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer?hl=pt-br" title="YouTubePlayer" class="devsite-navigation-title ">YouTubePlayer</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.OnFullscreenListener?hl=pt-br" title="YouTubePlayer.OnFullscreenListener" class="devsite-navigation-title ">YouTubePlayer.OnFullscreenListener</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.OnInitializedListener?hl=pt-br" title="YouTubePlayer.OnInitializedListener" class="devsite-navigation-title ">YouTubePlayer.OnInitializedListener</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.PlaybackEventListener?hl=pt-br" title="YouTubePlayer.PlaybackEventListener" class="devsite-navigation-title ">YouTubePlayer.PlaybackEventListener</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.PlayerStateChangeListener?hl=pt-br" title="YouTubePlayer.PlayerStateChangeListener" class="devsite-navigation-title ">YouTubePlayer.PlayerStateChangeListener</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.PlaylistEventListener?hl=pt-br" title="YouTubePlayer.PlaylistEventListener" class="devsite-navigation-title ">YouTubePlayer.PlaylistEventListener</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.Provider?hl=pt-br" title="YouTubePlayer.Provider" class="devsite-navigation-title ">YouTubePlayer.Provider</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeThumbnailLoader?hl=pt-br" title="YouTubeThumbnailLoader" class="devsite-navigation-title ">YouTubeThumbnailLoader</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeThumbnailLoader.OnThumbnailLoadedListener?hl=pt-br" title="YouTubeThumbnailLoader.OnThumbnailLoadedListener" class="devsite-navigation-title ">YouTubeThumbnailLoader.OnThumbnailLoadedListener</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeThumbnailView.OnInitializedListener?hl=pt-br" title="YouTubeThumbnailView.OnInitializedListener" class="devsite-navigation-title ">YouTubeThumbnailView.OnInitializedListener</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Classificações" class="devsite-navigation-title devsite-navigation-title-no-path ">Classificações</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeApiServiceUtil?hl=pt-br" title="YouTubeApiServiceUtil" class="devsite-navigation-title ">YouTubeApiServiceUtil</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeBaseActivity?hl=pt-br" title="YouTubeBaseActivity" class="devsite-navigation-title ">YouTubeBaseActivity</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeIntents?hl=pt-br" title="YouTubeIntents" class="devsite-navigation-title ">YouTubeIntents</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerFragment?hl=pt-br" title="YouTubePlayerFragment" class="devsite-navigation-title ">YouTubePlayerFragment</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerSupportFragment?hl=pt-br" title="YouTubePlayerSupportFragment" class="devsite-navigation-title ">YouTubePlayerSupportFragment</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerView?hl=pt-br" title="YouTubePlayerView" class="devsite-navigation-title ">YouTubePlayerView</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeStandalonePlayer?hl=pt-br" title="YouTubeStandalonePlayer" class="devsite-navigation-title ">YouTubeStandalonePlayer</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeThumbnailView?hl=pt-br" title="YouTubeThumbnailView" class="devsite-navigation-title ">YouTubeThumbnailView</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Enumerações" class="devsite-navigation-title devsite-navigation-title-no-path ">Enumerações</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeInitializationResult?hl=pt-br" title="YouTubeInitializationResult" class="devsite-navigation-title ">YouTubeInitializationResult</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.ErrorReason?hl=pt-br" title="YouTubePlayer.ErrorReason" class="devsite-navigation-title ">YouTubePlayer.ErrorReason</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer.PlayerStyle?hl=pt-br" title="YouTubePlayer.PlayerStyle" class="devsite-navigation-title ">YouTubePlayer.PlayerStyle</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeThumbnailLoader.ErrorReason?hl=pt-br" title="YouTubeThumbnailLoader.ErrorReason" class="devsite-navigation-title ">YouTubeThumbnailLoader.ErrorReason</a></li></ul></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/android/player/revision_history?hl=pt-br" title="Histórico de revisões" class="devsite-navigation-title ">Histórico de revisões</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/iframe_api_reference?hl=pt-br" title="API do IFrame" class="devsite-navigation-title ">API do IFrame</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/js_api_reference?hl=pt-br" title="API do JavaScript" class="devsite-navigation-title ">API do JavaScript</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/flash_api_reference?hl=pt-br" title="API do Flash (AS3)" class="devsite-navigation-title ">API do Flash (AS3)</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/v3/guides/ios_youtube_helper?hl=pt-br" title="Biblioteca auxiliar do iOS" class="devsite-navigation-title ">Biblioteca auxiliar do iOS</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/youtube_player_demo?hl=pt-br" title="Demonstração da API do Player" class="devsite-navigation-title ">Demonstração da API do Player</a></li></ul></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/youtube_subscribe_button?hl=pt-br" title="Botão &amp;quot;Inscrever-se&amp;quot; do YouTube" class="devsite-navigation-title ">Botão &amp;quot;Inscrever-se&amp;quot; do YouTube</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/youtube_upload_widget?hl=pt-br" title="Widget de envio do YouTube" class="devsite-navigation-title ">Widget de envio do YouTube</a></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Receber ajuda" class="devsite-navigation-title devsite-navigation-title-no-path ">Receber ajuda</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="http://stackoverflow.com/questions/ask?tags=youtube-api" title="Fazer uma pergunta" class="devsite-navigation-title ">Fazer uma pergunta</a></li><li class="devsite-navigation-item"><a href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20%28Defect%20Report%29" title="Registrar um erro" class="devsite-navigation-title ">Registrar um erro</a></li><li class="devsite-navigation-item"><a href="https://code.google.com/p/gdata-issues/issues/entry?template=YouTube%20%28Enhancement%20Request%29" title="Solicitar um recurso" class="devsite-navigation-title ">Solicitar um recurso</a></li><li class="devsite-navigation-item"><a href="https://code.google.com/p/gdata-issues/issues/list?q=label:API-YouTube" title="Ver questões em aberto" class="devsite-navigation-title ">Ver questões em aberto</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Manter-se informado" class="devsite-navigation-title devsite-navigation-title-no-path ">Manter-se informado</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="http://apiblog.youtube.com/" title="Blog de API do YouTube" class="devsite-navigation-title ">Blog de API do YouTube</a></li><li class="devsite-navigation-item"><a href="http://google.com/+YouTubeDev" title="Google+" class="devsite-navigation-title ">Google+</a></li><li class="devsite-navigation-item"><a href="https://groups.google.com/forum/#%21forum/youtube-api" title="Anúncios de e-mail" class="devsite-navigation-title ">Anúncios de e-mail</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a href="https://developers.google.com/youtube/terms?hl=pt-br" title="Termos de Serviço" class="devsite-navigation-title ">Termos de Serviço</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/branding_guidelines?hl=pt-br" title="Diretrizes da promoção de marca" class="devsite-navigation-title ">Diretrizes da promoção de marca</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/creating_monetizable_applications?hl=pt-br" title="Diretrizes de monetização" class="devsite-navigation-title ">Diretrizes de monetização</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/youtube-api-list?hl=pt-br" title="APIs sujeitas à Política de suspensão" class="devsite-navigation-title ">APIs sujeitas à Política de suspensão</a></li></ul></li><li class="devsite-navigation-item devsite-navigation-item-header devsite-navigation-item-header-expandable"><a title="Mais" class="devsite-navigation-title devsite-navigation-title-no-path ">Mais</a><a class="devsite-navigation-toggle collapsed"></a><ul class="devsite-navigation-section collapsed"><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/ytdirect?hl=pt-br" title="YouTube Direct" class="devsite-navigation-title ">YouTube Direct</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/academy/apis/youtube/?hl=pt-br" title="Treinamento" class="devsite-navigation-title ">Treinamento</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/articles?hl=pt-br" title="Artigos" class="devsite-navigation-title ">Artigos</a></li><li class="devsite-navigation-item"><a href="https://developers.google.com/youtube/compatibility_guidelines?hl=pt-br" title="Diretrizes de compatibilidade" class="devsite-navigation-title ">Diretrizes de compatibilidade</a></li></ul></li></ul></nav>
+
+
+      </div>
+      
+
+      <div id="gc-content" class="wide-sidebar">
+        
+        <div>
+  
+          
+  
+  <h1 itemprop="name" class="page-title">Parâmetros do player incorporado do YouTube</h1>
+  
+  <div itemprop="articleBody">
+  
+
+    <div itemscope="" itemtype="http://developers.google.com/ReferenceObject">
+    <meta itemprop="name" content="Parâmetros do player incorporado">
+
+<style>ol.toc {
+  list-style-type: none;
+}
+ol.toc ol {
+  list-style-type: none;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/screen.html">
+<link rel="stylesheet" type="text/css" href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/local_extensions.css">
+<link rel="stylesheet" type="text/css" href="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/youtube_css.css">
+
+<h1>Conteúdo</h1>
+<ol class="toc">
+  <li><a href="#Overview">Visão geral</a></li>
+  <li><a href="#Embedding_a_Player%20">Como incorporar um player do YouTube</a>
+    <ul class="treelist">
+      <li><a href="#Manual_IFrame_Embeds">Incorporações do IFrame usando tags <code>&lt;iframe&gt;</code></a></li>
+      <li><a href="#IFrame_Player_API">Incorporações do IFrame com IFrame Player API</a></li>
+      <li><a href="#AS3_Object_Embeds">Incorporações de objetos AS3</a></li>
+    </ul>
+  </li>
+  <li><a href="#Selecting_Content_to_Play">Como selecionar conteúdo para reproduzir</a></li>
+  <li><a href="#Parameters">Parâmetros</a>
+    <ul class="treelist">
+      <li><a href="#autohide"><code>autohide</code></a></li>
+      <li><a href="#autoplay"><code>autoplay</code></a></li>
+
+      <li><a href="#cc_load_policy"><code>cc_load_policy</code></a></li>
+      <li><a href="#color"><code>color</code></a></li>
+      <li><a href="#controls"><code>controls</code></a></li>
+      <li><a href="#disablekb"><code>disablekb</code></a></li>
+      <li><a href="#enablejsapi"><code>enablejsapi</code></a></li>
+      <li><a href="#end"><code>end</code></a></li>
+      <li><a href="#fs"><code>fs</code></a></li>
+      <li><a href="#hl"><code>hl</code></a></li>
+      <li><a href="#iv_load_policy"><code>iv_load_policy</code></a></li>
+      <li><a href="#list"><code>list</code></a></li>
+      <li><a href="#listType"><code>listType</code></a></li>
+      <li><a href="#loop"><code>loop</code></a></li>
+      <li><a href="#modestbranding"><code>modestbranding</code></a></li>
+      <li><a href="#origin"><code>origin</code></a></li>
+      <li><a href="#playerapiid"><code>playerapiid</code></a></li>
+      <li><a href="#playlist"><code>playlist</code></a></li>
+      <li><a href="#playsinline"><code>playsinline</code></a></li>
+      <li><a href="#rel"><code>rel</code></a></li>
+      <li><a href="#showinfo"><code>showinfo</code></a></li>
+      <li><a href="#start"><code>start</code></a></li>
+      <li><a href="#theme"><code>theme</code></a></li>
+
+    </ul>
+  </li>
+  <li><a href="#Revision_History">Histórico de revisões</a></li>
+</ol>
+
+<h1 id="Overview">Visão geral</h1>
+
+<p>Este documento explica como incorporar um player do YouTube em seu aplicativo e ainda define os parâmetros disponíveis nele.</p>
+
+
+<p>Os players do YouTube podem ser incorporados em uma página usando uma tag do <code>&lt;iframe&gt;</code> como do <code>&lt;object&gt;</code>.
+ Anexando parâmetros no IFrame ou no URL do SWF, você personaliza a 
+experiência de reprodução em seu aplicativo. Por exemplo, é possível 
+reproduzir vídeos de modo automático com o parâmetro <code><a href="#autoplay">autoplay</a></code> ou de forma repetida com o parâmetro <code><a href="#loop">loop</a></code>. Você também pode ativar a <a href="https://developers.google.com/youtube/js_api_reference?hl=pt-br">API JavaScript</a> para o player com o parâmetro <code><a href="#enablejsapi">enablejsapi</a></code>.</p>
+
+<p>No momento, estão definidos nesta página todos os parâmetros aceitos em <span id="first_change_text">qualquer player incorporado do YouTube</span>. A definição de cada parâmetro identifica os players que o aceitam.</p>
+
+<p class="note"><strong>Nota:</strong> É necessário que os players 
+incorporados tenham uma Janela de visualização de pelo menos 200 px por 
+200 px. Se o player mostra controles, ele tem que ser grande o 
+suficiente para exibir completamente os controles sem encolher a Janela 
+visualização abaixo do tamanho mínimo. Recomendamos que players de 16:9 
+tenham pelo menos 480 pixels de largura e 270 pixels de altura.</p>
+
+
+<h1 id="Embedding_a_Player">Como incorporar um player do YouTube</h1>
+
+<p class="special"><strong>Práticas recomendadas:</strong> recomendam-se
+ as incorporações do IFrame como método para incorporar um player do 
+YouTube, pois a seleção do player apropriado com base nas habilidades do
+ cliente e nos formatos de arquivo disponíveis no YouTube será feita no 
+IFrame.</p>
+
+<p>Você pode usar qualquer método a seguir para incorporar um player do 
+YouTube em seu aplicativo e especificar seus parâmetros. As instruções 
+abaixo demonstram como incorporar um player que carregue um vídeo único.
+ A seção a seguir explica como configurar seu player para carregar 
+outros tipos de conteúdo, como playlists e resultados de pesquisas.</p>
+
+<ul>
+  <li id="Manual_IFrame_Embeds">
+    <p><strong>Incorporações do IFrame com tags <code>&lt;iframe&gt;</code></strong></p>
+    <p>Defina em seu aplicativo uma tag do <code>&lt;iframe&gt;</code> em que o URL <code>src</code> especifique o conteúdo que o player carregará, além de todos os outros parâmetros do player que deseje definir. Os parâmetros <code>height</code> e <code>width</code> da tag do <code>&lt;iframe&gt;</code> especificam as dimensões do player.</p>
+    <p>Ao criar o elemento <code>&lt;iframe&gt;</code> sem usar o IFrame Player API, você pode anexar os parâmetros do player diretamente no final do URL, cujo formato é:</p>
+    <pre>http://www.youtube.com/embed/<strong>VIDEO_ID</strong></pre>
+    <p>A tag <code>&lt;iframe&gt;</code> abaixo carrega um player de 640 x 390 px que reproduz o vídeo <code>M7lc1UVf-VE</code> do YouTube. Já que o URL define o parâmetro <code>autoplay</code> como <code>1</code>, o vídeo é reproduzido automaticamente assim que o player é carregado.</p>
+    <pre>&lt;iframe id="ytplayer" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&amp;origin=http://example.com"
+  frameborder="0"/&gt;
+</pre>
+  </li>
+  <li id="IFrame_Player_API">
+    <p><strong>Incorporações do IFrame usando IFrame Player API</strong></p>
+    <p>Siga as <a href="https://developers.google.com/youtube/iframe_api_reference?hl=pt-br#Loading_a_Video_Player">instruções da IFrame Player API</a>
+ para inserir um player de vídeo em sua página da Web ou em seu 
+aplicativo após o carregamento do código de JavaScript da API do player.
+ O segundo parâmetro no construtor do player de vídeo é um objeto que 
+especifica as opções do player. Dentro desse objeto, a propriedade <code>playerVars</code> identifica parâmetros do player.</p>
+    <p>Os códigos HTML e JavaScript, abaixo, mostram um exemplo simples 
+que insere um player do YouTube no elemento da página que tem um valor 
+de <code>id</code> de <code>ytplayer</code>. A função <code>onYouTubePlayerAPIReady()</code>
+ especificada aqui é chamada automaticamente quando o código da IFrame 
+Player API é carregado. Este código não define parâmetros do player nem 
+outros manipuladores de eventos.</p>
+    <pre>&lt;div id="ytplayer"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an &lt;iframe&gt; and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '390',
+      width: '640',
+      videoId: 'M7lc1UVf-VE'
+    });
+  }
+&lt;/script&gt;
+</pre>
+  </li>
+  <li id="AS3_Object_Embeds">
+    <p><strong>Incorporações de objetos AS3</strong></p>
+    <p>Nas incorporações do objeto é usada uma tag <code>&lt;object&gt;</code>
+ para especificar as dimensões e os parâmetros do player. O exemplo de 
+código abaixo demonstra como usar uma incorporação de objeto para 
+carregar um player AS3 que automaticamente reproduza o mesmo vídeo dos 
+dois exemplos anteriores.</p>
+    <pre>&lt;object width="640" height="390"&gt;
+  &lt;param name="movie"
+         value="https://www.youtube.com/v/M7lc1UVf-VE?version=3&amp;autoplay=1"&gt;&lt;/param&gt;
+  &lt;param name="allowScriptAccess" value="always"&gt;&lt;/param&gt;
+  &lt;embed src="https://www.youtube.com/v/M7lc1UVf-VE?version=3&amp;autoplay=1"
+         type="application/x-shockwave-flash"
+         allowscriptaccess="always"
+         width="640" height="390"&gt;&lt;/embed&gt;
+&lt;/object&gt;
+</pre>
+  </li>
+</ul>
+
+<h1 id="Selecting_Content_to_Play">Como selecionar conteúdo para reproduzir</h1>
+
+<p>É possível configurar seu player incorporado para carregar um vídeo, 
+vídeos carregados pelo usuário ou resultados de pesquisa de determinada 
+consulta. Entretanto, opções diferentes de carregar um único vídeo são 
+aceitas apenas em incorporações de objetos AS3 e em incorporações do 
+IFrame que carregam o player AS3. (Incorporações do IFrame também 
+carregam o player do HTML5.)</p>
+
+<p>A lista que segue explica essas opções:</p>
+
+<ul>
+  <li>
+    <p><strong>Carregar um vídeo</strong></p>
+    <p>Para uma incorporação do IFrame, o ID do vídeo do YouTube para o vídeo que você deseja carregar é especificado no URL <code>src</code> do IFrame. Para uma incorporação de objetos AS3, o ID do vídeo é especificado no URL SWF do player.</p>
+    <pre><strong>IFrame embed:</strong>
+http://www.youtube.com/embed/<strong>VIDEO_ID</strong>
+
+<strong>Embedded AS3 player:</strong>
+http://www.youtube.com/v/<strong>VIDEO_ID</strong>?version=3
+
+<strong>Chromeless AS3 player:</strong>
+http://www.youtube.com/apiplayer?video_id=<strong>VIDEO_ID</strong>&amp;version=3
+</pre>
+
+    <p>Se estiver usando a API de dados (v3) do YouTube, você pode 
+construir esses URLs de forma programática com a recuperação dos IDs do 
+vídeo de <a href="https://developers.google.com/youtube/v3/docs/search?hl=pt-br#resource">resultados de pesquisa</a>, <a href="https://developers.google.com/youtube/v3/docs/playlistItems?hl=pt-br#resource">recursos de item de playlist</a>, <a href="https://developers.google.com/youtube/v3/docs/videos?hl=pt-br#resource">recursos de vídeo</a> ou outros recursos. Depois de conseguir um ID do vídeo, substitua o texto <code>VIDEO_ID</code> nos URLs acima por esse valor para criar o URL do player.</p>
+
+
+  </li>
+  <li>
+    <p><strong>Carregar uma playlist</strong></p>
+    <p>Configure o parâmetro <code><a href="#listType">listType</a></code> do player como <code>playlist</code>. Além disso, defina o parâmetro <code><a href="#list">list</a></code> do player como o ID da playlist do YouTube que deseja carregar.</p>
+    <pre>http://www.youtube.com/embed?listType=playlist&amp;list=<strong>PLAYLIST_ID</strong></pre>
+<p>É necessário adicionar as letras <code>PL</code> no início do ID da playlist, conforme mostrado no exemplo a seguir:</p>
+    <pre>http://www.youtube.com/embed?listType=playlist&amp;list=<strong>PLC77007E23FF423C6</strong></pre>
+    <p>Se estiver usando a API de dados (v3) do YouTube, você pode 
+construir esses URLs de forma programática com a recuperação dos IDs da 
+playlist de <a href="https://developers.google.com/youtube/v3/docs/search?hl=pt-br#resource">resultados de pesquisa</a>, <a href="https://developers.google.com/youtube/v3/docs/channels?hl=pt-br#contentDetails.relatedPlaylists">recursos do canal</a> ou <a href="https://developers.google.com/youtube/v3/docs/activities?hl=pt-br#resource">recursos de atividade</a>. Depois de recuperar um ID da playlist, substitua o texto <code>PLAYLIST_ID</code> no URL acima por esse valor.</p>
+  </li>
+  <li>
+    <p><strong>Carregar vídeos enviados por um usuário</strong></p>
+    <p>Defina o parâmetro <code><a href="#listType">listType</a></code> do player como <code>user_uploads</code>. Defina também o parâmetro <code><a href="#list">list</a></code> do player como o nome de usuário do YouTube cujos vídeos enviados você deseja carregar.</p>
+    <pre>http://www.youtube.com/embed?listType=user_uploads&amp;list=<strong>USERNAME</strong></pre>
+  </li>
+  <li>
+    <p><strong>Carregar resultados de pesquisa referentes a uma consulta especificada</strong></p>
+    <p>Defina o parâmetro <code><a href="#listType">listType</a></code> do player como <code>search</code>. Defina também o parâmetro <code><a href="#list">list</a></code> do player como o termo de consulta que você quer que seja carregado nos resultados da pesquisa do player.</p>
+    <pre>http://www.youtube.com/embed?listType=search&amp;list=<strong>QUERY</strong></pre>
+  </li>
+</ul>
+
+<h1 id="Parameters">Parâmetros</h1>
+
+<p>Todos os parâmetros a seguir são opcionais. A lista mostra parâmetros aceitos em <span id="second_change_text">qualquer player incorporado do YouTube</span>.
+ Se todos os players não aceitarem determinado parâmetro, a definição 
+dele identificará os players que não o aceitam. Esses parâmetros são 
+oficialmente aceitos apenas pelo player incorporado, mas alguns deles 
+podem funcionar com outros players, como o player da playlist.</p>
+
+<p><strong>Nota:</strong> é possível carregar tanto o player HTML5 
+quanto o AS3 por meio das incorporações do IFrame. Embora alguns 
+parâmetros não sejam aceitos nos dois players, uma incorporação do 
+IFrame que carregue o player AS3 aceita todos os parâmetros que 
+funcionam com esse player e ignora todos os outros. Da mesma maneira, 
+uma incorporação do IFrame que carregue o player HTML5 aceita todos os 
+parâmetros que funcionam com esse player, ignorando todos os outros.</p>
+
+<p>Por exemplo, no momento, o player HTML5 não é compatível com o parâmetro <code><a href="#playerapiid">playerapiid</a></code>,
+ porém, ainda é possível especificar esse parâmetro durante a criação de
+ uma incorporação do IFrame. Se a incorporação carregar o player AS3, 
+ele aceitará o parâmetro e, se ela carregar o player HTML5, o player irá
+ ignorá-lo.</p>
+
+<h3 id="parameter-subheader" style="padding-bottom:6px">Todos os parâmetros do player do YouTube</h3>
+
+<p></p>
+<dl>
+  <dt id="autohide"><code itemprop="property">autohide</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="autohide-definition">Valores: <code>2</code> (padrão), <code>1</code>, e <code>0</code>.
+ Este parâmetro indica se os controles de vídeo serão automaticamente 
+ocultados depois que um vídeo começar a ser reproduzido. O comportamento
+ padrão (<code>autohide=2</code>) é para que a barra de progresso do 
+vídeo comece a desaparecer enquanto os controles do player (botão de 
+reprodução, controle de volume, etc.) permaneçam visíveis.<br><br><ul> <li>Se esse parâmetro for definido como <code>1</code>,
+ a barra de progresso do vídeo e os controles do player sairão do campo 
+de visão alguns segundos depois que o vídeo começar a ser reproduzido. 
+Eles só voltarão a aparecer se o usuário mover o mouse sobre o vídeo ou 
+pressionar qualquer tecla no teclado.</li> <li>Se esse parâmetro for definido como <code>0</code>, a barra de progresso do vídeo e os controles do player permanecerão visíveis durante o vídeo e em tela inteira.</li> </ul></dd>
+
+  <dt id="autoplay"><code itemprop="property">autoplay</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="autoplay-definition">Valores: <code>0</code> ou <code>1</code>. O valor padrão é <code>0</code>. Define se o vídeo inicial será ou não reproduzido automaticamente quando o player é carregado.<br><br></dd>
+
+
+
+  <dt id="cc_load_policy"><code itemprop="property">cc_load_policy</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+  <dd id="cc_load_policy-definition">Valores: <code>1</code>. O padrão é baseado na preferência do usuário. Definir esse parâmetro como <code>1</code> fará com que as legendas ocultas sejam mostradas por padrão, mesmo que o usuário tenha desativado as legendas.<br><br></dd>
+
+  <dt id="color"><code itemprop="property">color</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="color-definition">Este parâmetro especifica a cor que será 
+usada na barra de progresso do vídeo, no player, para destacar a 
+quantidade de vídeos que o usuário já visualizou. Os valores válidos dos
+ parâmetros são <code>red</code> e <code>white</code> e, por padrão, o player usará a cor vermelha na barra de progresso do vídeo. Acesse o <a href="http://apiblog.youtube.com/2011/08/coming-soon-dark-player-for-embeds.html">blog de API do YouTube</a> para mais informações sobre opções de cores.<br><br><strong>Nota:</strong> configurar o parâmetro <code>color</code> como <code>white</code> desativará a opção <code><a href="#modestbranding">modestbranding</a></code>.<br><br></dd>
+
+  <dt id="controls"><code itemprop="property">controls</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="controls-definition">Valores: <code>0</code>, <code>1</code> ou <code>2</code>. O padrão é <code>1</code>.
+ Este parâmetro indica se os controles do player do vídeo serão 
+exibidos. Para incorporações do IFrame carregando um Flash player, o 
+parâmetro também define quando os controles serão exibidos no player e 
+quando o player carregará:
+      <p></p><ul>
+        <li><code>controls=0</code> – Os controles não são exibidos no player. Para incorporações do IFrame, o Flash Player carrega imediatamente.</li>
+        <li><code>controls=1</code> – Os controles são exibidos no 
+player. Para incorporações do IFrame, os controles são exibidos 
+imediatamente e o Flash Player é carregado imediatamente.</li>
+        <li><code>controls=2</code> – Os controles são exibidos no 
+player. Para incorporações do IFrame, os controles são exibidos e o 
+Flash Player é carregado após o usuário iniciar a reprodução do vídeo.</li>
+      </ul><p></p>
+      <strong>Nota:</strong> os valores de parâmetro <code>1</code> e <code>2</code> oferecem uma experiência do usuário idêntica, porém, <code>controls=2</code> traz uma melhoria de desempenho com relação a <code>controls=1</code>
+ para incorporações do IFrame. No momento, os dois valores ainda geram 
+algumas diferenças visuais no player, como tamanho da fonte do título do
+ vídeo. No entanto, quando a diferença entre os dois valores se torna 
+praticamente invisível para o usuário, o valor padrão do parâmetro pode 
+variar entre <code>1</code> e <code>2</code>.<br><br>
+    </dd>
+
+  <dt id="disablekb"><code itemprop="property">disablekb</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="disablekb-definition">Valores: <code>0</code> ou <code>1</code>. O padrão é <code>0</code>. Definir como <code>1</code> desabilita os controles de teclado do player. Os controles do teclado são os seguintes:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barra de espaço: Reproduzir/Pausar
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seta para a esquerda: Voltar 10% no vídeo atual
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seta para a direita: Avançar 10% no vídeo atual
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seta para cima: Aumentar o volume
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seta para baixo: Diminuir o volume
+    <br><br></dd>
+
+  <dt id="enablejsapi"><code itemprop="property">enablejsapi</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="enablejsapi-definition">Valores: <code>0</code> ou <code>1</code>. O valor padrão é <code>0</code>. Configurar este parâmetro como <code>1</code> ativará a API Javascript. Para mais informações sobre a API Javascript e como utilizá-la, consulte a <a href="https://developers.google.com/youtube/js_api_reference?hl=pt-br">documentação da API JavaScript</a>.<br><br></dd>
+
+  <dt id="end"><code itemprop="property">end</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="start-definition">Valores: um número inteiro positivo. Este 
+parâmetro especifica o tempo, medido em segundos, desde o início do 
+vídeo, quando o player deve parar de reproduzir o vídeo. O tempo é 
+medido do início do vídeo, não do valor do parâmetro <code>start</code> do player nem do parâmetro <code>startSeconds</code>, usado nas funções da API do Player do YouTube para carregar ou consultar um vídeo.<br><br></dd>
+
+
+  <dt id="fs"><code itemprop="property">fs</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="fs-definition">Valores: <code>0</code> ou <code>1</code>. O valor padrão é <code>1</code>, que ativa a exibição do botão de tela cheia. Definir este parâmetro como <code>0</code> impede que o botão de tela inteira apareça.<br><br>
+</dd>
+
+  <dt id="hl"><code itemprop="property">hl</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="fs-definition">Define o idioma da interface do player. O valor do parâmetro é um <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">código de idioma de duas letras ISO 639-1</a>, embora outros códigos de entrada de idioma como tags de idioma IETF (BCP 47) também possam ser tratados adequadamente.<br><br>O
+ idioma da interface é utilizado para dicas de ferramenta no player e 
+também afeta a faixa de legenda padrão. É possível que um idioma da 
+faixa de legenda diferente seja selecionado pelo YouTube para um 
+determinado usuário com base nas preferências individuais de idioma do 
+usuário e na disponibilidade das faixas de legenda.<br><br></dd>
+
+  <dt id="iv_load_policy"><code itemprop="property">iv_load_policy</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+  <dd id="iv_load_policy-definition">Valores: <code>1</code> ou <code>3</code>. O valor padrão é <code>1</code>. Definir como <code>1</code> fará com que as anotações do vídeo sejam exibidas por padrão, enquanto definir como <code>3</code> fará com que elas não apareçam.<br><br></dd>
+
+  <dt id="list"><code itemprop="property">list</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+  <dd id="list-definition">O conteúdo que será carregado no player é identificado no parâmetro <code>list</code> combinado com o parâmetro <code><a href="#listType">listType</a></code>.<br>
+    <ul>
+      <li>Se o valor do parâmetro <code><a href="#listType">listType</a></code> for <code>search</code>, o valor do parâmetro <code>list</code> especifica a consulta de pesquisa.</li>
+      <li>Se o valor do parâmetro <code><a href="#listType">listType</a></code> for <code>user_uploads</code>, o valor do parâmetro <code>list</code> identifica o canal do YouTube, cujos vídeos enviados serão carregados.</li>
+      <li>Se o valor do parâmetro <code><a href="#listType">listType</a></code> for <code>playlist</code>, o valor do parâmetro <code>list</code> especifica o ID da playlist do YouTube. No valor do parâmetro, é necessário adicionar as letras <code>PL</code> no início do ID da playlist, conforme mostrado no exemplo a seguir:<br><pre>http://www.youtube.com/embed?listType=playlist&amp;list=PLC77007E23FF423C6</pre></li>
+    </ul>
+    <strong>Nota:</strong> se você especificar valores para os parâmetros <code><a href="#list">list</a></code> e <code>listType</code>, não será necessário que um ID do vídeo seja especificado no URL das incorporações do IFrame.<br><br>
+  </dd>
+
+  <dt id="listType"><code itemprop="property">listType</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+  <dd id="listType-definition">O conteúdo que será carregado no player é identificado pelo parâmetro <code>listType</code> combinado com o parâmetro <code><a href="#list">list</a></code>. Os valores dos parâmetros válidos são <code>playlist</code>, <code>search</code> e <code>user_uploads</code>.<br><br>Se você especificar valores para os parâmetros <code><a href="#list">list</a></code> e <code>listType</code>, não será necessário que um ID do vídeo seja especificado no URL das incorporações do IFrame.<br><br></dd>
+
+  <dt id="loop"><code itemprop="property">loop</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="loop-definition">Valores: <code>0</code> ou <code>1</code>. O valor padrão é <code>0</code>. No caso de um único player de vídeo, uma configuração igual a <code>1</code>
+ fará com que o player reproduza o vídeo inicial repetidamente. No caso 
+de um player de playlist (ou player personalizado), o player reproduzirá
+ a playlist inteira e, em seguida, começará novamente a partir do 
+primeiro vídeo.<br><br><strong>Nota:</strong> este parâmetro tem suporte
+ limitado no player AS3 e nas incorporações do IFrame, que pode carregar
+ tanto player AS3 quanto HTML5. No momento, o parâmetro <code>loop</code> funciona somente no player AS3 quando usado com o parâmetro <code><a href="#playlist">playlist</a></code>. Para reproduzir um vídeo repetidamente, defina o valor do parâmetro <code>loop</code> como <code>1</code> e o valor do parâmetro <code><a href="#playlist">playlist</a></code> como o mesmo ID do vídeo já especificado no URL da API do player:<br><pre>http://www.youtube.com/v/<strong>VIDEO_ID</strong>?version=3&amp;loop=1&amp;playlist=<strong>VIDEO_ID</strong></pre></dd>
+
+  <dt id="modestbranding"><code itemprop="property">modestbranding</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+  <dd id="modestbranding-definition">Este parâmetro permite usar um player do YouTube que não exiba o logotipo do YouTube. Defina o valor do parâmetro como <code>1</code> para impedir que o logotipo do YouTube seja exibido na barra de controle. Um pequeno rótulo de texto do <code>YouTube</code> ainda aparece no canto superior direito de um vídeo pausado quando o ponteiro do mouse do usuário passa sobre o player.<br><br></dd>
+
+  <dt id="origin"><code itemprop="property">origin</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="origin-definition">Este parâmetro fornece uma medida de 
+segurança adicional para o IFrame API, sendo aceito apenas em 
+incorporações do IFrame. Usar a API do IFrame significa que você definiu
+ o valor do parâmetro <code><a href="#enablejsapi">enablejsapi</a></code> como <code>1</code>. Sempre especifique seu domínio como o valor do parâmetro <code>origin</code>.<br><br></dd>
+
+  <dt id="playerapiid"><code itemprop="property">playerapiid</code> <span class="player-support">(players compatíveis: AS3)</span></dt>
+    <dd id="playerapiid-definition">O valor pode ser qualquer string alfanumérica. Esta configuração é usada em conjunto com a API JavaScript. Consulte a <a href="https://developers.google.com/youtube/js_api_reference?hl=pt-br">documentação da API JavaScript</a> para detalhes.<br><br></dd>
+
+  <dt id="playlist"><code itemprop="property">playlist</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="playlist-definition">Valor é uma lista de IDs de vídeos 
+separados por vírgulas a ser reproduzida. Se você especificar um valor, o
+ primeiro vídeo a ser reproduzido será o <code>VIDEO_ID</code> especificado no caminho do URL, e os vídeos especificados no parâmetro <code>playlist</code> serão reproduzidos em seguida.<br><br></dd>
+
+  <dt id="playsinline"><code itemprop="property">playsinline</code> <span class="player-support">(players compatíveis: HTML5)</span></dt>
+    <dd id="playlist-definition">Este parâmetro controla se os vídeos 
+são reproduzidos in-line ou em tela cheia em um player HTML5 no iOS. Os 
+valores válidos são:<br><ul><li><code>0</code>: este valor faz com que a
+ reprodução seja feita em tela cheia. Atualmente é o valor padrão, ainda
+ que o padrão esteja sujeito a alterações.</li><li><code>1</code>: este valor define a reprodução in-line para <code>UIWebViews</code> criada com o parâmetro <code>allowsInlineMediaPlayback</code> como <code>TRUE</code>.</li></ul></dd>
+
+  <dt id="rel"><code itemprop="property">rel</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="rel-definition">Valores: <code>0</code> ou <code>1</code>. O valor padrão é <code>1</code>. Este parâmetro indica se o player deve exibir vídeos relacionados quando a reprodução do vídeo inicial acaba.<br><br></dd>
+
+  <dt id="showinfo"><code itemprop="property">showinfo</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+  <dd id="showinfo-definition">Valores: <code>0</code> ou <code>1</code>. O valor padrão do parâmetro é <code>1</code>. Se você definir o valor do parâmetro como <code>0</code>, o player não exibirá informações como título do vídeo e remetente antes de o vídeo começar a ser reproduzido.<br><br>Se o player estiver carregando uma playlist e você definir explicitamente o valor como <code>1</code>,
+ ao carregar, o player também exibirá imagens em miniatura dos vídeos na
+ lista. Essa funcionalidade é aceita apenas no player AS3, o único capaz
+ de carregar uma playlist.<br><br></dd>
+
+  <dt id="start"><code itemprop="property">start</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="start-definition">Valores: um número inteiro positivo. Este 
+parâmetro faz com que o player comece a reproduzir o vídeo em um número 
+determinado de segundos a partir do início do vídeo. Assim como na 
+função <code><a href="https://developers.google.com/youtube/js_api_reference?hl=pt-br#seekTo">seekTo</a></code>,
+ o player buscará o keyframe mais próximo ao tempo que você especificar.
+ Isso quer dizer que, algumas vezes, o marcador da reprodução pode 
+chegar até um pouco antes do tempo solicitado, não mais do que dois 
+segundos, em geral.<br><br></dd>
+
+  <dt id="theme"><code itemprop="property">theme</code> <span class="player-support">(players compatíveis: AS3, HTML5)</span></dt>
+    <dd id="theme-definition">Este parâmetro indica se o player 
+incorporado exibirá os controles do player (como um botão de reprodução 
+ou controle de volume) dentro de uma barra de controle clara ou escura. 
+Os valores válidos dos parâmetros são <code>dark</code> e <code>light</code>, e, por padrão, o player exibe os controles usando o tema <code>dark</code>. Acesse o <a href="http://apiblog.youtube.com/2011/08/coming-soon-dark-player-for-embeds.html">blog de API do YouTube</a> para mais informações sobre temas claros e escuros.</dd>
+
+
+
+</dl>
+
+<h1 id="Revision_History">Histórico de revisões</h1>
+
+<div class="notranslate">
+<a name="release_notes_10_14_2014"></a>
+<h3>October 14, 2014</h3>
+
+<ul>
+  <li>
+    <p>The HTML5 player now supports the <code><a href="#cc_load_policy">cc_load_policy</a></code>, <code><a href="#disablekb">disablekb</a></code>, <code><a href="#end">end</a></code>, <code><a href="#fs">fs</a></code>, <code><a href="#list">list</a></code>, and <code><a href="#listType">listType</a></code> parameters. The parameter descriptions have been updated accordingly.</p>
+  </li>
+</ul>
+
+<a name="release_notes_07_18_2014"></a>
+<h3>July 18, 2014</h3>
+
+
+<ul>
+  <li>
+    <p>The new <code><a href="#hl">hl</a></code> parameter can be used 
+to set the player's interface language. The interface language is used 
+for tooltips in the player and also affects the default caption track. 
+The selected caption track may also depend on the availability of 
+caption tracks and user's individual language preferences.</p>
+    <p>The parameter's value is an <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO 639-1 two-letter language code</a>, though other language input codes, such as IETF language tags (BCP 47) may also be handled properly.</p>
+  </li>
+  <li>
+    <p>The definition of the <code><a href="#playsinline">playsinline</a></code>
+ parameter, which only affects HTML5 players on iOS, has been modified 
+slightly. The definition now notes that setting the parameter value to <code>1</code> causes inline playback only for <code>UIWebViews</code> created with the <code>allowsInlineMediaPlayback</code> property set to <code>TRUE</code>.</p>
+  </li>
+</ul>
+
+<a name="release_notes_01_28_2014"></a>
+<h3>January 28, 2014</h3>
+
+
+<ul>
+  <li>
+    <p>The <code><a href="#playsinline">playsinline</a></code> parameter controls whether videos play inline or fullscreen in an HTML5 player on iOS. Setting the value to <code>1</code> causes inline playback.</p>
+  </li>
+
+
+
+
+  <li>
+    <p>The <a href="#Selecting_Content_to_Play">Selecting content to play</a>
+ section has been updated to explain how to find YouTube video IDs and 
+playlist IDs using the YouTube Data API (v3) rather than the older API 
+version.</p>
+  </li>
+  <li>
+    <p>The <code><a href="#controls">controls</a></code> parameter's 
+definition has been updated to reflect the fact that the parameter value
+ only affects the time that the Flash player actually loads in IFrame 
+embeds. In addition, for IFrame embeds, the parameter value also 
+determines when the controls display in the player. If you set the 
+parameter's value to <code>2</code>, then the controls display and the Flash player loads after the user initiates the video playback.</p>
+  </li>
+</ul>
+
+<a name="release_notes_05_10_2013"></a>
+<h3>May 10, 2013</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>YouTube no longer identifies experimental API features and services. Instead, we now provide a list of <a href="https://developers.google.com/youtube/youtube-api-list?hl=pt-br">YouTube APIs that are subject to the deprecation policy</a>.</p>
+  </li>
+</ul>
+
+<a name="release_notes_07_20_2012"></a>
+<h3>July 20, 2012</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The definition of the <code><a href="#controls">controls</a></code> parameter has been updated to reflect support for a parameter value of <code>2</code> and to explain that, for AS3 players, the parameter value determines the time when the Flash player actually loads. If the <code><a href="#controls">controls</a></code> parameter is set to <code>0</code> or <code>1</code>, the Flash player loads immediately. If the parameter value is <code>2</code>, the Flash player does not load until the video playback is initiated.</p>
+  </li>
+</ul>
+
+<a name="release_notes_06_05_2012"></a>
+<h3>June 5, 2012</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The HTML5 player now supports the <code><a href="#color">color</a></code>, <code><a href="#modestbranding">modestbranding</a></code>, and <code><a href="#rel">rel</a></code> parameters, and the definitions for these parameters have been updated accordingly.</p>
+  </li>
+  <li>
+    <p>The definition of the <code><a href="#showinfo">showinfo</a></code>
+ parameter has been updated to explain how that if the player is loading
+ a playlist, and you explicitly set the parameter value to <code>1</code>,
+ then, upon loading, the player will also display thumbnail images for 
+the videos in the playlist. Note that this functionality is only 
+supported for the AS3 player since that is the only player that can load
+ a playlist.</p>
+  </li>
+</ul>
+
+<a name="release_notes_05_04_2012"></a>
+<h3>May 4, 2012</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The <code><a href="#showinfo">showinfo</a></code> parameter's definition has been updated to reflect the fact that the HTML5 player supports this parameter.</p>
+  </li>
+</ul>
+
+<a name="release_notes_05_03_2012"></a>
+<h3>May 3, 2012</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The new <code><a href="#end">end</a></code> parameter specifies 
+the time, measured in seconds from the start of the video, when the 
+player should stop playing a video. Note that the time when playback is 
+stopped is measured from the beginning of the video and not from the 
+value of either the <code>start</code> player parameter or the <code>startSeconds</code> parameter, which is used in YouTube Player API functions for loading or queueing a video.</p>
+  </li>
+</ul>
+
+<a name="release_notes_03_29_2012"></a>
+<h3>March 29, 2012</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The new <a href="#Embedding_a_Player%20">Embedding a YouTube player</a>
+ section explains different ways to embed a YouTube player in your 
+application. This section covers manual IFrame embeds, IFrame embeds 
+that use the IFrame Player API, and AS3 and AS2 object embeds. This 
+section incorporates information from the old <strong>Example usage</strong> section, which has been removed.</p>
+  </li>
+  <li>
+    <p>The new <a href="#Selecting_Content_to_Play">Selecting content to play</a>
+ section explains how to configure the player to load a video, a 
+playlist, search results for a specified query, or uploaded videos for a
+ specified user.</p>
+  </li>
+  <li>
+    <p>The new <code><a href="#list">list</a></code> and <code><a href="#listType">listType</a></code>
+ parameters let you specify the content that the player should load. You
+ can specify a playlist, a search query, or a particular user's uploaded
+ videos.</p>
+  </li>
+  <li>
+    <p>The definitions of the <code><a href="#fs">fs</a></code> and <code><a href="#rel">rel</a></code> parameters have been updated to more clearly explain the default parameter values for the AS3 player.</p>
+  </li>
+  <li>
+    <p>The <code><a href="#border">border</a></code>, <code><a href="#color1">color1</a></code>, <code><a href="#egm">egm</a></code>, <code><a href="#hd">hd</a></code>, and <code><a href="#showsearch">showsearch</a></code> parameters, which are all only supported for the deprecated AS2 Player API, have been moved to a new section named <a href="#Deprecated_Parameters">deprecated parameters only used in the AS2 Player API</a>.</p>
+  </li>
+  <li>
+    <p>The document no longer provides a way to filter the parameter 
+list to only display parameters supported in either the AS3, AS2, or 
+HTML5 player. Instead, each parameter definition has been updated to 
+identify the players that support that parameter.</p>
+  </li>
+</ul>
+
+<a name="release_notes_08_11_2011"></a>
+<h3>August 11, 2011</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The new <code><a href="#theme">theme</a></code> and <code><a href="#color">color</a></code> parameters let you customize the appearance of the embedded player's player controls. See the <a href="http://apiblog.youtube.com/2011/08/coming-soon-dark-player-for-embeds.html">YouTube API blog</a> for more information.</p>
+  </li>
+</ul>
+
+<a name="release_notes_06_08_2011"></a>
+<h3>June 8, 2011</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The new <code><a href="#modestbranding">modestbranding</a></code>
+ parameter lets you use a YouTube player that does not show a YouTube 
+logo. As of this release, the parameter was only supported for the AS3 
+embedded player and for IFrame embeds that loaded the AS3 player. As of 
+June 5, 2012, the HTML5 player also supported this parameter.</p>
+  </li>
+</ul>
+
+<a name="release_notes_02_14_2011"></a>
+<h3>February 14, 2011</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The documentation has been updated to note that the AS2 Player 
+API has been deprecated. The deprecation of the AS2 Player API was 
+actually <a href="http://apiblog.youtube.com/2009/10/actionscript-3-youtube-chromeless.html">announced</a> on October 14, 2009.</p>
+  </li>
+</ul>
+
+<a name="release_notes_02_03_2011"></a>
+<h3>February 3, 2011</h3>
+<p>This update contains the following changes:</p>
+
+<ul>
+  <li>
+    <p>The documentation has been updated to identify parameters supported in the HTML5 (<a href="https://developers.google.com/youtube/iframe_api_reference?hl=pt-br">IFrame</a>) embedded player.</p>
+  </li>
+  <li>
+    <p>The document now displays all of the parameters supported in any of YouTube's embedded players (HTML5, AS3, AS2).</p>
+  </li>
+  <li>
+    <p>The following parameters are supported in the AS2 player but have been deprecated for the newer AS3 and HTML5 players: <code><a href="#border">border</a></code>, <code><a href="#color">color1</a></code>, <code><a href="#color">color2</a></code>, <code><a href="#egm">egm</a></code>, <code><a href="#hd">hd</a></code>, and <code><a href="#showsearch">showsearch</a></code>.</p>
+    <p>In addition, the <code><a href="#loop">loop</a></code> parameter 
+has limited support in the AS3 player and in IFrame embeds, which could 
+load either an AS3 or HTML player. Currently, the <code><a href="#loop">loop</a></code> parameter only works in the AS3 player when used in conjunction with the <code><a href="#playlist">playlist</a></code> parameter. To loop a single video, set the <code><a href="#loop">loop</a></code> parameter to <code>1</code> and set the <code><a href="#playlist">playlist</a></code> parameter value to the same video ID already specified in the Player API URL:<br></p><pre>http://www.youtube.com/v/<strong>VIDEO_ID</strong>?version=3&amp;loop=1&amp;playlist=<strong>VIDEO_ID</strong></pre><p></p>
+    <p>Similarly, the <code><a href="#controls">controls</a></code> and <code><a href="#playlist">playlist</a></code> parameters are supported in the AS3 and HTML5 players but are not and will not be supported in the AS2 player.</p>
+    <p>As noted above, IFrame embeds can load either an AS3 or HTML5 
+player. Though some parameters are not supported in both players, an 
+IFrame embed that loads the AS3 player will support all parameters that 
+work with that player and ignore all other parameters. Similarly, an 
+IFrame embed that loads the HTML5 player will support all parameters 
+that work with that player while ignoring all other parameters.</p>
+  </li>
+  <li>
+    <p>The parameter list has been updated to include the <code><a href="#autohide">autohide</a></code> parameter, which indicates whether the player's video controls will automatically hide after a video begins playing.</p>
+  </li>
+  <li>
+    <p>The parameter list has been updated to include the <code><a href="#controls">controls</a></code> parameter, which indicates whether the player's video controls will display at all. (Player controls do display by default.)</p>
+  </li>
+  <li>
+    <p>The parameter list has been updated to include the <code><a href="#playlist">playlist</a></code> parameter, which specifies a comma-separated list of video IDs to play.</p>
+  </li>
+  <li>
+    <p>The definition of the <code><a href="#fs">fs</a></code> has been updated to note that the fullscreen option will not work if you load the YouTube player into another SWF.</p>
+  </li>
+  <li>
+    <p>The <a href="#AS3_Object_Embeds">example</a> at the end of the 
+document has been updated to use the embedded AS3 player instead of the 
+embedded AS2 player. The parameters used in the example have also been 
+updated to only include parameters that the AS3 player supports.</p>
+    <p>In addition, the instructions for constructing the URLs that 
+contain player parameters have been updated to reflect the URL formats 
+used by the AS3 and AS2 embedded and chromeless players as well as by 
+the HTML5 player.</p>
+  </li>
+</ul>
+
+</div>
+
+    </div>
+  
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+<div id="gc-content-license">
+
+    
+      
+        <p>Salvo indicação em contrário, o conteúdo desta página está licenciado de acordo com a <a href="http://creativecommons.org/licenses/by/3.0/">Licença de Atribuição 3.0 do Creative Commons</a>, e as amostras de código estão licenciadas de acordo com a <a href="http://www.apache.org/licenses/LICENSE-2.0">Licença do Apache 2.0</a>. Para ver detalhes, consulte nossas <a href="https://developers.google.com/site-policies?hl=pt-br">Políticas de sites</a>.</p>
+      
+    
+    
+    
+
+</div>
+
+
+
+<div itemprop="datePublished" content="2014-10-14T19:16:48.711930" id="gc-content-last-updated">Last updated Outubro 14, 2014.</div>
+
+</div>
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+      
+        
+          
+        
+      
+
+      
+
+  
+
+  
+       <!-- not (if site.theme == 'maia' or site.theme == 'maia-cloud') -->
+      <div id="gc-footer-container">
+        <footer id="gc-footer">
+          
+
+
+
+
+        <div id="maia-footer-local" class="footer-local">
+          <div id="footer-top" class="maia-aux">
+            <div class="footer-top-wrap">
+
+             <div class="search-wrap new_left">
+               <div class="dev-wrap new_left">
+                 <a href="https://developers.google.com/?hl=pt-br"><img src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/developers-logo.png"></a>
+               </div>
+               <form class="search new_left" action="/s/results" method="GET" id="footer-search">
+                 <div id="searchbox" class="searchbox new_left">
+                   <input name="q" class="q" id="q" placeholder="Search" autocomplete="off" type="text">
+                 </div>
+                 <button id="search-button" class="button button-blue big new_left">
+                   <img src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/search.png" alt="Search">
+                 </button>
+               </form>
+             </div>
+             <div class="plus-wrap new_left">
+               <div class="plus">
+                 <!-- Place this tag where you want the widget to render. -->
+                 <div id="___follow_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 145px; height: 24px;"><iframe data-gapiattached="true" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/follow.html" name="I1_1426720460538" id="I1_1426720460538" vspace="0" tabindex="0" style="position: static; top: 0px; width: 145px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+                 <!-- Place this tag after the last widget tag. -->
+                 <script type="text/javascript">
+                   (function() {
+                     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                     po.src = 'https://apis.google.com/js/platform.js';
+                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                   })();
+                 </script>
+               </div>
+             </div>
+           </div>
+         </div>
+
+      <div id="footer-list" class="maia-aux">
+    <div class="footer-list-wrap  maia-cols">
+      <div class="maia-col-3">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="https://developers.google.com/products/?hl=pt-br">Products</a></li>
+          <li><a href="https://developers.google.com/showcase/?hl=pt-br">Showcase</a></li>
+          <li><a href="https://developers.google.com/events/?hl=pt-br">Events</a></li>
+          <li><a href="https://developers.google.com/community/?hl=pt-br">Communities</a></li>
+        </ul>
+      </div>
+      <div class="maia-col-3">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="http://googledevelopers.blogspot.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Blog Link">Blog</a></li>
+          <li><a href="https://plus.google.com/+GoogleDevelopers/posts" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer G+ Link">Google+ Community</a></li>
+          <li><a href="http://www.youtube.com/user/GoogleDevelopers" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer YouTube Link">YouTube Channel</a></li>
+          <li><a class="google-feedback" id="devsite-feedback-site">Informar um problema</a></li>
+          <li><a href="https://developers.google.com/careers/?hl=pt-br">Jobs</a></li>
+        </ul>
+      </div>
+      
+      <script type="text/javascript">
+      $(document).ready(function() {
+        new devsite.feedback.Widget({
+            'product_id': '81425',
+            'bucket': 'Documentation',
+            'version': 'devsite-20150318-r00-rc01.default'
+          },
+          document.querySelectorAll('#devsite-feedback-site'),
+          null,
+          null,
+          null,
+          null
+        );
+      });
+      </script>
+      <div class="maia-col-3">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="https://developers.google.com/groups/?hl=pt-br">Groups</a></li>
+          <li><a href="https://developers.google.com/experts/?hl=pt-br">Experts</a></li>
+          <li><a href="https://developers.google.com/startups/?hl=pt-br">Startups</a></li>
+          <li><a href="https://developers.google.com/women-techmakers/?hl=pt-br">Women Techmakers</a></li>
+        </ul>
+      </div>
+      <div class="maia-col-3">
+        <h4>Top Products</h4>
+        <ul class="top-prod-1 left">
+          <li><a href="https://developers.google.com/advertise/?hl=pt-br">Ads</a></li>
+          <li><a href="https://developers.google.com/analytics/?hl=pt-br">Analytics</a></li>
+          <li><a href="https://developer.android.com/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Android Link">Android</a></li>
+          <li><a href="https://developers.google.com/cast/?hl=pt-br">Cast</a></li>
+          <li><a href="https://developers.google.com/chrome/?hl=pt-br">Chrome</a></li>
+          <li><a href="https://cloud.google.com/docs/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Cloud Link">Cloud</a></li>
+        </ul>
+        <ul class="top-prod-2 left">
+          <li><a href="https://developers.google.com/google-apps/?hl=pt-br">Google Apps</a></li>
+          <li><a href="https://developers.google.com/+/?hl=pt-br">Google+</a></li>
+          <li><a href="https://developers.google.com/maps/?hl=pt-br">Maps</a></li>
+          <li><a href="https://developers.google.com/search/?hl=pt-br">Search</a></li>
+          <li><a href="https://developers.google.com/commerce/wallet/?hl=pt-br">Wallet</a></li>
+          <li><a href="https://developers.google.com/youtube/?hl=pt-br">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div><!-- END DIV#MAIA-FOOTER-LOCAL -->
+
+<div id="maia-footer-global" class="footer-global">
+  <div class="maia-aux">
+    <span id="terms">
+      <a href="https://developers.google.com/site-terms/?hl=pt-br">Terms of Use</a>
+    </span>
+    <span class="pipe">
+    </span>
+    <span id="privacy">
+      <a href="http://www.google.com/intl/en/privacy/" class="gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Footer Privacy Link">Privacy Policy</a>
+    </span>
+
+    
+    <div id="gc-language" class="new_right">
+    <ul>
+      <li>
+        <form id="setlang" action="/i18n/setlang/" method="post">
+          <input name="xsrf_token" value="72Zt-3bT4pXVtAO_AnyjZjoxNDI2NzIwNDYwMTUyODcw" type="hidden">
+          <select style="display: none;" id="footer_language" name="language">
+            <option value="ar">
+                العربيّة
+              </option><option value="bg">
+                български
+              </option><option value="ca">
+                català
+              </option><option value="zh-cn">
+                简体中文
+              </option><option value="zh-tw">
+                繁體中文
+              </option><option value="hr">
+                Hrvatski
+              </option><option value="cs">
+                česky
+              </option><option value="da">
+                dansk
+              </option><option value="nl">
+                Nederlands
+              </option><option value="en">
+                English
+              </option><option value="fa">
+                فارسی
+              </option><option value="fi">
+                suomi
+              </option><option value="fr">
+                français
+              </option><option value="de">
+                Deutsch
+              </option><option value="el">
+                Ελληνικά
+              </option><option value="he">
+                עברית
+              </option><option value="hi">
+                Hindi
+              </option><option value="hu">
+                Magyar
+              </option><option value="id">
+                Bahasa Indonesia
+              </option><option value="it">
+                italiano
+              </option><option value="ja">
+                日本語
+              </option><option value="ko">
+                한국어
+              </option><option value="lv">
+                latviešu
+              </option><option value="lt">
+                Lithuanian
+              </option><option value="nb">
+                norsk (bokmål)
+              </option><option value="nn">
+                norsk (nynorsk)
+              </option><option value="pl">
+                polski
+              </option><option value="pt-br" selected="selected">
+                Português Brasileiro
+              </option><option value="pt">
+                Português
+              </option><option value="ro">
+                Română
+              </option><option value="ru">
+                Русский
+              </option><option value="sr">
+                српски
+              </option><option value="sk">
+                slovenský
+              </option><option value="sl">
+                Slovenščina
+              </option><option value="es">
+                español
+              </option><option value="sv">
+                svenska
+              </option><option value="th">
+                Thai
+              </option><option value="tr">
+                Türkçe
+              </option><option value="uk">
+                Українська
+              </option><option value="vi">
+                Vietnamese
+              </option>
+          </select><span class="kd-button kd-menubutton kd-select"><div style="display: inline-block;"><div style="float: left;" class="label">
+                Português Brasileiro
+              </div><div class="kd-disclosureindicator"></div></div></span>
+        </form>
+      </li>
+    </ul>
+    </div>
+    
+  </div>
+</div><!-- END DIV#MAIA-FOOTER-GLOBAL -->
+<script type="text/javascript">
+    // Add the handlers once the document has loaded.
+    $(document).ready(function() {
+      devsite.devsite.handlePlusBadgeResize($('#plusbadge'), $('#homephoto'));
+    });
+  </script>
+
+        </footer>
+      </div>
+      
+
+      
+      
+  
+
+    </div>
+    <div id="search-autocomplete" class="search-results search-autocomplete" style="display:none"></div>
+    <script type="text/javascript" async="" defer="defer" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/api.js"></script>
+    
+      <script>
+        (function($) {
+          var cssHref = $('#screen-foot').attr('data-href');
+          $('#screen-foot').attr('href', cssHref);
+          $('#screen-foot').load(function() {
+            
+            devsite.timing.tick('cl');
+          });
+        })(jQuery);
+      </script>
+    
+    <script id="jqueryui" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/jquery-ui.js"></script>
+    
+    <script type="text/javascript" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/a"></script>
+    <script src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/script_foot_closure.js"></script>
+    <script src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/script_foot.js"></script>
+    <script>
+      
+      devsite.timing.tick('jl');
+      (function($) {
+        devsite.devsite.Init($, 'devsite',
+            '[]', '',
+            'pt-br', true,
+            '3bb7e1809c', 'paulobelmarco@gmail.com',
+            false,
+            {"296e8173cd0024b4839dd7f3d7fa4387": false, "04f8c40014dc472fb1b95e175fb1b9fd": true, "6749dcb526ce9bde6993550c7d928d24": true, "993b1906435224595bd618f6f331ee45": true, "6e6d95ece619bf85cc1ea2c6da8a4690": false});
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+    </script>
+    
+    
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if (navigator.userAgent.match(/msie/i)) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script>
+
+    
+
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/conversion.js">
+    </script><img alt="" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/a.gif" border="0" height="1" width="1">
+
+    
+
+    
+    
+    <script async="" defer="defer" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/async_survey"></script>
+    
+
+    
+    <script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="https://2507573.fls.doubleclick.net/activityi;src=2507573;type=other026;cat=googl875;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script><iframe src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/activityi.html" style="display:none" frameborder="0" height="1" width="1"></iframe>
+    <noscript>
+    <iframe src="https://2507573.fls.doubleclick.net/activityi;src=2507573;type=other026;cat=googl875;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+    
+
+    <noscript>
+      <div style="display:none;">
+        <img style="display:none;" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    
+
+
+
+<script type="text/javascript" defer="defer">
+
+
+</script>
+
+
+
+
+  </div><ul style="display: none; position: absolute; top: 12520.1px; right: 0px; bottom: auto; left: auto; height: 1312px; padding: 0px;" class="kd-menulist"><li class="kd-menulistitem">
+                العربيّة
+              </li><li class="kd-menulistitem">
+                български
+              </li><li class="kd-menulistitem">
+                català
+              </li><li class="kd-menulistitem">
+                简体中文
+              </li><li class="kd-menulistitem">
+                繁體中文
+              </li><li class="kd-menulistitem">
+                Hrvatski
+              </li><li class="kd-menulistitem">
+                česky
+              </li><li class="kd-menulistitem">
+                dansk
+              </li><li class="kd-menulistitem">
+                Nederlands
+              </li><li class="kd-menulistitem">
+                English
+              </li><li class="kd-menulistitem">
+                فارسی
+              </li><li class="kd-menulistitem">
+                suomi
+              </li><li class="kd-menulistitem">
+                français
+              </li><li class="kd-menulistitem">
+                Deutsch
+              </li><li class="kd-menulistitem">
+                Ελληνικά
+              </li><li class="kd-menulistitem">
+                עברית
+              </li><li class="kd-menulistitem">
+                Hindi
+              </li><li class="kd-menulistitem">
+                Magyar
+              </li><li class="kd-menulistitem">
+                Bahasa Indonesia
+              </li><li class="kd-menulistitem">
+                italiano
+              </li><li class="kd-menulistitem">
+                日本語
+              </li><li class="kd-menulistitem">
+                한국어
+              </li><li class="kd-menulistitem">
+                latviešu
+              </li><li class="kd-menulistitem">
+                Lithuanian
+              </li><li class="kd-menulistitem">
+                norsk (bokmål)
+              </li><li class="kd-menulistitem">
+                norsk (nynorsk)
+              </li><li class="kd-menulistitem">
+                polski
+              </li><li class="kd-menulistitem selected">
+                Português Brasileiro
+              </li><li class="kd-menulistitem">
+                Português
+              </li><li class="kd-menulistitem">
+                Română
+              </li><li class="kd-menulistitem">
+                Русский
+              </li><li class="kd-menulistitem">
+                српски
+              </li><li class="kd-menulistitem">
+                slovenský
+              </li><li class="kd-menulistitem">
+                Slovenščina
+              </li><li class="kd-menulistitem">
+                español
+              </li><li class="kd-menulistitem">
+                svenska
+              </li><li class="kd-menulistitem">
+                Thai
+              </li><li class="kd-menulistitem">
+                Türkçe
+              </li><li class="kd-menulistitem">
+                Українська
+              </li><li class="kd-menulistitem">
+                Vietnamese
+              </li></ul><!-- END DIV.MAIA-MAX -->
+  
+
+  
+    
+    <span id="devsite-request-elapsed" data-request-elapsed="538.839817047"></span>
+  
+
+<div id="contain-402"></div><script src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/prompt"></script><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Par%C3%A2metros%20do%20player%20incorporado%20do%20YouTube%20-%20YouTube%20%E2%80%94%20Google%20Developers_arquivos/postmessageRelay.html" id="oauth2relay223857084" name="oauth2relay223857084"></iframe></body></html>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>00000000001</idiv>
+    <idevideo>QrKuxNY3OGc</idevideo>
+    <title> Herbalife, Góticos e &#34;Síumes&#34;</title>
+    <author>Comunidade-BR</author>
+    <description> Quer que meu trabalho aqui continue? Seja o meu patrão! http://www.patreon.com/izzynobre As aberturas do canal são feitas pelo Murilo Almeida. Prestigiem o t....</description>
+    <keywords></keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

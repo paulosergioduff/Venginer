@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>Mukeka</idiv>
+    <idevideo>1.0</idevideo>
+    <title>:: Mukeka Braba</title>
+    <author>Anderson de Arruda Casimiro</author>
+    <description>anderson at duodraco dot com</description>
+    <keywords>Olá key</keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

@@ -1,0 +1,17 @@
+<?php
+
+
+echo PHP_OS . "<br>";
+
+echo $_SERVER['REMOTE_ADDR'] . "<br>";
+echo $_SERVER['HTTP_USER_AGENT'] . "<br>"; 
+echo $_SERVER['HTTP_USER_AGENT'] . "<br>"; 
+
+
+
+/*
+phpinfo();*/
+
+
+
+?>

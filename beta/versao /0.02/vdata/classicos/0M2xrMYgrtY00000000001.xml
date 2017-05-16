@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>00000000001</idiv>
+    <idevideo>0M2xrMYgrtY</idevideo>
+    <title> OS CAVALEIROS DO ZODIACO - O FILME PROLOGO DO CEU-DUBLADO</title>
+    <author>Comunidade-BR</author>
+    <description> Quinto filme da franquia Cavaleiros do zodíaco</description>
+    <keywords>key</keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

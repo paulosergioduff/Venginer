@@ -1,0 +1,32 @@
+                                    BR Busca JS - versão 1.0
+
+
+        Este script foi desenvolvido por: Bruno Linhares - w w w . b r d e s i g n . n e t
+
+   ****************************************************************************************
+   **                                                                                    **
+   **                              Informações de Copyright                              **
+   **  Copyright 2003 - Bruno Linhares - www.brdesign.net - Todos os direitos reservados **
+   **                                                                                    **
+   **  Este script pode ser usado e distribuido livremente, desde que sejam mantidos os  **
+   **  direitos autorais. Em caso do não cumprimento das regras, o ato será interpretado **
+   **  como pirataria de software. Basta colocar alguma mensagem de origem do script,    **
+   **  anexado com o link http://www.brdesign.net/  A mensagem pode ser por exemplo:     **
+   **  by brdesign.net , desenvolveido por brdesign.net ou criado por brdesign.net       **                                                                                    
+   **                                                                                    **
+   **                         w w w . b r d e s i g n . n e t                            **
+   **                                         					         **
+   **              BR design - Criação, Manutenção e Desenvolvimento de:                 **
+   **                                                                                    **
+   **           Websites - Sistemas dinâmicos para internet e intranet - Impressos       **
+   **           Logomarcas - Apresentações e Mídias digitais - Artes gráficas            **
+   **                                                                                    **
+   ****************************************************************************************
+
+BR Busca JS é um sistema de busca todo em JavaScript, com paginação e exibição de 
+resultados. No momento da busca o usuário pode optar por um ou mais banco de dados ou
+separar um banco de dados para cada categoria. O sites devem ser cadastrados nos banco de
+dados em js, contidos no mesmo diretório, onde são armazenados todos os dados dos sites
+cadastrados.
+
+* Lembrando que por esse script ser gratuito, não possui nenhum tipo de suporte.

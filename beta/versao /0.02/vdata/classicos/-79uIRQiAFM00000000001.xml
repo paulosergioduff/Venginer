@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>-79uIRQiAFM00000000001</idiv>
+    <idevideo>-79uIRQiAFM</idevideo>
+    <title> How BIG is Google?</title>
+    <author>Comunidade-BR</author>
+    <description> MUCH more where this came from. Subscribe to see it! Video Editing: http://www.cfnstudios.com ColdfusTion Android Launcher: https://play.google.com/store/app....</description>
+    <keywords></keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

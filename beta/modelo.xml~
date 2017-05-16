@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<core>
+  <video>
+    <idi>Mukeka</idi>
+    <ide>1.0</ide>
+    <author>Anderson de Arruda Casimiro</author>
+    <embed>anderson@duodraco.com</email>
+    <title>:: Mukeka Braba</title>
+    <description>anderson at duodraco dot com</description>
+    <keywords>anderson at duodraco dot com</keywords>
+
+    
+    <futere></future>
+  </video>
+  <opcoes>
+    <type>youtube</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </opcoes>
+</core>

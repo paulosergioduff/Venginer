@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>00000000001</idiv>
+    <idevideo>ey9bTshV308</idevideo>
+    <title> 2 O Método Científico e os Tipos de Pesquisa</title>
+    <author>Comunidade-BR</author>
+    <description> .</description>
+    <keywords></keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

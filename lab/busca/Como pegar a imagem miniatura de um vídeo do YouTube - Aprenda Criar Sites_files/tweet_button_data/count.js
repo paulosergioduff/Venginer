@@ -1,0 +1,1 @@
+/**/__twttr.receiveCount({"count":0,"url":"http:\/\/aprendacriarsites.com\/como-pegar-a-imagem-miniatura-de-um-video-do-youtube\/"});

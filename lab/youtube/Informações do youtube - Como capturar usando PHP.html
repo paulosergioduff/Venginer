@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js IE9 IE" lang="pt-BR" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="js" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" lang="pt-BR"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Informações do youtube - Como capturar usando PHP</title>
+<script data-rocketoptimized="true" data-rocketsrc="http://cc.chango.com/c/1426519478613/o?p=http%3A%2F%2Fsounoob.com.br%2Finformacoes-youtube-usando-php%2F&amp;r=http%3A%2F%2Fwww.google.com.br%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D1%26ved%3D0CCEQFjAA%26url%3Dhttp%253A%252F%252Fsounoob.com.br%252Finformacoes-youtube-usando-php%252F%26ei%3DofUGVbXrBMGfgwTxuYTwAQ%26usg%3DAFQjCNHTSkWbSBqBWk_AVcZqmBVtcpeJnQ%26sig2%3D2RVmDx2yBbdKd3SCVEnWiw%26bvm%3Dbv.88198703%2Cd.eXY&amp;pid=2864&amp;__js__=true" async="" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="?cf_action=sync_comments&amp;post_id=1059" async=""></script><script data-rocketoptimized="true" data-rocketsrc="http://b.scorecardresearch.com/beacon.js" async=""></script><script data-rocketoptimized="true" data-rocketsrc="http://px.owneriq.net/stas/s/sholic.js" async="" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="http://cc.chango.com/static/o.js" async="" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="//clickcdn.shareaholic.com/api/vglnk.js" async="" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="http://www.google-analytics.com/ga.js" async="" type="text/javascript"></script><script data-analytics-script-placeholder="true" id="shr-analytics"></script><script async="" type="text/javascript" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/shareaholic.js" data-cfasync="false"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"2f0d88eff2c9391cac3c0196155ae673",petok:"10ebcb345f0d076fe3a1f8d10b35a16f3b4127f5-1426519472-1800",zone:"sounoob.com.br",rocket:"a",apps:{}}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=919620257c/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/cloudflare.js"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><script data-module="cloudflare/rocket" id="cfjs_block_ab1f8644c7" onload="CloudFlare.__cfjs_block_ab1f8644c7_load()" onerror="CloudFlare.__cfjs_block_ab1f8644c7_error()" onreadystatechange="CloudFlare.__cfjs_block_ab1f8644c7_readystatechange()" type="text/javascript" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/rocket.js"></script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+		/* <![CDATA[ */
+		document.documentElement.className = document.documentElement.className.replace(new RegExp('(^|\\s)no-js(\\s|$)'), '$1js$2');
+		/* ]]> */
+	</script>
+ 
+<meta name="robots" content="noydir">
+<meta name="description" content="Veja como recuperar as Informações do youtube usando poucas linhas de código, cadastre apenas uma URL e o sistema fará o resto.">
+<link rel="canonical" href="http://sounoob.com.br/informacoes-youtube-usando-php/">
+<link rel="publisher" href="https://plus.google.com/104281767853073648353">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Informações do youtube - Como capturar usando PHP">
+<meta property="og:description" content="Veja como recuperar as informações de vídeos do youtube usando poucas linhas de código, cadastra apenas uma URL e o sistema fará o resto.">
+<meta property="og:url" content="http://sounoob.com.br/informacoes-youtube-usando-php/">
+<meta property="og:site_name" content="SouNoob">
+<meta property="article:publisher" content="https://www.facebook.com/sounoob.com.br">
+<meta property="article:author" content="https://www.facebook.com/gordosena">
+<meta property="article:tag" content="Google,Youtube">
+<meta property="article:section" content="Tutoriais">
+<meta property="article:published_time" content="2014-05-15T18:59:07+00:00">
+<meta property="article:modified_time" content="2014-06-10T08:27:24+00:00">
+<meta property="og:updated_time" content="2014-06-10T08:27:24+00:00">
+<meta property="fb:app_id" content="370117756342202">
+<meta property="og:image" content="http://sounoob.com.br/wp-content/uploads/2014/05/younoob.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Veja como recuperar as Informações do youtube usando poucas linhas de código, cadastre apenas uma URL e o sistema fará o resto.">
+<meta name="twitter:title" content="Informações do youtube - Como capturar usando PHP">
+<meta name="twitter:domain" content="SouNoob">
+<meta name="twitter:image:src" content="http://sounoob.com.br/wp-content/uploads/2014/05/younoob.jpg">
+<meta itemprop="description" content="Veja como recuperar as informações de vídeos do youtube usando poucas linhas de código, cadastra apenas uma URL e o sistema fará o resto.">
+ 
+<link rel="alternate" type="application/rss+xml" title="Feed de SouNoob »" href="http://sounoob.com.br/feed/">
+<link rel="alternate" type="application/rss+xml" title="SouNoob »  Feed de comentários" href="http://sounoob.com.br/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="SouNoob » Informações do YouTube – Como capturar usando PHP  Feed de comentários" href="http://sounoob.com.br/informacoes-youtube-usando-php/feed/">
+ 
+<script type="text/javascript" data-cfasync="false">
+  //<![CDATA[
+    (function() {
+      var shr = document.createElement('script');
+      shr.setAttribute('data-cfasync', 'false');
+      shr.src = '//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js';
+      shr.type = 'text/javascript'; shr.async = 'true';
+      shr.onload = shr.onreadystatechange = function() {
+        var rs = this.readyState;
+        if (rs && rs != 'complete' && rs != 'loaded') return;
+        var site_id = 'a1332da9b5fbd6cd0d182313b4f41c2f';
+        var page_config = {};
+        try { Shareaholic.init(site_id, page_config); } catch (e) {}
+      };
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(shr, s);
+    })();
+  //]]>
+</script>
+ 
+<meta name="shareaholic:site_name" content="SouNoob">
+<meta name="shareaholic:language" content="pt-BR">
+<meta name="shareaholic:url" content="http://sounoob.com.br/informacoes-youtube-usando-php/">
+<meta name="shareaholic:keywords" content="google, youtube, informações do youtube, tutoriais">
+<meta name="shareaholic:article_published_time" content="2014-05-15T21:59:07+00:00">
+<meta name="shareaholic:article_modified_time" content="2014-09-05T22:12:02+00:00">
+<meta name="shareaholic:shareable_page" content="true">
+<meta name="shareaholic:article_author_name" content="Sena">
+<meta name="shareaholic:site_id" content="a1332da9b5fbd6cd0d182313b4f41c2f">
+<meta name="shareaholic:wp_version" content="7.5.0.0">
+<meta name="shareaholic:image" content="http://sounoob.com.br/wp-content/uploads/2014/05/younoob.jpg">
+ 
+<link rel="stylesheet" id="contact-form-7-css" href="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="ttfmake-google-fonts-css" href="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="ttfmake-font-awesome-css" href="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="ttfmake-main-style-css" href="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="ttfmake-print-style-css" href="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/print.css" type="text/css" media="print">
+ 
+<script data-rocketoptimized="true" type="text/rocketscript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-5016269-14']);
+	_gaq.push(['_gat._forceSSL']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+ 
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-includes/js/jquery/jquery.js?ver=1.11.1"></script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://sounoob.com.br/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://sounoob.com.br/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 4.0.1">
+<link rel="shortlink" href="http://sounoob.com.br/?p=1059">
+<style type="text/css" id="custom-background-css">body.custom-background{background-color:#b2adad;}</style>
+ 
+<style type="text/css" id="ttfmake-custom-css">.header-bar,.header-bar .search-form input,.header-social-links li:first-of-type,.header-social-links li a{border-color:#4f4f4f;}.header-bar{background-color:#494949;}.entry-content a{text-decoration:underline;}.site-title,.font-site-title{font-size:50px;font-size:5rem;}.site-description,.font-site-tagline{font-size:10px;font-size:1rem;}h1,.font-header{font-size:25px;font-size:2.5rem;}h2{font-size:19px;font-size:1.9rem;}h3,.builder-text-content .widget-title{font-size:13px;font-size:1.3rem;}h4{font-size:13px;font-size:1.3rem;}h5{font-size:9px;font-size:0.9rem;}h6{font-size:8px;font-size:0.8rem;}@media screen and (min-width: 800px){.has-left-sidebar.has-right-sidebar .entry-title{font-size:14px;font-size:1.4rem;}}</style>
+ 
+<link rel="pingback" href="http://sounoob.com.br/xmlrpc.php">
+<script data-cfasync="false" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/ga.js" id="shr-google-analytics" type="text/javascript"></script><script data-cfasync="false" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/jquery.js" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="//sounoob.disqus.com/embed.js?pname=wordpress&amp;pver=2.77" async="" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="//sounoob.disqus.com/count.js" type="text/javascript" async=""></script><script data-cfasync="false" data-rocketoptimized="true" data-rocketsrc="//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic_tools.js" type="text/javascript"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><script data-cfasync="false" data-rocketoptimized="true" data-rocketsrc="https://partner.shareaholic.com/partners.js?compiled_at=2015-03-03+20%3A06%3A44+%2B0000&amp;location=http%3A%2F%2Fsounoob.com.br%2Finformacoes-youtube-usando-php%2F&amp;canonical=http%3A%2F%2Fsounoob.com.br%2Finformacoes-youtube-usando-php%2F&amp;referrer=http%3A%2F%2Fwww.google.com.br%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D1%26ved%3D0CCEQFjAA%26url%3Dhttp%253A%252F%252Fsounoob.com.br%252Finformacoes-youtube-usando-php%252F%26ei%3DofUGVbXrBMGfgwTxuYTwAQ%26usg%3DAFQjCNHTSkWbSBqBWk_AVcZqmBVtcpeJnQ%26sig2%3D2RVmDx2yBbdKd3SCVEnWiw%26bvm%3Dbv.88198703%2Cd.eXY&amp;site=a1332da9b5fbd6cd0d182313b4f41c2f" id="shareaholic-partners" type="text/javascript"></script><link id="share_buttons_css" href="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/share_buttons.css" type="text/css" rel="stylesheet"></head>
+<body class="single single-post postid-1059 single-format-standard custom-background boxed">
+<div id="site-wrapper" class="site-wrapper">
+<header id="site-header" class="site-header header-layout-1 no-site-tagline" role="banner">
+<div class="header-bar right-content">
+<div class="container">
+<a class="skip-link screen-reader-text" href="#site-content">Skip to content</a>
+<form role="search" method="get" class="search-form" action="http://sounoob.com.br/">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input class="search-field" placeholder="Search…" title="Press Enter to submit your search" name="s" type="search">
+</label>
+<input class="search-submit" value="Search" type="submit">
+</form>
+<ul class="social-customizer social-links header-social-links">
+<li class="facebook">
+<a href="http://facebook.com/sounoob.com.br">
+<i class="fa fa-fw fa-facebook">
+<span>Facebook</span>
+</i>
+</a>
+</li>
+<li class="google-plus-square">
+<a href="https://plus.google.com/+SounoobBr">
+<i class="fa fa-fw fa-google-plus-square">
+<span>Google+</span>
+</i>
+</a>
+</li>
+<li class="email">
+<a href="mailto:contato@sounoob.com.br">
+<i class="fa fa-fw fa-envelope">
+<span>Email</span>
+</i>
+</a>
+</li>
+<li class="rss">
+<a href="http://sounoob.com.br/feed/">
+<i class="fa fa-fw fa-rss">
+<span>RSS</span>
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="site-header-main">
+<div class="container">
+<div class="site-branding">
+<h1 class="site-title">
+<a href="http://sounoob.com.br/" rel="home">
+SouNoob </a>
+</h1>
+</div>
+<nav id="site-navigation" class="site-navigation" role="navigation">
+<span class="menu-toggle">Menu</span>
+<a class="skip-link screen-reader-text" href="#site-content">Skip to content</a>
+<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu nav-menu"><li id="menu-item-8" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8"><a href="http://sounoob.com.br/quem-somos/">Quem somos</a></li>
+<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="http://sounoob.com.br/contato/">Contato</a></li>
+</ul></div> </nav>
+</div>
+</div>
+</header>
+<div id="site-content" class="site-content">
+<div class="container">
+<main id="site-main" class="site-main" role="main">
+<article id="post-1059" class="post-1059 post type-post status-publish format-standard has-post-thumbnail hentry category-tutoriais tag-google tag-youtube has-author-avatar">
+<header class="entry-header">
+<time class="entry-date published" datetime="2014-05-15T18:59:07+00:00">
+15/05/2014 </time>
+<figure class="entry-thumbnail post-header">
+<img src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/younoob.jpg" class="attachment-large wp-post-image" alt="YouNoob" height="246" width="470"> </figure>
+<h1 class="entry-title">
+Informações do YouTube – Como capturar usando PHP </h1> </header>
+<div class="entry-content">
+<div class="shareaholic-canvas" data-app-id="6427499" data-app="share_buttons" data-title="Informações do YouTube - Como capturar usando PHP" data-link="http://sounoob.com.br/informacoes-youtube-usando-php/" data-summary=""><div style="height: auto; display: block;" class="shareaholic-share-buttons-container shareaholic-ui flat round mini side-counter right-align"><div class="shareaholic-share-buttons-wrapper shareaholic-ui"><ul class="shareaholic-share-buttons"><li style="display: list-item;" class="shareaholic-share-button" data-service="google_plus" title="Google+"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-google_plus"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button has-shares" data-service="facebook" title="Facebook"><div class="shareaholic-share-button-container"><span class="share-button-counter">9</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-facebook"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button" data-service="twitter" title="Twitter"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-twitter"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button has-shares" data-service="linkedin" title="LinkedIn"><div class="shareaholic-share-button-container"><span class="share-button-counter">1</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-linkedin"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button" data-service="email_this" title="Email This"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-email_this"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button" data-service="all" title="More Options"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-all"></i><span class="share-button-verb"><b>Share</b></span></a></div></li></ul></div></div></div><p>Hoje
+ em dia temos um sério problema com limite de tráfego de servidores, o 
+que acaba forçando os programadores utilizarem serviços de terceiros 
+para inserir nos sites conteúdo de vídeos. Uma das opções é o serviço do
+ Google: O <span style="color: #000000;">YouTube</span>. O problema que surgia logo após a migração de vídeos para o <span style="color: #000000;">YouTube</span>, é que todas informações&nbsp;cadastradas no <span style="color: #000000;">YouTube&nbsp;</span>eram
+ um pouco difíceis de ser recuperar. Em um dilema como este, resolvi 
+criar uma classe (Um script) que faça todo trabalho pesado para 
+recuperar as Informações do <span style="color: #000000;">YouTube</span>.&nbsp;Vou mostrar para vocês como funciona<span id="more-1059"></span>:</p>
+<p>Neste tutorial estarei utilizando uma classe chama youtubeDetails, 
+que disponibilizei no github (caso achem bugs ou queira melhorar, fiquem
+ a vontade). Esta classe&nbsp;consegue atualmente recuperar:</p>
+<ul>
+<li>Imagens.</li>
+<li>URL para embed.</li>
+<li>Data da publicação.</li>
+<li>Data da ultima atualização.</li>
+<li>Título.</li>
+<li>Descrição.</li>
+<li>Autor.</li>
+</ul>
+<p>Existem dois métodos públicos para consulta rápida e com maior performasse, que é o <strong>getImages()</strong> para recuperar as imagens e o <strong>getEmbed()</strong> para recuperar a URL de embed.<br>
+Existe outro método mais completo chamdo&nbsp;<strong>getInfor()</strong>
+ que este conecta no feed do Google e busca todas as outras informações,
+ alem de chamar os métodos de imagem e de embed. (Evite usar esse método
+ se você quiser apenas buscar a imagem ou pegar a URL de embed.</p>
+<p>Para a classe funcionar, é necessário informar uma URL (válida) do vídeo do <span style="color: #000000;">YouTube</span>, essa URL pode ser informada no construtor, ou em qualquer método publico da classe.</p>
+<p>Uma coisa importante de saber: Todas as&nbsp;informações do <span style="color: #000000;">YouTube&nbsp;</span>são retornadas como array.</p>
+<h2>Usando a classe para receber as informações do&nbsp;YouTube</h2>
+<p>Primeiro passo, baixe a classe no github&nbsp;<a href="https://github.com/Sena/youtubeDetails" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'https://github.com/Sena/youtubeDetails', 'https://github.com/Sena/youtubeDetails']);" title="youtubeDetails" target="_blank" rel="external nofollow">https://github.com/Sena/youtubeDetails</a></p>
+<p>Incluiremos a classe em nosso código usando a função <strong>require</strong> do PHP</p>
+<pre>require 'class/youtubeDetails.php'</pre>
+<p>Criando uma instancia do objeto&nbsp;youtubeDetails() informando a URL do nosso vídeo e guardando a instancia em uma variável</p>
+<pre>$youtubeDetails = new youtubeDetails('https://www.youtube.com/watch?v=0rFE8FZNZ3o');</pre>
+<p>Recuperando apenas as imagens e guardando em uma variável.</p>
+<pre>$imagens = $youtubeDetails-&gt;getImages();
+
+//Imagem grande
+echo $imagens['big'];
+echo '&lt;br&gt;';
+
+//Imagem pequena
+echo $imagens['small'];</pre>
+<p>Recuperando apenas a URL&nbsp;para embed&nbsp;e guardando em uma variável.</p>
+<pre>$embed = $youtubeDetails-&gt;getEmbed();
+
+//Link para embed do vídeo
+echo $embed;</pre>
+<p>Recuperando todas&nbsp;informações do youtube&nbsp;e guardando em uma
+ variável (Ao chamar esse método, não é necessário chamar os outros, 
+pelo fato deste trazer todas informações disponíveis na classe)</p>
+<pre>$infor = $youtubeDetails-&gt;getInfor();
+
+//Imagem grande
+echo $infor['image']['big'];
+echo '&lt;br&gt;';
+
+//Imagem pequena
+echo $infor['image']['small'];
+echo '&lt;br&gt;';
+
+//Link para embed
+echo $infor['embed'];
+echo '&lt;br&gt;';
+
+//Data da publicação
+echo $infor['published'];
+echo '&lt;br&gt;';
+
+//Última atualização
+echo $infor['updated'];
+echo '&lt;br&gt;';
+
+//Título
+echo $infor['title'];
+echo '&lt;br&gt;';
+
+//Descrição
+echo $infor['description'];
+echo '&lt;br&gt;';
+
+//Autor
+echo $infor['author'];</pre>
+<p>&nbsp;</p>
+<p>Este post, foi inicialmente inspirado no&nbsp;<a href="http://sounoob.com.br/obter-a-miniaturas-de-imagem-de-um-video-do-youtube-usando-php/" onclick="_gaq.push(['_trackEvent', 'outbound-article-', 'http://sounoob.com.br/obter-a-miniaturas-de-imagem-de-um-video-do-youtube-usando-php/', 'Obter miniaturas de imagem de um vídeo do YouTube usando PHP']);" title="Obter miniaturas de imagem de um vídeo do YouTube usando PHP" target="_blank">Obter miniaturas de imagem de um vídeo do YouTube usando PHP</a></p>
+<div class="shareaholic-canvas" data-app-id="6427495" data-app="share_buttons" data-title="Informações do YouTube - Como capturar usando PHP" data-link="http://sounoob.com.br/informacoes-youtube-usando-php/" data-summary=""><div style="height: auto; display: block;" class="shareaholic-share-buttons-container shareaholic-ui flat round side-counter center-align"><div class="shareaholic-share-buttons-wrapper shareaholic-ui"><ul class="shareaholic-share-buttons"><li style="display: list-item;" class="shareaholic-share-button" data-service="google_plus" title="Google+"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-google_plus"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button has-shares" data-service="facebook" title="Facebook"><div class="shareaholic-share-button-container"><span class="share-button-counter">9</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-facebook"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button" data-service="twitter" title="Twitter"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-twitter"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button has-shares" data-service="linkedin" title="LinkedIn"><div class="shareaholic-share-button-container"><span class="share-button-counter">1</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-linkedin"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button" data-service="email_this" title="Email This"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-email_this"></i><span class="share-button-verb"><b>Share</b></span></a></div></li><li style="display: list-item;" class="shareaholic-share-button" data-service="all" title="More Options"><div class="shareaholic-share-button-container"><span class="share-button-counter">0</span><a href="javascript:void(0);"><i class="shareaholic-service-icon service-all"></i><span class="share-button-verb"><b>Share</b></span></a></div></li></ul></div></div></div>
+</div>
+<footer class="entry-footer">
+<div class="entry-author">
+<div class="entry-author-avatar">
+<a class="vcard" href="http://sounoob.com.br/author/sena/"><img alt="" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/cc317421ae2be6c4864685984741cc80.jpeg" class="avatar avatar-96 photo" height="96" width="96"></a> </div>
+<div class="entry-author-byline">
+by <a class="vcard fn" href="http://sounoob.com.br/author/sena/">Sena</a> </div>
+<div class="entry-author-bio">
+<p>Olá. eu sou Goku. Brincadeira, sou o Flavio Sena, Sena, Seninha...</p>
+<p>Sou baiano arretado com orgulho, tenho 23 anos, sou solteiro (meninas se segurem LoL)...</p>
+<p>Analista e desenvolvedor de sistemas formado pela Estácio UniRadial, finjo que programo PHP desde 2009.</p>
+<p>puxo um back no PHP (com CodeIgniter) e viajo no jQuery e CSS, e 
+quando os amigos pedem eu trabalho até com WordPress, quando não tenho 
+nada para fazer alimento meu blog. E... agora estou me aventurando no 
+mundo de desenvolvimento para Android /</p>
+<p>Sou apaixonado por música (Soul pfv) e tento tocar violão, mas parece que ele não gosta tanto de mim assim...</p>
+</div>
+</div>
+<i class="fa fa-file"></i> <ul class="post-categories">
+<li><a href="http://sounoob.com.br/category/tutoriais/" rel="category tag">Tutoriais</a></li></ul><i class="fa fa-tag"></i> <ul class="post-tags"><li><a href="http://sounoob.com.br/tag/google/" rel="tag">Google</a></li>
+<li><a href="http://sounoob.com.br/tag/youtube/" rel="tag">Youtube</a></li></ul> </footer>
+</article>
+<nav class="navigation post-navigation" role="navigation">
+<span class="screen-reader-text">Post navigation</span>
+<div class="nav-links">
+<div class="nav-previous"><a href="http://sounoob.com.br/curl-usando-e-abusando/" rel="next">cURL. Feita para usar e abusar</a></div><div class="nav-next"><a href="http://sounoob.com.br/controllers-e-views-codeigniter/" rel="prev">Controllers e Views – CodeIgniter</a></div> </div>
+</nav>
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/a.html" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 680px ! important;" title="Disqus" tabindex="0" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<script data-rocketoptimized="true" type="text/rocketscript">
+/* <![CDATA[ */
+    var disqus_url = 'http://sounoob.com.br/informacoes-youtube-usando-php/';
+    var disqus_identifier = '1059 http://sounoob.com.br/?p=1059';
+    var disqus_container_id = 'disqus_thread';
+    var disqus_domain = 'disqus.com';
+    var disqus_shortname = 'sounoob';
+    var disqus_title = "Informações do YouTube &#8211; Como capturar usando PHP";
+    var disqus_config = function () {
+        var config = this; // Access to the config object
+        config.language = '';
+
+        /* Add the ability to add javascript callbacks */
+        
+        /*
+           All currently supported events:
+            * preData — fires just before we request for initial data
+            * preInit - fires after we get initial data but before we load any dependencies
+            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+            * afterRender - fires when template is rendered but before we show it
+            * onReady - everything is done
+         */
+
+        config.callbacks.preData.push(function() {
+            // clear out the container (its filled for SEO/legacy purposes)
+            document.getElementById(disqus_container_id).innerHTML = '';
+        });
+                config.callbacks.onReady.push(function() {
+            // sync comments in the background so we don't block the page
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = '?cf_action=sync_comments&post_id=1059';
+
+            var firstScript = document.getElementsByTagName( "script" )[0];
+            firstScript.parentNode.insertBefore(script, firstScript);
+        });
+                    };
+/* ]]> */
+</script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+/* <![CDATA[ */
+    var DsqLocal = {
+        'trackbacks': [
+            {
+                'author_name':    "Obter miniaturas de imagem de um vídeo do YouTube",
+                'author_url':    "http:\/\/sounoob.com.br\/obter-a-miniaturas-de-imagem-de-um-video-do-youtube-usando-php\/",
+                'date':            "05\/15\/2014 09:20 PM",
+                'excerpt':        "[&#8230;] Veja nosso post mostrando como recuperar não só as imagens, mas muito outras informações do youtube [&#8230;] ",
+                'type':            "pingback"            }
+        ],
+        'trackback_url': "http:\/\/sounoob.com.br\/informacoes-youtube-usando-php\/trackback\/"    };
+/* ]]> */
+</script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+/* <![CDATA[ */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.' + 'disqus.com' + '/' + 'embed' + '.js' + '?pname=wordpress&pver=2.77';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+/* ]]> */
+</script>
+</main>
+</div>
+</div>
+<footer id="site-footer" class="site-footer footer-layout-1" role="contentinfo">
+<div class="container">
+<div class="site-info">
+<span class="theme-name">Make: A WordPress template</span>
+<span class="theme-by">by</span>
+<span class="theme-author">
+<a title="The Theme Foundry homepage" href="https://thethemefoundry.com/">
+The Theme Foundry
+</a>
+</span>
+</div>
+<ul class="social-customizer social-links footer-social-links">
+<li class="facebook">
+<a href="http://facebook.com/sounoob.com.br">
+<i class="fa fa-fw fa-facebook">
+<span>Facebook</span>
+</i>
+</a>
+</li>
+<li class="google-plus-square">
+<a href="https://plus.google.com/+SounoobBr">
+<i class="fa fa-fw fa-google-plus-square">
+<span>Google+</span>
+</i>
+</a>
+</li>
+<li class="email">
+<a href="mailto:contato@sounoob.com.br">
+<i class="fa fa-fw fa-envelope">
+<span>Email</span>
+</i>
+</a>
+</li>
+<li class="rss">
+<a href="http://sounoob.com.br/feed/">
+<i class="fa fa-fw fa-rss">
+<span>RSS</span>
+</i>
+</a>
+</li>
+</ul>
+</div>
+</footer> </div>
+<script data-rocketoptimized="true" type="text/rocketscript">
+    // <![CDATA[
+        var disqus_shortname = 'sounoob';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) url = url[0];
+                    else url = url[1]
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    //]]>
+    </script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20"></script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/sounoob.com.br\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Enviando ..."};
+/* ]]> */
+</script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.9.3"></script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-content/themes/make/js/libs/cycle2/jquery.cycle2.min.js?ver=1.3.1"></script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+/* <![CDATA[ */
+var ttfmakeFitVids = {"selectors":"iframe[src*='www.viddler.com'],iframe[src*='money.cnn.com'],iframe[src*='www.educreations.com'],iframe[src*='\/\/blip.tv'],iframe[src*='\/\/embed.ted.com'],iframe[src*='\/\/www.hulu.com']"};
+/* ]]> */
+</script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-content/themes/make/js/libs/fitvids/jquery.fitvids.min.js?ver=1.1"></script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-content/themes/make/js/global.min.js?ver=1.3.1"></script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://sounoob.com.br/wp-includes/js/comment-reply.min.js?ver=4.0.1"></script>
+<script data-rocketoptimized="true" data-rocketsrc="http://px.owneriq.net/j/?pt=sholic&amp;t=d%7C%22Travel%22" async="" type="text/javascript"></script><script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&a.indexOf("/cdn-cgi/l/email-protection") > -1  && (a.length > 28)){s='';j=27+ 1 + a.indexOf("/cdn-cgi/l/email-protection");if (a.length > j) {r=parseInt(a.substr(j,2),16);for(j+=2;a.length>j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);}t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
+
+<iframe style="display: none;" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/analytics_frame.html" id="shr_oven"></iframe><iframe style="width: 0px; height: 0px; border: 0px none; display: none;" name="__dxframe" src="Informa%C3%A7%C3%B5es%20do%20youtube%20-%20Como%20capturar%20usando%20PHP_files/cms-sh2c.html"></iframe></body></html>

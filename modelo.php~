@@ -1,0 +1,19 @@
+<?php
+
+include 'essencial.php';
+include 'headers.php';
+
+?>
+
+</head>
+
+</body>
+<?php include 'navbar.php'; ?>
+
+!-- CONTEUDO -- 
+
+
+<?php include 'footer.php'; ?>
+
+
+

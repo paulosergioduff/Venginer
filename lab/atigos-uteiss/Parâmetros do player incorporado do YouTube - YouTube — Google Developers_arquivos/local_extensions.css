@@ -1,0 +1,307 @@
+/*This style sheet strictly regulates the colors for individual code.google.com API documents
+and their page identification for indication in the navigation bar*/
+
+/* 
+GOOGLE API WRITERS: 
+Put a copy of this file in the 
+top directory of your API doc.
+*/
+
+/*  ---- OFFICIAL GOOGLE COLORS ----
+
+Color schemes should be assigned to each product 
+(either red, yellow, green or blue).
+ 
+To change your colors, 
+simply copy and paste both lines below, 
+and paste them into the above definition.
+
+  --------------------------
+
+--RED--
+	background-color: #efefef;
+	border-color: #aa0033;
+
+--YELLOW--
+	background-color: #fff4c2; 
+	border-color: #ffcc33;  
+
+--GREEN--
+	background-color: #ddf8cc;
+	border-color: #008000;
+
+--BLUE--
+	background-color: #e5ecf9;
+	border-color: #224499;
+	
+	
+ ---- END OF OFFICIAL GOOGLE COLORS ---- */
+ 
+
+/* ---- PAGE ID TAGS ---- 
+These tags identify the current page in order 
+to modify the font style in the navigation bar.
+
+For each page that you have in your navigation bar, type here 
+the id name for the page (in the body tag) followed by the 
+id name for the navigation link (in the anchor tag). 
+
+Example: 
+In the HTML: <body id="index_page"> and <a href="index.html" id="index_link">Home</a>
+In this CSS, below: #index_page #index_link 
+
+Separate each page-link pair with a comma.
+*/
+
+#gdata_page #gdata_link,
+#overview_page #overview_link,
+#developers_guide_page #developers_guide_link,
+#reference_page #reference_link,
+#migration_page #migration_link,
+#terms_page #terms_link{
+
+/* ---- ! DO NOT MODIFY ! ---- */
+	color:#000;
+	text-decoration:none;
+	}
+/* ------------------------ */
+
+
+/* ---- ! DO NOT MODIFY ! ---- */
+
+td {
+	background-color: #fff;
+	}
+h2 {
+	background-color: #fff;
+	}
+/* ------------------------ */
+
+
+/* Local items */
+
+h1.clearRight {
+	clear: right;
+}
+
+tr.csrow {
+        border-bottom: 1px dashed #DDD;
+}
+
+td.cstd {
+        vertical-align: middle;
+        padding: 20px;
+        border: 0;
+        width: 150px;;
+        height: 150px;
+}
+
+td.cstdtext {
+	vertical-align: middle;
+	padding: 20px; 
+	border: 0; 
+
+}
+
+img.csimg {
+        border: 0;
+        width: 150px;;
+}
+
+img.floatRight {
+	border: 0;
+        float: right; 
+	margin: 19px 10px; 
+}
+
+.adviser-header {
+        border-bottom:solid 1px #3a7bcb;
+        font-weight:bold;
+        margin:12px 0px 8px 0px;
+        background:#e5ecf9;
+        padding:4px;
+}
+.adviser-options {
+        padding-left: 20px;
+        color:#444;
+}
+.adviser-toc-customized-link {
+        padding-left:8px;
+        vertical-align:top;
+        color:#333;
+        font-weight:normal;
+        font-size:90%;
+        text-decoration:none;
+}
+.customized-doc-message {
+        padding-top:6px;
+        padding-bottom:6px;
+}
+/* tooltips */
+a.tooltip {
+        position: static;  /* fix IE6 non-hover */
+}
+a.tooltip img {
+        vertical-align: text-top;
+        border: 0;
+}
+a.tooltip .tooltip-content {
+        display: none;
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        z-index: 1;
+        width: 20em;
+        padding: 0.5em 1em;
+        color: #333;
+        background-color: #FFFFCC;
+        border: 1px solid #FFCC05;
+        font-weight: normal;
+        font-size: 12px;
+        text-align: left;
+}
+a.tooltip .tooltip-left-align {
+        left: 15px;
+}
+a.tooltip .tooltip-right-align {
+        left: -7em;
+}
+a.tooltip:hover {
+        position: relative;  /* fix IE6 hover by triggering redraw */
+        text-decoration: none;
+}
+a.tooltip:hover .tooltip-content {
+        display: block;
+}
+
+/*
+td.required {
+	background-color: #ffeedd;
+	}
+
+/* The following items are for tabs on the developers guide */
+/*
+#mt {
+	margin-top:0.5ex;
+	}
+
+table#mt div.tc1 {
+	background:transparent url(http://code.google.com/images/corner_tl_sharp.gif) no-repeat scroll left top;
+	height:4px;
+	}
+
+table#mt div.tc2 {
+	background:transparent url(http://code.google.com/images/corner_tr_sharp.gif) no-repeat scroll right top;
+	height:4px;
+	padding:0pt 4px;
+	}
+
+table#mt div.tT {
+	font-family:arial,sans-serif;
+	font-size:small;
+	padding:0px 1em 2px;
+	}
+
+table#mt table.st {
+	background-color: #c3d9ff;
+	}
+
+.t1 table#mt .int1 div.tc1, .t2 table#mt .int2 div.tc1, 
+.t3 table#mt .int3 div.tc1, .t4 table#mt .int4 div.tc1, 
+.t5 table#mt .int5 div.tc1, .t6 table#mt .int6 div.tc1, 
+.t7 table#mt .int7 div.tc1 {
+	background:transparent url(/images/corner_tl_sharp.gif) no-repeat scroll left top;
+	height:4px;
+	}
+
+.t1 table#mt .int1 div.tc2, .t2 table#mt .int2 div.tc2, 
+.t3 table#mt .int3 div.tc2, .t4 table#mt .int4 div.tc2, 
+.t5 table#mt .int5 div.tc2, .t6 table#mt .int6 div.tc2, 
+.t7 table#mt .int7 div.tc2 {
+	background:transparent url(/images/corner_tr_sharp.gif) no-repeat scroll right top;
+	height:4px;
+	padding:1px 6px;
+	}
+
+table#mt th {
+	background-color:#E5ECF9;
+	cursor:pointer;
+	font-weight:bold;
+	text-align:center;
+	}
+
+.t1 table#mt th.int1, .t2 table#mt th.int2, .t3 table#mt th.int3,
+.t4 table#mt th.int4, .t5 table#mt th.int5, .t6 table#mt th.int6,
+.t7 table#mt th.int7 {
+        background-color: #c3d9ff;
+	}
+
+table#mt th a {
+	text-decoration:none;
+	color: black;
+	}
+
+.t1 table#mt th.int1, .t2 table#mt th.int2, .t3 table#mt th.int3, 
+.t4 table#mt th.int4, .t5 table#mt th.int5, .t6 table#mt th.int6, 
+.t7 table#mt th.int7 {
+	background-color:#C3D9FF;
+	}
+
+table#mt th a {
+	color:black;
+	text-decoration:none;
+	}
+
+table#mt {
+	border-collapse:separate;
+	border: 0px;
+	border-spacing:0;
+	margin: 0px 0px 0px 10px;
+	clear:right;
+	}
+
+table#mt th {
+	font-weight: bold;
+	text-align:left;
+	margin-left:3%;	
+	border: 0px;
+	text-align: left;
+	padding: 0px 0px 0px 0px;
+	background-color: #e5ecf9;
+	}
+
+table#mt td {
+	border: 0px solid #ccc; 
+	background: #fff;
+	text-align:left;
+	margin-left:3%;	
+	padding: 0px;
+	vertical-align:top;
+	}
+
+table.st {
+	background-color:#C3D9FF;
+	border: 0px;
+	margin: 0px 0px 0px 10px;
+	padding: 0px;
+	}
+
+table.st td {
+	background-color:#C3D9FF;
+	border: 0px;
+	}
+
+table.st span {
+	padding:0pt 4px;
+	}
+
+table.st div.stur {
+	background:transparent url(http://code.google.com/images/ur.gif) no-repeat scroll right top;
+	height:2px;
+	padding:1px 4px;
+	}	
+
+#topnav {
+  	margin: 20px 10px 0px 0px;
+	}
+i*/

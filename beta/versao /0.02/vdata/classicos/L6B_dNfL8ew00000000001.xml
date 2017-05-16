@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>L6B_dNfL8ew00000000001</idiv>
+    <idevideo>L6B_dNfL8ew</idevideo>
+    <title> Os 5 Piores Jogos do PS2 [Canal 90]</title>
+    <author>Comunidade-BR</author>
+    <description> Veja mais vídeo da série &#34;5 Piores Jogos&#34;: https://www.youtube.com/playlist?list=PLzSxQPt-zF5l2D6wdR9sUmd-L_IV5c8bz Clique em &#34;Mostrar mais&#34; para desbloquear....</description>
+    <keywords></keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

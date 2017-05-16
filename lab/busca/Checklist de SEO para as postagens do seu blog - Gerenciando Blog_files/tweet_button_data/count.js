@@ -1,0 +1,1 @@
+/**/__twttr.receiveCount({"count":15,"url":"http:\/\/www.gerenciandoblog.com.br\/p\/checklist-seo.html\/"});

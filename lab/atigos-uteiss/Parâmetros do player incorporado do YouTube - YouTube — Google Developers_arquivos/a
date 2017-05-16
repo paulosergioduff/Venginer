@@ -1,0 +1,129 @@
+
+/* gettext library */
+
+var catalog = new Array();
+
+function pluralidx(count) { return (count == 1) ? 0 : 1; }
+catalog[' visible URL, ad extensions) is 6px.'] = ' URL vis\u00edvel, extens\u00f5es de an\u00fancio) \u00e9 6 px.';
+catalog[' within an ad unit (i.e. title, '] = ' em um bloco de an\u00fancios (ou seja, t\u00edtulo, ';
+catalog['%(count)s results'] = '%(count)s resultados';
+catalog['Add Credential'] = 'Adicionar credencial';
+catalog['All %(count)s results'] = 'Todos os %(count)s resultados';
+catalog['Close'] = 'Fechar';
+catalog['Could not load project credentials.'] = 'N\u00e3o foi poss\u00edvel carregar a credencial do projeto.';
+catalog['Could not load projects list.'] = 'N\u00e3o foi poss\u00edvel carregar a lista de projetos.';
+catalog['Could not save your project selection.'] = 'N\u00e3o foi poss\u00edvel salvar a sele\u00e7\u00e3o de projeto.';
+catalog['Error: The maximum difference allowed between font sizes'] = 'Erro: a diferen\u00e7a m\u00e1xima permitida entre dois tamanhos de fonte';
+catalog['Error: The maximum number of ads allowed is 10'] = 'Erro: o n\u00famero m\u00e1ximo de an\u00fancios permitido \u00e9 10';
+catalog['Excellent documentation'] = 'Excelente documenta\u00e7\u00e3o';
+catalog['Get help and support'] = 'Ajuda e suporte';
+catalog['Good documentation'] = 'Boa documenta\u00e7\u00e3o';
+catalog['History Preferences'] = 'Prefer\u00eancias de hist\u00f3rico';
+catalog['How can we improve this page?'] = 'Como podemos melhorar esta p\u00e1gina?';
+catalog['Insert'] = 'Inserir';
+catalog['It doesn\'t provide the information I expected.'] = 'N\u00e3o oferece as informa\u00e7\u00f5es esperadas.';
+catalog['It\'s difficult to understand'] = '\u00c9 dif\u00edcil de entender.';
+catalog['It\'s inaccurate'] = '\u00c9 imprecisa.';
+catalog['It\'s out of date.'] = 'Est\u00e1 desatualizada.';
+catalog['Loading your history...'] = 'Carregando seu hist\u00f3rico\u2026';
+catalog['Most Recently Visited'] = 'Visitadas recentemente';
+catalog['My Most Visited'] = 'Mais visitadas';
+catalog['OK documentation'] = 'OK documentation';
+catalog['Other (use text area below)'] = 'Outros (use a \u00e1rea de texto abaixo).';
+catalog['Place this code where you want your ad unit to appear. <br><br>'] = 'Coloque este c\u00f3digo onde voc\u00ea deseja que seu bloco de an\u00fancios apare\u00e7a. <br><br>';
+catalog['Place this code where you want your ad unit to appear.<br><br>'] = 'Coloque este c\u00f3digo onde voc\u00ea deseja que seu bloco de an\u00fancios apare\u00e7a.<br><br>';
+catalog['Place this code where you want your first ad unit to appear. '] = 'Coloque este c\u00f3digo no local em que deseja exibir o primeiro bloco de an\u00fancios. ';
+catalog['Please enter a width in pixels.'] = 'Insira uma largura em pixels.';
+catalog['Please enter the part of your client-ID that comes after partner-'] = 'Insira a parte do seu c\u00f3digo de cliente que vem depois de "partner-"';
+catalog['Please enter the pub-id using the pub-0000000000000000 format'] = 'Insira o c\u00f3digo do editor usando o formato pub-0000000000000000';
+catalog['Poor documentation'] = 'Poor documentation';
+catalog['Rate this page'] = 'Avalie esta p\u00e1gina';
+catalog['Report a bug'] = 'Informar um bug';
+catalog['Report a documentation error'] = 'Informar erro da documenta\u00e7\u00e3o';
+catalog['Request a feature'] = 'Solicitar um recurso';
+catalog['Sign in to view your recently visited pages.'] = 'Fazer login para visualizar as p\u00e1ginas visitadas recentemente.';
+catalog['Sorry. We couldn\'t load the credentials for this project. You can visit the %(start_link)sDevelopers Console%(end_link)s to see them.'] = 'Sorry. We couldn\'t load the credentials for this project. You can visit the %(start_link)sDevelopers Console%(end_link)s to see them.';
+catalog['Sorry. We couldn\'t load your projects. You can visit the %(start_link)sDevelopers Console%(end_link)s to see them.'] = 'Sorry. We couldn\'t load your projects. You can visit the %(start_link)sDevelopers Console%(end_link)s to see them.';
+catalog['The Google Developers website now saves the pages you visit when you are logged into Google. You can quickly access them via the history icon at the top of the site. %(link_html)sManage History%(end_link_html)s'] = 'O website do Google Developers agora salvar\u00e1 as p\u00e1ginas que voc\u00ea acessar quando estiver conectado ao Google. Acesse-as rapidamente por meio do \u00edcone do hist\u00f3rico no topo do site. %(link_html)sGerenciar hist\u00f3rico%(end_link_html)s';
+catalog['There\'s a typo'] = 'H\u00e1 um erro de digita\u00e7\u00e3o.';
+catalog['This project has no appropriate credentials. You can add one in the %(start_link)sDevelopers Console%(end_link)s.'] = 'This project has no appropriate credentials. You can add one in the %(start_link)sDevelopers Console%(end_link)s.';
+catalog['Turn on %(begin_link_html)shistory%(end_link_html)s to view recently visited pages.'] = 'Ative o %(begin_link_html)shist\u00f3rico%(end_link_html)s para visualizar as p\u00e1ginas rec\u00e9m-visitadas.';
+catalog['Unusable documentation'] = 'Documenta\u00e7\u00e3o inutiliz\u00e1vel';
+catalog['Warning: Longer Headlines can only be used in wide ad'] = 'Aviso: cabe\u00e7alhos mais longos s\u00f3 podem ser usados em blocos de an\u00fancios';
+catalog['You have no projects. You can create one in the %(start_link)sDevelopers Console%(end_link)s.'] = 'You have no projects. You can create one in the %(start_link)sDevelopers Console%(end_link)s.';
+catalog['You rated: %(rating_description)s'] = 'You rated: %(rating_description)s';
+catalog['Your browsing history on Google Developers will appear here.'] = 'Seu hist\u00f3rico de navega\u00e7\u00e3o no Google Developers aparecer\u00e1 aqui.';
+catalog['units. Please ensure the ads don\'t wrap.'] = 'longos. Verifique se os an\u00fancios n\u00e3o se ajustam.';
+
+
+function gettext(msgid) {
+  var value = catalog[msgid];
+  if (typeof(value) == 'undefined') {
+    return msgid;
+  } else {
+    return (typeof(value) == 'string') ? value : value[0];
+  }
+}
+
+function ngettext(singular, plural, count) {
+  value = catalog[singular];
+  if (typeof(value) == 'undefined') {
+    return (count == 1) ? singular : plural;
+  } else {
+    return value[pluralidx(count)];
+  }
+}
+
+function gettext_noop(msgid) { return msgid; }
+
+function pgettext(context, msgid) {
+  var value = gettext(context + '\x04' + msgid);
+  if (value.indexOf('\x04') != -1) {
+    value = msgid;
+  }
+  return value;
+}
+
+function npgettext(context, singular, plural, count) {
+  var value = ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
+  if (value.indexOf('\x04') != -1) {
+    value = ngettext(singular, plural, count);
+  }
+  return value;
+}
+
+function interpolate(fmt, obj, named) {
+  if (named) {
+    return fmt.replace(/%\(\w+\)s/g, function(match){return String(obj[match.slice(2,-2)])});
+  } else {
+    return fmt.replace(/%s/g, function(match){return String(obj.shift())});
+  }
+}
+
+/* formatting library */
+
+var formats = new Array();
+
+formats['DATETIME_FORMAT'] = 'j \\d\\e F \\d\\e Y \u00e0\\s H:i';
+formats['DATE_FORMAT'] = 'j \\d\\e F \\d\\e Y';
+formats['DECIMAL_SEPARATOR'] = ',';
+formats['MONTH_DAY_FORMAT'] = 'j \\d\\e F';
+formats['NUMBER_GROUPING'] = '3';
+formats['TIME_FORMAT'] = 'H:i';
+formats['FIRST_DAY_OF_WEEK'] = '0';
+formats['TIME_INPUT_FORMATS'] = ['%H:%M:%S', '%H:%M'];
+formats['THOUSAND_SEPARATOR'] = '.';
+formats['DATE_INPUT_FORMATS'] = ['%d/%m/%Y', '%d/%m/%y', '%Y-%m-%d'];
+formats['YEAR_MONTH_FORMAT'] = 'F \\d\\e Y';
+formats['SHORT_DATE_FORMAT'] = 'd/m/Y';
+formats['SHORT_DATETIME_FORMAT'] = 'd/m/Y H:i';
+formats['DATETIME_INPUT_FORMATS'] = ['%d/%m/%Y %H:%M:%S', '%d/%m/%Y %H:%M', '%d/%m/%Y', '%d/%m/%y %H:%M:%S', '%d/%m/%y %H:%M', '%d/%m/%y', '%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%d %H:%M', '%Y-%m-%d'];
+
+function get_format(format_type) {
+    var value = formats[format_type];
+    if (typeof(value) == 'undefined') {
+      return format_type;
+    } else {
+      return value;
+    }
+}

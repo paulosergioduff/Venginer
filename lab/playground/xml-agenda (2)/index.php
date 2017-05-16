@@ -1,0 +1,128 @@
+<?php
+	include ("SimpleDOM.php");
+	include ("config.php");	
+	include ("funcoes.php");
+	$buscar = $_REQUEST["buscar"];
+	$opc	= ($_REQUEST["opc"] != "") ? ($_REQUEST["opc"]) : ("nome");
+	$order	= ($_REQUEST["order"] != "") ? ($_REQUEST["order"]) : ("@nome");
+	$id		= ($_REQUEST["id"] != "") ? ($_REQUEST["id"]) : ("");
+	$by		= ($_REQUEST["by"] != "") ? ($_REQUEST["by"]) : ("a");
+	$byC	= ($by == "d") ? ("a") : ("d");
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sistema de Agenda Eletrônica</title>
+
+<!--
+	Sistema desenvolvido por Tiago para o site linhadecomando.com
+	Este sistema é de uso livre, podendo ser alterado e distribuído livremente.
+	Lembre-se de dar os créditos para o site linhadecomando.com
+    
+    dúvidas - sugestões - melhorias: tiago.agostinho@gmail.com
+-->
+
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript" src="jquery.maskedinput.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#divAdd').hide();
+			
+		$('#add').click(function(){
+			$('#divAdd').show();
+			$("input:text:first:visible").focus();
+			$('#add').hide();
+		});
+			
+		$('#btnCancelar').click(function(){
+			var url = "index.php"; 
+			$(location).attr('href',url);
+		});
+	});      
+</script>
+<script>
+	jQuery(function($){
+   		$("#idtel").mask("(99) 9999-9999");
+		$("#idcel").mask("(99) 9999-9999");
+		$("#ttel").mask("(99) 9999-9999");
+		$("#tcel").mask("(99) 9999-9999");
+	});
+</script>
+<link href="estilo.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div>
+	<h1>SISTEMA DE AGENDA ELETRÔNICA</h1>
+	<p>Desenvolvido por <a href="http://www.linhadecomando.com" target="_blank">linhadecomando.com</a>, utilizando PHP, SimpleDOM, XPath, JQuery e muito mais.</p>
+	<p><strong>Detalhes</strong>: Não utiliza tabela. O simplexml só funciona a partir da versão 5 do PHP. Não clicar no botão "Adicionar Novo Contato" quando estiver editando, pois não funcionará.</p>
+	<p><strong>Instalação</strong>: Simples e rápido. Descompactar o arquivo no diretório (www ou htdocs) do servidor web (apache).</p>
+</div>
+
+<hr />
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+	<!-- lado direito -->
+	<td width="35%" valign="top">
+        <a href="#" id="add"><img src="imagens/btn-add.gif" border="0" /></a>
+		
+        <div id="divAdd">
+        <br />
+        	<div id="divEdit">
+			<br />
+			<span class="tituloAtu">Inserindo dados...</span>
+			<br /><br />
+        	<form name="frmAdicionar" method="post" action="index.php?action=add">
+            <table>
+            <tr><td>
+            	<span class="titulo">Nome:</span></td><td><input type="text" name="tnome" size="40" /></td></tr>
+			<tr><td>                
+            	<span class="titulo">Tel:</span></td><td><input type="text" name="ttel" id="idtel" size="40" /></td></tr>
+           	<tr><td>
+             	<span class="titulo">Cel:</span></td><td><input type="text" name="tcel" id="idcel" size="40" /></td></tr>
+			<tr><td>                
+            	<span class="titulo">Email:</span></td><td><input type="text" name="temail" size="40" /></td></tr>
+			<tr><td align="right" colspan="2">
+            	<input type="reset" value="Limpar" class="btnClean" />
+            	<input type="button" value="Cancelar" class="btnClean" id="btnCancelar" />
+            	<input type="submit" value="Adicionar" class="btnSubmit" id="btnAdicionar" /></td></tr>                
+            </table>
+            </form>
+            </div>
+        </div>
+    	<?php
+		if($_REQUEST){
+			$acao = $_REQUEST['action'];
+	
+			switch ($acao){
+				case "add":
+					// adicionando
+					include ('xml-adicionar.php');
+					break;
+				case "del":
+					// apagando
+					include ('xml-deletar.php');				
+					break;
+				case "edt":
+					// editando
+					include ('xml-editar.php');				
+					break;
+			}	
+		}
+		?>	</td><!-- *** fim lado direito -->
+    <br />
+	<!-- lado esquerdo -->
+	<td width="65%">
+    <img src="imagens/logo-agenda.gif" border="0" />
+    <hr />
+	<?php
+		include ('xml-buscar.php');
+	?>
+    </td>
+</tr>
+</table>
+</body>
+</html>

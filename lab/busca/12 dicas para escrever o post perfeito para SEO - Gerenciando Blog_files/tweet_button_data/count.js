@@ -1,0 +1,1 @@
+/**/__twttr.receiveCount({"count":34,"url":"http:\/\/www.gerenciandoblog.com.br\/2013\/07\/dicas-para-escrever-post-perfeito-para-seo.html\/"});

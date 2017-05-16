@@ -1,0 +1,40 @@
+<?php
+
+$idvideo = $_GET_['v'];
+
+include 'essencial.php';
+include 'headers.php';
+include 'bootstrap.php';
+
+?>
+
+</head>
+
+</body>
+
+<?php include 'navbar.php'; ?>
+<hr>
+<!-- ?autoplay=1 -->
+
+<?
+$server = $_SERVER['SERVER_NAME'];
+$endereco = $_SERVER ['REQUEST_URI'];
+
+echo "http://" . $server . $endereco;
+?><br>
+
+<iframe width="480" height="285" src="https://www.youtube.com/embed/ODDtYGymz0I" frameborder="0" allowfullscreen></iframe><?php echo include 'anunciodireito.php'; ?><br>
+<?php include 'comentario.php'; ?>
+
+<br>
+ 
+
+      <hr>
+<?php include 'relacionados.php'; ?>
+      <hr>
+
+
+<?php include 'footer.php'; ?>
+
+
+

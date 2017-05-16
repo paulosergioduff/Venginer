@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>00000000001</idiv>
+    <idevideo>jNQXAC9IVRw</idevideo>
+    <title> 22 Me at the zoo</title>
+    <author>Comunidade-BR</author>
+    <description> The first video on YouTube..
+Método</description>
+    <keywords>key</keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

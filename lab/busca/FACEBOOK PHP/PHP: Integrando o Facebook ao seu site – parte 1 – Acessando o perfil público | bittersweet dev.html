@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público | bittersweet dev</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="screen" href="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/A_002.css">
+
+<link rel="pingback" href="http://blog.hboaventura.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://blog.hboaventura.com/wp-content/themes/kidh0_theme/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="Feed de bittersweet dev »" href="http://blog.hboaventura.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="bittersweet dev »  Feed de comentários" href="http://blog.hboaventura.com/comments/feed/">
+
+			<script async="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/cbgapi.loaded_1"></script><script async="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/plusone.js" async="" type="text/javascript"></script><script src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-620782-2']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();
+//]]></script>
+			<link rel="alternate" type="application/rss+xml" title="bittersweet dev » PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público  Feed de comentários" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/feed/">
+<style id="contact-form-7-css" media="all">div.wpcf7{margin:0;padding:0}div.wpcf7-response-output{margin:2em .5em 1em;padding:.2em 1em}div.wpcf7-mail-sent-ok{border:2px solid #398f14}div.wpcf7-mail-sent-ng{border:2px solid red}div.wpcf7-spam-blocked{border:2px solid #ffa500}div.wpcf7-validation-errors{border:2px solid #f7e700}span.wpcf7-form-control-wrap{position:relative}span.wpcf7-not-valid-tip{position:absolute;top:20%;left:20%;z-index:100;background:#fff;border:1px solid red;font-size:10pt;width:280px;padding:2px}span.wpcf7-not-valid-tip-no-ajax{color:red;font-size:10pt;display:block}span.wpcf7-list-item{margin-left:.5em}.wpcf7-display-none{display:none}div.wpcf7 img.ajax-loader{border:none;vertical-align:middle;margin-left:4px}div.wpcf7 .watermark{color:#888}</style>
+<script type="text/javascript" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/jquery_002.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.hboaventura.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.hboaventura.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Javascript: Desktop Notifications" href="http://blog.hboaventura.com/javascript-desktop-notifications/">
+<link rel="next" title="PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/">
+<meta name="generator" content="WordPress 3.4.1">
+<link rel="canonical" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/">
+<link rel="shortlink" href="http://blog.hboaventura.com/?p=409">
+	<link href="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/A.css" type="text/css" rel="stylesheet">
+	</head>
+
+<body data-twttr-rendered="true" class="single single-post postid-409 single-format-standard"><noscript><meta HTTP-EQUIV="refresh" content="0;url='http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/?ModPagespeed=noscript'" /><style><!--table,div,span,font,p{display:none} --></style><div style="display:block">Please click <a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/?ModPagespeed=noscript">here</a> if you are not redirected within a few seconds.</div></noscript>
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+				<h1 id="site-title"><span><a href="http://blog.hboaventura.com/" title="bittersweet dev" rel="home">bittersweet dev</a></span></h1>
+				<h2 id="site-description">Henrique Boaventura</h2>
+			</hgroup>
+
+			<nav id="access" role="navigation">
+				<h1 class="section-heading">Main menu</h1>
+				<div class="skip-link screen-reader-text"><a href="#content" title="Pular para o conteúdo">Pular para o conteúdo</a></div>
+
+				<div class="menu"><ul><li><a href="http://blog.hboaventura.com/" title="Início">Início</a></li><li class="page_item page-item-2"><a href="http://blog.hboaventura.com/sobre/">Sobre</a></li><li class="page_item page-item-357"><a href="http://blog.hboaventura.com/contato/">Contato</a></li></ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+		<div id="primary">
+			<div id="content" role="main">
+
+			
+				<nav id="nav-above">
+					<h1 class="section-heading">Post navigation</h1>
+					<div class="nav-previous"><a href="http://blog.hboaventura.com/javascript-desktop-notifications/" rel="prev"><span class="meta-nav">←</span> Javascript: Desktop Notifications</a></div>
+					<div class="nav-next"><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/" rel="next">PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário <span class="meta-nav">→</span></a></div>
+				</nav><!-- #nav-above -->
+
+				
+<article id="post-409" class="post-409 post type-post status-publish format-standard hentry category-sem-categoria tag-api tag-facebook tag-php">
+	<header class="entry-header">
+		<h1 class="entry-title">PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público</h1>
+
+		<div class="entry-meta">
+			<span class="sep">Postado por: </span><span class="author vcard"><a class="url fn n" href="http://blog.hboaventura.com/author/kidh0/" title="Ver todos os posts de Henrique Boaventura">Henrique Boaventura</a></span> em <a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/" rel="bookmark"><time class="entry-date" datetime="2011-08-29T14:41:35+00:00" pubdate="">29 de agosto de 2011</time></a>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p><a href="http://blog.hboaventura.com/wp-content/uploads/2011/08/facebook.png" rel="" style="" target="" title=""><img alt="" class="alignleft size-full wp-image-416" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/216x216xfacebook.png" style="" title="Facebook" height="216" width="216"></a><br>
+E lá vamos nós mais uma vez para uma série de artigos. Após vários pedidos,&nbsp;vamos finalmente abordar a tão aclamada <a href="http://developers.facebook.com/docs/reference/api/">API do Facebook</a>.
+ Esse artigo vai se estender por, hum, tantas partes quanto necessárias.
+ Ou até eu ficar sem paciência. Já aviso, este primeiro post será mais 
+curto, mas em compensação, vou postar mais frequentemente, visto que 
+temos que abordar várias facetas da API.</p>
+<h1>Iniciando a brincadeira</h1>
+<p>Antes de mais nada, para podermos brincar com qualquer recurso da <a href="http://developers.facebook.com/docs/reference/api/">API do Facebook</a>, temos que <strong>necessariamente</strong> criar uma aplicação no Facebook. Para isso, seguimos os seguintes passos:</p>
+<ol>
+<li>Acesse a página inicial de <a href="https://developers.facebook.com/apps">Apps do Facebook</a> devidamente logado;</li>
+<li>No canto direito superior, clique em + Create New App;</li>
+<li>Dê um nome para a aplicação (e tente adivinhar o captcha);</li>
+<li>Após isso, sua aplicação já está funcionando. Você pode adicionar 
+uma imagem, alterar o nome. Mas por enquanto, somente isso já está 
+ótimo.</li>
+</ol>
+<p>Feito o cadastro, vamos precisar fazer o download da <a href="http://pt.wikipedia.org/wiki/Software_Development_Kit">SDK</a> do Facebook. Podemos fazer de duas maneiras:</p>
+<ul>
+<li>Clonando o repositório do <a href="http://www.github.com/facebook/php-sdk">GitHub</a> (recomendado. Isso me lembra que tenho que fazer um artigo sobre Git)</li>
+<li>Fazendo o download do pacote via a url <a href="https://github.com/facebook/php-sdk/zipball/master">https://github.com/facebook/php-sdk/zipball/master</a></li>
+</ul>
+<p>Com a aplicação registrada e a SDK em mãos, podemos realmente nos divertir</p>
+<h1>Configurando a SDK</h1>
+<p>Para configurar a SDK, vamos precisar somente de duas coisas: <strong>App ID</strong> e <strong>App Secret</strong>. Ambas informações estão disponíveis na administração da sua recem criada aplicação, em "Summary".</p>
+<p>Eu criei uma aplicação chamada Paranoid Android e as informações dela são:</p>
+<ul>
+<li>App ID: 125178627581346</li>
+<li>App secret: 9fcc6b62c0f23c337d8ecb9aec27d155</li>
+</ul>
+<p>Com essas informações em mãos, vamos ao que interessa!</p>
+<p>Vamos criar um arquivo, vai se chamar index.php mesmo, estou sem imaginação, e colocamos o seguinte código nele:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span class="keyword">require</span><span>&nbsp;</span><span class="string">'facebook_sdk/facebook.php'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="vars">$facebook</span><span>&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;Facebook(</span><span class="keyword">array</span><span>(&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'appId'</span><span>&nbsp;&nbsp;=&gt;&nbsp;</span><span class="string">'125178627581346'</span><span>,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">'secret'</span><span>&nbsp;=&gt;&nbsp;</span><span class="string">'9fcc6b62c0f23c337d8ecb9aec27d155'</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>));&nbsp;&nbsp;</span></li><li class=""><span><span class="vars">$kidh0</span><span>&nbsp;=&nbsp;</span><span class="vars">$facebook</span><span>-&gt;api(</span><span class="string">'/henrique.boaventura'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="func">echo</span><span>&nbsp;</span><span class="string">'Nome:&nbsp;'</span><span>&nbsp;.&nbsp;</span><span class="vars">$kidh0</span><span>[</span><span class="string">'name'</span><span>];&nbsp;&nbsp;</span></span></li><li class=""><span><span class="func">echo</span><span>&nbsp;</span><span class="string">'Localização&nbsp;'</span><span>&nbsp;.&nbsp;</span><span class="vars">$kidh0</span><span>[</span><span class="string">'location'</span><span>][</span><span class="string">'name'</span><span>];&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" class="php" name="code">    require 'facebook_sdk/facebook.php';
+    $facebook = new Facebook(array(
+        'appId'  =&gt; '125178627581346',
+        'secret' =&gt; '9fcc6b62c0f23c337d8ecb9aec27d155'
+    ));
+    $kidh0 = $facebook-&gt;api('/henrique.boaventura');
+    echo 'Nome: ' . $kidh0['name'];
+    echo 'Localização ' . $kidh0['location']['name'];</pre>
+<p>Explicando:</p>
+<ul>
+<li>Linha 1: Requisita a biblioteca do Facebook;</li>
+<li>Linha 2: Criamos a instância da nossa aplicação, setando as informações da nossa aplicação (App ID e App secret);</li>
+<li>Linha 6: Faz a chamada para a API, requisitando o perfil público do usuário (aqui também pode ser o id do usuário);</li>
+<li>Linha 7 e 8: Exibimos algumas informações do usuário.</li>
+</ul>
+<p>A API retorna um array para a variável (no caso <code>$kidh0</code>) com todas as informações públicas do usuário.</p>
+<p>E é somente isso, com 6 linhas de código temos acesso ao perfil 
+público de qualquer usuário (logicamente, desde que o usuário 
+compartilhe o seu perfil). &nbsp;</p>
+<p>Para fazer o download do arquivo de exemplo (com HTML exibindo o perfil público do usuário), <a href="http://blog.hboaventura.com/wp-content/uploads/2011/08/facebook_parte_1.zip">clique aqui</a>.</p>
+<p>Esse artigo foi <del>bem</del> curto, mas nos próximos, vamos nos aprofundar mais na API. See you there!</p>
+<p><strong>Links úteis:</strong></p>
+<ul>
+<li><a href="http://www.github.com/facebook/php-sdk">http://www.github.com/facebook/php-sdk</a></li>
+<li><a href="https://developers.facebook.com/docs/reference/api/">https://developers.facebook.com/docs/reference/api/</a></li>
+</ul>
+<br><br><p><strong>  Leia também:</strong></p><ol>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/" rel="bookmark" title="PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário">PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário</a></li>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-twitter-ao-seu-site-autenticacao-de-usuarios/" rel="bookmark" title="PHP: Integrando o Twitter ao seu Site – Autenticação de Usuários">PHP: Integrando o Twitter ao seu Site – Autenticação de Usuários</a></li>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-twitter-ao-seu-site-%e2%80%93-parte-3-agora-com-oauth/" rel="bookmark" title="PHP: Integrando o Twitter ao seu Site – Parte 3 (Agora com OAuth)">PHP: Integrando o Twitter ao seu Site – Parte 3 (Agora com OAuth)</a></li>
+<li><a href="http://blog.hboaventura.com/php-integrando-o-twitter-ao-seu-site-parte-2/" rel="bookmark" title="PHP: Integrando o Twitter ao seu Site – Parte 2">PHP: Integrando o Twitter ao seu Site – Parte 2</a></li>
+</ol><p></p>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<div id="post_attr">
+			<strong>Categoria:</strong> <a href="http://blog.hboaventura.com/category/sem-categoria/" title="Ver todos os posts em Sem categoria" rel="category tag">Sem categoria</a><br><strong>Tags:</strong> <a href="http://blog.hboaventura.com/tag/api/" rel="tag">API</a>, <a href="http://blog.hboaventura.com/tag/facebook/" rel="tag">facebook</a>, <a href="http://blog.hboaventura.com/tag/php/" rel="tag">PHP</a>					</div>
+		<div id="sharing">
+			<script src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/widgets.js" type="text/javascript"></script>
+			<iframe style="width: 119px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/tweet_button.html" allowtransparency="true" id="twitter-widget-0" frameborder="0" scrolling="no"></iframe>
+			<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 106px; height: 24px;"><iframe title="+1" data-gapiattached="true" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/fastbutton.html" name="I0_1426428746777" id="I0_1426428746777" vspace="0" tabindex="0" style="position: static; top: 0px; width: 106px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div>
+			<script type="text/javascript">(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='https://apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>
+			<iframe src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/like.html" style="border:none; overflow:hidden; width:80px; height:21px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</footer><!-- .entry-meta -->
+</article><!-- #post-409 -->
+
+				<nav id="nav-below">
+					<h1 class="section-heading">Post navigation</h1>
+					<div class="nav-previous"><a href="http://blog.hboaventura.com/javascript-desktop-notifications/" rel="prev"><span class="meta-nav">←</span> Javascript: Desktop Notifications</a></div>
+					<div class="nav-next"><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/" rel="next">PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário <span class="meta-nav">→</span></a></div>
+				</nav><!-- #nav-below -->
+
+				
+	<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			41 respostas a <em>PHP: Integrando o Facebook ao seu site – parte 1 – Acessando o perfil público</em>		</h2>
+
+		
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-455">
+		<article id="comment-455" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/8b1b9810c8615edcceecfab9830a3963.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Roger Wolff</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-455"><time pubdate="" datetime="2011-09-05T01:09:16+00:00">
+					05 de setembro de 2011 às 01:09					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>E a parte 2, vai falar como postar no mural ou em uma página? Aguardando</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-456">
+		<article id="comment-456" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-456"><time pubdate="" datetime="2011-09-05T09:02:35+00:00">
+					05 de setembro de 2011 às 09:02					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Sim sr. Roger. O próximo post vai abordar uma simples postagem no mural do usuário. Novidades em breve.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="post pingback">
+		<p>Pingback: <a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/" rel="external nofollow" class="url">PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário | bittersweet dev</a></p>
+	</li>
+	<li class="comment even thread-even depth-1" id="li-comment-538">
+		<article id="comment-538" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/2744d68752f8a3b42d0c6d8b9d244919.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Renan Maia</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-538"><time pubdate="" datetime="2011-11-28T13:57:49+00:00">
+					28 de novembro de 2011 às 13:57					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Como faço para obter o e-mail do usuário indicado?</p>
+<p>Tentei substituir<br>
+echo ‘Localização ‘ . $kidh0['location']['name'];<br>
+por<br>
+echo ‘Localização ‘ . $kidh0['email']['name'];</p>
+<p>ou até</p>
+<p>echo ‘Localização ‘ . $kidh0['email'];</p>
+<p>e não consegui.</p>
+<p>pode me auxiliar?</p>
+<p>obrigado e abraços!</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-539">
+		<article id="comment-539" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-539"><time pubdate="" datetime="2011-11-28T21:33:07+00:00">
+					28 de novembro de 2011 às 21:33					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Acessando o perfil público, tu não 
+tem acesso a esse tipo de informação. Somente com o usuário liberando 
+permissão para a aplicação</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment even thread-even depth-1" id="li-comment-567">
+		<article id="comment-567" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/5c37aa8152adf7eee144094005a0457d.png" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.formulariogratis.com/" rel="external nofollow" class="url">Felipe</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-567"><time pubdate="" datetime="2012-01-30T16:12:23+00:00">
+					30 de janeiro de 2012 às 16:12					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Agora boiei…Criei beleza…Quando 
+acessei a página para atualizar, ele pediu para logar no facebook, o 
+facebook pediu autorização e rolou sussa…Ele conectou e postou no 
+perfil. Porém eu estava logado com o login do dono do aplicativo. Daí 
+troquei de login e tentei fazer o mesmo processo. Daí não deu…Ele 
+retorna erro no servidor, mas sem mostrar nada…E no facebook ele falha 
+no carregamento da página no aplicativo…<br>
+E outra coisa, quando terminei de me conectar com o login do 
+desenvolvedor ele voltou para a mesma página com informações na URL e 
+nada…</p>
+<p>Sabe oque pode estar ocorrendo :/</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-568">
+		<article id="comment-568" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/5c37aa8152adf7eee144094005a0457d.png" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.formulariogratis.com/" rel="external nofollow" class="url">Felipe</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-568"><time pubdate="" datetime="2012-01-30T16:16:13+00:00">
+					30 de janeiro de 2012 às 16:16					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>E outra coisa cara, tem como deletar um aplicativo?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-569">
+		<article id="comment-569" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-569"><time pubdate="" datetime="2012-01-30T16:36:35+00:00">
+					30 de janeiro de 2012 às 16:36					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Ao acessar a aplicação via 
+developers.facebook.com, no menu lateral, o último item deve ser ‘Delete
+ app’, ele fala por si mesmo :)</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-570">
+		<article id="comment-570" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-570"><time pubdate="" datetime="2012-01-30T16:38:01+00:00">
+					30 de janeiro de 2012 às 16:38					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Se sei o que está acontecendo? Não, 
+não tenho idéia porque não estou acessando os fontes :) Mas 
+provavelmente se tu debugar a aplicação, vai verificar porque do erro. 
+Se tu está usando meu aplicativo de testes, ao retornar, ele não vai 
+fazer nada, só postar no facebook, o que a principio, está correto.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment even thread-even depth-1" id="li-comment-593">
+		<article id="comment-593" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/c8f1568e7e97e68a7e585254eb599f89.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Ganhão</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-593"><time pubdate="" datetime="2012-03-30T18:45:41+00:00">
+					30 de março de 2012 às 18:45					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Caro Henrique. Li atentamente estes 
+excelentes artigos e comigo funcionaram à primeira. Aproveito para 
+perguntar como posso integrar só a minha lista de posts do Facebbok no 
+meu site? Como se fosse uma lista de noticias. Obrigado.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-594">
+		<article id="comment-594" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/256674ab9cc528175e30bff671f0d26e.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">bruno</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-594"><time pubdate="" datetime="2012-04-01T23:30:18+00:00">
+					01 de abril de 2012 às 23:30					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>O script está perfeito, muito obrigado!<br>
+Agora uma dúvida como fazer o script postar automáticamente.<br>
+Usarei em apenas um usuário para postar informações se uma página está 
+on ou não. Por isto posso passar os dados do client_id client_secret 
+para o modo manual direto no php<br>
+Se puder ajudar, agradeço muito!</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment even thread-even depth-1" id="li-comment-602">
+		<article id="comment-602" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/8e42cdba5a4fe9717264d88289bf7ed9.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://soufoda.net/" rel="external nofollow" class="url">Thiago</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-602"><time pubdate="" datetime="2012-04-20T11:43:56+00:00">
+					20 de abril de 2012 às 11:43					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>tem como eu mostrar para o usuario 
+que ultilizar esse app a foto dos amigos dele que já usaram o app 
+também? Se sim, qual seria o comando para isso?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="post pingback">
+		<p>Pingback: <a href="http://thiagomunhozdev.wordpress.com/2012/04/20/como-integrar-seu-site-ao-facebook-com-php/" rel="external nofollow" class="url">Como integrar seu site ao Facebook com PHP « THIAGO MUNHOZ – WEB DEVELOPER</a></p>
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-605">
+		<article id="comment-605" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/933f38a1393b205a632ff09aed0d27a1.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">mozartcardoso</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-605"><time pubdate="" datetime="2012-04-21T20:19:03+00:00">
+					21 de abril de 2012 às 20:19					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>É dificil encontrar pessoas como você !<br>
+Quando eu chegar no mesmo nivel que você tambem estarei ajudando aos outros !</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment even thread-even depth-1" id="li-comment-608">
+		<article id="comment-608" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/541e25f1fb20e535ae5b41fceabf451e.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">thalysson</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-608"><time pubdate="" datetime="2012-04-30T18:14:42+00:00">
+					30 de abril de 2012 às 18:14					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Valeu, Gostei do post! pelo visto, é 
+possível acessar pelo aplicativo algumas informações dos usuário e suas 
+fotos. Isso quando ele liberar a permissão. Queria saber se tem como o 
+aplicativo fazer download das fotos do usuário. E se possível, como 
+faria? ou aonde posso procurar. Obrigado.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-614">
+		<article id="comment-614" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-614"><time pubdate="" datetime="2012-05-09T13:27:15+00:00">
+					09 de maio de 2012 às 13:27					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Dá uma olhada nestes dois links:<br>
+<a href="https://developers.facebook.com/docs/reference/api/photo/" rel="nofollow">https://developers.facebook.com/docs/reference/api/photo/</a><br>
+<a href="https://developers.facebook.com/docs/reference/api/album/" rel="nofollow">https://developers.facebook.com/docs/reference/api/album/</a><br>
+São a doc para a API de photo e de album.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-615">
+		<article id="comment-615" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-615"><time pubdate="" datetime="2012-05-09T13:29:32+00:00">
+					09 de maio de 2012 às 13:29					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Thiago, procurei por isso, mas creio 
+que não seja possivel, tu tem acesso aos amigos do usuário, mas 
+precisaria de permissão de cada um para verificar os likes/permissions</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-628">
+		<article id="comment-628" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/f3f42756bc5c9e7c12cf868584b9ec77.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.risosloucos.com.br/" rel="external nofollow" class="url">Natan Roque</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-628"><time pubdate="" datetime="2012-05-10T16:39:28+00:00">
+					10 de maio de 2012 às 16:39					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Aonde devo Usar esse Código no meu Aplicativo?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-629">
+		<article id="comment-629" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-629"><time pubdate="" datetime="2012-05-11T11:06:28+00:00">
+					11 de maio de 2012 às 11:06					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Tu pode colocar em qualquer lugar, desde que faça o include correto da SDK</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-630">
+		<article id="comment-630" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/f3f42756bc5c9e7c12cf868584b9ec77.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.risosloucos.com.br/" rel="external nofollow" class="url">Natan Roque</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-630"><time pubdate="" datetime="2012-05-11T23:05:41+00:00">
+					11 de maio de 2012 às 23:05					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Mais… Como fazer esse Include da SDK? eu baixei e tenho varios arquivos, aonde coloco isso?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-639">
+		<article id="comment-639" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-639"><time pubdate="" datetime="2012-05-22T10:59:43+00:00">
+					22 de maio de 2012 às 10:59					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>O facebook removeu a permissão offline da aplicação, impossibilitando esse tipo de post.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-652">
+		<article id="comment-652" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/0b6cde3c540be98c1b1d75abd4cf7fac.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Thiago</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-652"><time pubdate="" datetime="2012-05-31T15:55:07+00:00">
+					31 de maio de 2012 às 15:55					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Não consigo achar minha appsecrete na pagina do face como posso verificar acho que eles andaram modificando</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-653">
+		<article id="comment-653" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-653"><time pubdate="" datetime="2012-06-01T23:32:45+00:00">
+					01 de junho de 2012 às 23:32					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Segue um link para ver onde está <a href="http://www.evernote.com/shard/s82/sh/50379cf0-ef33-43f5-9f87-1cfeada7ac70/ef56e56154fc68b51290f41a72b155a8" rel="nofollow">http://www.evernote.com/shard/s82/sh/50379cf0-ef33-43f5-9f87-1cfeada7ac70/ef56e56154fc68b51290f41a72b155a8</a></p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-668">
+		<article id="comment-668" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/f9a8d79c21e38d305b4c45ffb4b6518e.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.camisetasdosul.com.br/" rel="external nofollow" class="url">DotaDias</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-668"><time pubdate="" datetime="2012-06-15T06:34:57+00:00">
+					15 de junho de 2012 às 06:34					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Cara, uma duvida.<br>
+Isso funciona bem com e-comerce? Penso se teria segurança tanto para o 
+cliente quanto para a loja, em questão, de endereço, telefone, Se for um
+ usuário FAKE ou não.<br>
+Espero que entendam minha pergunta.<br>
+Abraços, Até. =)</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-669">
+		<article id="comment-669" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-669"><time pubdate="" datetime="2012-06-15T08:31:01+00:00">
+					15 de junho de 2012 às 08:31					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Se funciona? Sim, funciona. Se isso 
+vai provar que o usuário é fake ou não? não, não vai. Provavelmente tu 
+vai ter a mesma certeza de que o usuário existe do que se tu fizesse um 
+cadastro “manual” no teu sistema.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-676">
+		<article id="comment-676" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/023ecd3b8392ee964e4c011cdf2509c5.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Lorena</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-676"><time pubdate="" datetime="2012-07-12T13:52:16+00:00">
+					12 de julho de 2012 às 13:52					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Olá, baixei o SDK, to desenvolvendo 
+uma aplicação em asp.net e gostaria de saber se posso colocar o código 
+php em meio aos controles asp.net.<br>
+Entenda, sou novata tanto na programação quanto na linguagem php, peço desculpas se a pergunta parece “boba”.</p>
+<p>Incluir o SDK no projeto seria incluir a pasta descompactada?</p>
+<p>Outra dúvida é sobre esse App ID e App secret. No caso, para teste eu
+ fiz no meu login mas a aplicação é pra fins comerciais, então eu 
+deveria obter num outro tipo de usuario esse ID e secret?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-677">
+		<article id="comment-677" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-677"><time pubdate="" datetime="2012-07-12T20:55:13+00:00">
+					12 de julho de 2012 às 20:55					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>No teu caso, acho melhor fazer uma integração com a SDK Javascript, não faz sentido integrar com a PHP e é muito mais fácil</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-680">
+		<article id="comment-680" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/ba2a94eebff5d447d3d46f1fa29b7698.png" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Kamylla</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-680"><time pubdate="" datetime="2012-07-31T09:44:45+00:00">
+					31 de julho de 2012 às 09:44					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Olá Henrique!<br>
+Muito bom o seu blog, consegui integrar o facebook ao meu site, a 
+questão agora é a seguinte.. sou nova no php/css e estou com 
+dificuldades para alterar o css do login button. Procuro em blogs e 
+nenhum deles me disponibiliza o css nem como conseguir altera-lo. Se 
+poder me dar uma ajudinha agradeço!<br>
+Obrigada</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment even thread-even depth-1" id="li-comment-698">
+		<article id="comment-698" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/91a90a83f6d56fc04e1e37dc6480af99.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.republicakaos.com/facebook" rel="external nofollow" class="url">Adriano Neves</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-698"><time pubdate="" datetime="2012-09-27T18:20:27+00:00">
+					27 de setembro de 2012 às 18:20					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Olá Henrique,</p>
+<p>primeiramente parabéns pelos artigos, ficaram muito bons. Eu tenho 
+uma dúvida e ficaria grato se pudesse me dar uma dica, tem como eu 
+bloquear marcações a partir da api do facebook?? Por exemplo, eu não 
+quero receber marcações que contenham a palavra pedofilia. Isso é 
+possível??? Abraço.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="post pingback">
+		<p>Pingback: <a href="http://sobatequemerra.wordpress.com/2012/10/28/integrando-o-facebook-ao-seu-site/" rel="external nofollow" class="url">Integrando o Facebook ao seu site « Só Bate Quem Erra</a></p>
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-703">
+		<article id="comment-703" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/0833703303c976c5b542b19e16705fbd.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.classificadosdublin.com/" rel="external nofollow" class="url">cleyton</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-703"><time pubdate="" datetime="2012-11-03T11:30:54+00:00">
+					03 de novembro de 2012 às 11:30					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>gostaria estar integrando o Facebook e twitter ao meu site ele é  em joomla seria possivel ?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-704">
+		<article id="comment-704" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-704"><time pubdate="" datetime="2012-11-05T08:11:09+00:00">
+					05 de novembro de 2012 às 08:11					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Joomla não é minha especialidade, mas acredito que existam plugins que permitam isso. Uma pesquisada deve te ajudar ;)</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-706">
+		<article id="comment-706" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/712b8b17f2dfc8267a34504953d1321f.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://www.internetrentavel.com.br/" rel="external nofollow" class="url">Carlos</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-706"><time pubdate="" datetime="2012-11-07T10:56:55+00:00">
+					07 de novembro de 2012 às 10:56					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Olá Henrique vc tem skype, gostaria de conversar a respeito de um projeto de plugin que tenho.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-709">
+		<article id="comment-709" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-709"><time pubdate="" datetime="2012-11-19T10:02:15+00:00">
+					19 de novembro de 2012 às 10:02					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Tenho, mas caso queira entrar em contato, pode usar o formulário no site <a href="http://www.hboaventura.com/" rel="nofollow">http://www.hboaventura.com</a></p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-714">
+		<article id="comment-714" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/82f9b3218f682a23f1d7df0ceff83d4e.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Tiago Abreu</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-714"><time pubdate="" datetime="2012-12-26T00:58:02+00:00">
+					26 de dezembro de 2012 às 00:58					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>tenho uma duvida, no lugar de definir um usuário fixo em:<br>
+$me = $facebook-&gt;api(‘/henrique.boaventura’); </p>
+<p>como posso fazer para exibir as informações de um usuario que já esteja logado no facebook<br>
+exemplo:<br>
+se eu estiver logado com a conta: tiago1<br>
+irar exibir as informaçoes dessa conta</p>
+<p>se eu tiver logado com a conta: tiago2<br>
+irar exibir as informaçoes dessa outra conta</p>
+<p>se puder postar um exemplo agradeço<br>
+Obrigado</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-715">
+		<article id="comment-715" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-715"><time pubdate="" datetime="2012-12-26T07:58:47+00:00">
+					26 de dezembro de 2012 às 07:58					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>É bem simples Tiago, se tu já solicitou as permissões do usuário e ele está logado, é só usar $me = $facebook-&gt;api(‘/me’);</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-716">
+		<article id="comment-716" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/82f9b3218f682a23f1d7df0ceff83d4e.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Tiago Abreu</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-716"><time pubdate="" datetime="2012-12-26T13:28:42+00:00">
+					26 de dezembro de 2012 às 13:28					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Obrigado Henrique, funcionou certinho como eu queria<br>
+Agora sendo um pouquinho mais chato e pedindo outra ajuda, to com um 
+problema, em algumas pagina aparece esse erro e algumas nao, ja 
+pesquisei em varios lugares, mais nada encontrei para resolver, se voce 
+souber como significa e como arrumar por favor :)</p>
+<p>O erro é esse:<br>
+Warning: session_start() [function.session-start]: Cannot send session 
+cache limiter – headers already sent (output started at 
+C:\xampp\htdocs\pegasus.php:4) in 
+C:\xampp\htdocs\SDK\facebook-php-sdk\src\facebook.php on line 49</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor even thread-even depth-1" id="li-comment-717">
+		<article id="comment-717" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-717"><time pubdate="" datetime="2012-12-26T17:53:43+00:00">
+					26 de dezembro de 2012 às 17:53					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>O erro é bem especifico, 
+provavelmente tu deve ter dado output de algum conteúdo antes de fazer a
+ chamada para o facebook. Ela deve ser a primeira coisa a ser chamada, 
+antes de iniciar a saida de dados.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-718">
+		<article id="comment-718" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/82f9b3218f682a23f1d7df0ceff83d4e.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Tiago Abreu</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-718"><time pubdate="" datetime="2012-12-26T23:47:09+00:00">
+					26 de dezembro de 2012 às 23:47					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Obrigado Henrique, uffa concertei, aparentemente esta sem erro, mais as vezes quando troco de usuário aparece o seguinte erro:</p>
+<p>Fatal error: Uncaught OAuthException: An active access token must be 
+used to query information about the current user.  thrown in 
+C:\xampp\htdocs\SDK\facebook-php-sdk\src\base_facebook.php on line 1249</p>
+<p>algo com o token, você ainda não fez nenhum artigo sobre isso né ?<br>
+aferar a parte 3 do integrando o facebook ?</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment even thread-even depth-1" id="li-comment-723">
+		<article id="comment-723" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/c8a281a61a9742ddb3563d12024ad1c9.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn">Jhonn</cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-723"><time pubdate="" datetime="2013-02-27T11:13:08+00:00">
+					27 de fevereiro de 2013 às 11:13					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Instalei um componente no joomla que necessita de API é ID, quando adiciono essas informações tudo fica branco, alguma solução?<br>
+Desde já muito obrigado, muito bom esse post.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+	<li class="comment byuser comment-author-kidh0 bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-724">
+		<article id="comment-724" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<img alt="" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/901f0a442e210509d983c0fb8fa4f54d.jpeg" class="avatar avatar-80 photo" height="80" width="80">					<cite class="fn"><a href="http://blog.hboaventura.com/" rel="external nofollow" class="url">Henrique Boaventura</a></cite> <span class="says">disse:</span>				</div><!-- .comment-author .vcard -->
+				
+				<div class="comment-meta commentmetadata">
+					<a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/comment-page-1/#comment-724"><time pubdate="" datetime="2013-02-28T22:14:19+00:00">
+					28 de fevereiro de 2013 às 22:14					</time></a>
+									</div><!-- .comment-meta .commentmetadata -->
+			</footer>
+
+			<div class="comment-content"><p>Como é algo especifico do Joomla, não, não saberia dizer nem o porque desse problema.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</article><!-- #comment-##  -->
+
+	</li>
+		</ol>
+
+		
+	
+									<div id="respond">
+				<h3 id="reply-title">Deixe uma resposta <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-1-acessando-o-perfil-publico/#respond" style="display:none;">Cancelar resposta</a></small></h3>
+									<form action="http://blog.hboaventura.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">O seu endereço de email não será publicado Campos obrigatórios são marcados <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Nome</label> <span class="required">*</span><input id="author" name="author" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-url"><label for="url">Site</label><input id="url" name="url" size="30" type="text"></p>
+												<p class="comment-form-comment"><label for="comment">Comentário</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">Você pode usar estas tags e atributos de <abbr title="HyperText Markup Language">HTML</abbr>:  <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" id="submit" value="Publicar comentário" type="submit">
+							<input name="comment_post_ID" value="409" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="b318cfd858" type="hidden"></p>					</form>
+							</div><!-- #respond -->
+				<script type="text/javascript">jQuery(document).ready(function(){jQuery('#commentform').submit(function(){_gaq.push(['_setAccount','UA-620782-2'],['_trackEvent','comment','submit']);});});</script>
+				
+</div><!-- #comments -->
+			
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" action="http://blog.hboaventura.com/">
+	<div><label class="screen-reader-text" for="s">Pesquisar por:</label>
+	<input name="s" id="s" type="text">
+	<input id="searchsubmit" value="Pesquisar" type="submit">
+	</div>
+	</form></aside><aside id="text-3" class="widget widget_text">			<div class="textwidget">web
+ standards enthusiastic | webdev addicted | symfony lover | webaholic | 
+music fan | asparing chef... mix it up... drink it cold</div>
+		</aside><aside id="twitter-1" class="widget widget_twitter"><h1 class="widget-title"><a href="http://twitter.com/kidh0" class="twitter_title_link">Twitter</a></h1><ul class="twitter"><li>No public Twitter messages.</li></ul></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Tópicos recentes</h1>		<ul>
+				<li><a href="http://blog.hboaventura.com/desabafo-de-um-ubunteiro-a-k-a-como-o-ubuntu-esta-acabando-com-a-minha-produtividade/" title="Desabafo de um ubunteiro (a.k.a. como o Ubuntu está acabando com a minha produtividade)">Desabafo de um ubunteiro (a.k.a. como o Ubuntu está acabando com a minha produtividade)</a></li>
+				<li><a href="http://blog.hboaventura.com/noticias-do-front/" title="Noticias do front">Noticias do front</a></li>
+				<li><a href="http://blog.hboaventura.com/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario/" title="PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário">PHP: Integrando o Facebook ao seu site – parte 2 – Atualizando o status do usuário</a></li>
+				</ul>
+		</aside><aside id="linkcat-2" class="widget widget_links"><h1 class="widget-title">Lista de Links</h1>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.hboaventura.com/" rel="me" title="Site pessoal com todas as informações referentes a minha pessoa">Henrique Boaventura</a></li>
+<li><a href="http://kroiner.wordpress.com/" rel="friend met co-worker">Life With Linux</a></li>
+<li><a href="http://lucas-ts.com/" rel="friend met co-worker" target="_blank">Lucas Stephanou</a></li>
+
+	</ul>
+</aside>
+		</div><!-- #secondary .widget-area -->
+
+		
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+			<div id="site-generator">
+                <q cite="http://en.wikipedia.org/wiki/Paranoid_Android">I may be paranoid... but not an android</q> - 1984-'15 / Design by <a href="http://www.melonmakers.com/">Luciano Fontoura</a>
+			</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/shCore.js"></script><script>eval(mod_pagespeed_9lBfqjKnQj);</script>
+<script>eval(mod_pagespeed_gEWmz$LbBM);</script>
+<script>eval(mod_pagespeed_OzikAHH9Bq);</script>
+<script>eval(mod_pagespeed_WZzZ9FrLow);</script>
+<script>eval(mod_pagespeed_4eqVuZt4od);</script>
+<script>eval(mod_pagespeed_xh5xsr38Vj);</script>
+<script>eval(mod_pagespeed_6po3cZnAY0);</script>
+<script>eval(mod_pagespeed_VxVhHiJRPi);</script>
+<script>eval(mod_pagespeed_kaJpdFvdGy);</script>
+<script>eval(mod_pagespeed_kBOcRP7WtQ);</script>
+<script>eval(mod_pagespeed_iLaU8DZrFO);</script>
+<script>eval(mod_pagespeed_kLznJTxQMh);</script>
+<script>eval(mod_pagespeed_j2$WdisdIU);</script>
+<script class="javascript">dp.SyntaxHighlighter.ClipboardSwf='http://blog.hboaventura.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';dp.SyntaxHighlighter.HighlightAll('code');</script>
+<script type="text/javascript" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/jquery.js"></script>
+<script type="text/javascript">//<![CDATA[
+var _wpcf7={"loaderUrl":"http:\/\/blog.hboaventura.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Enviando ..."};
+//]]></script>
+<script type="text/javascript" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/scripts.js"></script>
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="PHP:%20Integrando%20o%20Facebook%20ao%20seu%20site%20%E2%80%93%20parte%201%20%E2%80%93%20Acessando%20o%20perfil%20p%C3%BAblico%20%7C%20bittersweet%20dev_files/postmessageRelay.html" id="oauth2relay1264902414" name="oauth2relay1264902414"></iframe></body><iframe src="" style="display: none;"></iframe></html>

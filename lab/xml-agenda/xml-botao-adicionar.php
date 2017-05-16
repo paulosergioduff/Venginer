@@ -1,0 +1,1 @@
+<a href="#" id="add"><img src="imagens/btn-add.gif" border="0" /></a>

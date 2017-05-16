@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<core>
+  <sys>
+    <idiv>opji5DgE_nQ00000000001</idiv>
+    <idevideo>opji5DgE_nQ</idevideo>
+    <title> Dragon Ball Z: Light of Hope - Pilot</title>
+    <author>Comunidade-BR</author>
+    <description> DONATE HERE FOR EPISODE 2: http://www.robotunderdog.com/donate -- Dragon Ball Z: Light of Hope - Pilot Episode-- SUBSCRIBE! Hope is worth fighting for. In Dr....</description>
+    <keywords></keywords>
+  </sys>
+  <db>
+    <type>mysql</type>
+    <host>localhost</host>
+    <user>quser</user>
+    <password>quser</password>
+    <database>mukeka</database>
+  </db>
+</core>

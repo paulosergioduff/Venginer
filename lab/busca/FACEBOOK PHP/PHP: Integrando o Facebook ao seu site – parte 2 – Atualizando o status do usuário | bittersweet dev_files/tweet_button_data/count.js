@@ -1,0 +1,1 @@
+/**/__twttr.receiveCount({"count":21,"url":"http:\/\/blog.hboaventura.com\/php-integrando-o-facebook-ao-seu-site-parte-2-atualizando-o-status-do-usuario\/"});

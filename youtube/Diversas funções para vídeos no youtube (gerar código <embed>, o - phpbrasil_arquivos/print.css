@@ -1,0 +1,12 @@
+div#advertising,
+div#menu,
+div#comment-form,
+input.search {
+  display: none;
+}
+div#content {
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+
